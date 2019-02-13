@@ -89,15 +89,9 @@ https://chrome.google.com/webstore/detail/inet-developer-tool/hgmdmgbfllloocljif
 
 
 
-
 Contributors:
 ===
-- Hien Nguyen <hiennguyen@inetcloud.vn>
-- Tung Luong <lqtung@inetcloud.vn>
-- Phong Tran <phongtt@inetcloud.vn>
 - Vy Nguyen <ntvy@inetcloud.vn>
-- Tan Truong <tntan@inetcloud.vn>
 - Hanh Le <hanhld@inetcloud.vn>
-- Duyen Tang <tttduyen@inetcloud.vn>
-- Cong Nguyen <nbccong@inetcloud.vn>
 - An Tran <anttt@inetcloud.vn>
+- Van Nguyen <vannbt@inetcloud.vn>
