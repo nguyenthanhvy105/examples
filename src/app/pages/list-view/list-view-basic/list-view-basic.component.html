@@ -1,0 +1,67 @@
+<div class="admin-layout">
+    <div class="nav-fixed-top cp-toolbar">
+        <h5><i class="fa fa-cube" aria-hidden="true"></i> List View</h5>
+    </div>
+    <div class="cp-content">
+        <div class="list-container">
+            <div class="row">
+                <list-view
+                        class="list-view list-group col-sm-4" [items]="peoples"
+                        idProperty="uuid"
+                        (onSelectionChanged)="onListSelectionChanged($event,true)">
+
+                    <ng-template #toolbarTpl>
+                        <nav class="nav nav-tabs text-center">
+                            <span class="nav-item nav-link rounded-0 active" data-toggle="tab" role="tab">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i> Tất cả
+                                <span [hidden]="peoples.length<1" class="badge badge-pill badge-primary p-1 pl-2 pr-2">
+                                {{ peoples.length }}</span>
+                            </span>
+                        </nav>
+                    </ng-template>
+
+                    <ng-template #searchTpl>
+                        <div class="d-flex">
+                            <div class="input-group p-1">
+                                <div class="input-group input-group-sm">
+                                    <input [(ngModel)]="keyword" (keydown.enter)="search($event)" type="text"
+                                           name="keyword"
+                                           class="form-control" style="border-radius: 25rem"
+                                           placeholder="'Từ khóa tìm kiếm'">
+                                    <i class="fa fa-search icon icon-search" (click)="search($event)"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+
+                    <ng-template #contentTpl let-item let-selected="selected" let-active="active" let-odd="odd">
+                        <div class="list-item p-2" [ngClass]="{odd: odd, selected: selected, active: active}">
+                            <div class="item-list-content">
+                                <div>
+                                    <div class="row ml-0 mr-0">
+                                        <div class="col-sm-1 text-center pl-0 pr-0">
+                                            <img userAvatar src="{{item.picture}}" width="30px" height="30px"
+                                                 class="rounded-circle mt-1">
+                                        </div>
+                                        <div class="col-sm-11 pr-0">
+                                            <b class="mb-1">{{ item.name }}</b>
+                                            <p class="mb-1 mt-2 text-ellipsis">{{ item.company }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+
+                    <ng-template #footerTpl>
+                        <div *ngIf="selectedPeople.length" class="mt-2">Có {{ selectedPeople.length }} item đã chọn</div>
+                    </ng-template>
+                </list-view>
+                <div class="col-sm-8">
+                    <h5>Selected value</h5>
+                    <p class="p-2">{{selectedPeople | json}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

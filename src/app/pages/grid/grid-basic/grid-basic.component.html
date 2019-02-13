@@ -1,0 +1,57 @@
+<div class="admin-layout">
+  <div class="nav-fixed-top cp-toolbar">
+    <h5><i class="fa fa-cube" aria-hidden="true"></i> Grid View</h5>
+  </div>
+  <div class="cp-content">
+    <data-table id="people-grid"
+                headerTitle=""
+                [page]="pageNumber"
+                [items]="items"
+                [itemCount]="itemCount"
+                (reload)="load($event)"
+                (rowClick)="rowClick($event)"
+                [limit]="10"
+                [header]="false"
+                [selectColumn]="true"
+                [multiSelect]="true"
+                [pagination_input]="true"
+                [pagination_range]="true"
+                [indexColumnHeader]="'#'"
+                [selectOnRowClick]="true"
+                [showReloading]="true">
+      <data-table-column
+              [property]="'company'"
+              [header]="'Company'"
+              [width]="150">
+      </data-table-column>
+      <data-table-column
+              [property]="'name'"
+              [header]="'Name'">
+      </data-table-column>
+      <data-table-column
+              [property]="'email'"
+              [header]="'Email'"
+              [width]="250">
+        <ng-template #dataTableCell let-item="item">
+          <i class="fa fa-envelope-open"></i> <a href="mailto:{{item.email}}"> {{item.email}}</a>
+        </ng-template>
+      </data-table-column>
+      <data-table-column
+              [property]="'phone'"
+              [header]="'Phone'"
+              [width]="175">
+      </data-table-column>
+      <data-table-column
+              [property]="'id'"
+              [header]=""
+              [width]="40">
+        <ng-template #dataTableCell let-item="item">
+          <span (click)="deleteItem(item, $event)" class="fs-100 badge badge-danger"><i class="fa fa-trash"></i></span>
+        </ng-template>
+      </data-table-column>
+    </data-table>
+    <app-confirm-dialog iconCls="fa fa-trash" [title]="'Xóa ?'"
+                        [content]="'Bạn có chắc là đồng ý muốn xóa item đã chọn không ?'">
+    </app-confirm-dialog>
+    </div>
+</div>

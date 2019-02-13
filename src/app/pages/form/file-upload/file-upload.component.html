@@ -1,0 +1,50 @@
+<div class="admin-layout">
+    <div class="nav-fixed-top cp-toolbar">
+        <h5><i class="fa fa-cube" aria-hidden="true"></i> File Upload</h5>
+    </div>
+    <div class="cp-content">
+        <div class="row-fluid pt-2">
+            <form [formGroup]="frmFileUpload">
+                <div class="row-fluid">
+                    <div class="col-sm-6">
+                        <div class="form-group row">
+                            <label class="control-label col-form-label col-sm-4 font-weight-bold">
+                                File Input :
+                            </label>
+                            <div class="col-sm-8 pl-0">
+                                <label class="i-file-input">
+                                    <input #fileUpload [formControl]="frmFileUpload.controls['fileUpload']" required
+                                           name="fileUpload" type="file" accept="image/*" (change)="changeFile($event)"
+                                           class="form-control form-control-sm col-xs-12 col-sm-12">
+                                    <span class="i-file-container" [ngClass]="{'selected': fileName}"
+                                          [attr.data-title]="'Choose...'">
+                                                            <span class="i-file-name"
+                                                                  [attr.data-title]="fileName || 'No File...'">
+                                                                <i class="file-icon fa fa-upload"></i>
+                                                            </span>
+                                                        </span>
+                                    <a class="remove" *ngIf="fileName" href="javascript:;" (click)="clearForm()">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </label>
+                                <p class="pt-2" *ngIf="data">{{data | json}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="col-sm-12">
+                        <div class="form-group row">
+                            <label class="control-label col-form-label col-sm-2 font-weight-bold">
+                                Custom Upload :
+                            </label>
+                            <div class="col-sm-10 pl-0">
+                                <app-attachment [attachments]="files" (onUpload)="onUpload($event)" (onRemove)="onRemove($event)"></app-attachment>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="admin-layout">
+    <div class="nav-fixed-top cp-toolbar">
+        <h5><i class="fa fa-cube" aria-hidden="true"></i> Tags</h5>
+    </div>
+    <div class="cp-content">
+        <form class="p-2">
+            <div class="col-sm-12 card">
+                <div class="card-body">
+                    <div class="form-group margin-b-form-group row">
+                        <label class="control-label col-form-label col-sm-2 font-weight-bold">Default: </label>
+                        <div class="col-sm-5">
+                            <ng-select [items]="['iNet']"
+                                       name="tag1"
+                                       [addTag]="true"
+                                       [(ngModel)]="tag1">
+                            </ng-select>
+                        </div>
+                        <div class="col-sm-4">
+                            <p class="p-2">Selected value: {{tag1 | json}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group margin-b-form-group row">
+                        <label class="control-label col-form-label col-sm-2 font-weight-bold">Multiple : </label>
+                        <div class="col-sm-5">
+                            <ng-select [items]="companies"
+                                       [addTag]="addTag"
+                                       [hideSelected]="true"
+                                       multiple="true"
+                                       bindLabel="name"
+                                       name="tag2"
+                                       [(ngModel)]="tag2">
+                            </ng-select>
+                        </div>
+                        <div class="col-sm-4">
+                            <p class="p-2">Selected value: {{tag2 | json}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group margin-b-form-group row">
+                        <label class="control-label col-form-label col-sm-2 font-weight-bold">Search : </label>
+                        <div class="col-sm-5">
+                            <ng-select [items]="companies"
+                                       [addTag]="addTagPromise"
+                                       multiple="true"
+                                       bindLabel="name"
+                                       name="tag3"
+                                       [loading]="loading"
+                                       [(ngModel)]="tag3">
+                                <ng-template ng-tag-tmp let-search="searchTerm">
+                                    <b>Create new</b>: {{search}}
+                                </ng-template>
+                            </ng-select>
+
+                        </div>
+                        <div class="col-sm-4">
+                            <p class="p-2">Selected value: {{tag3 | json}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

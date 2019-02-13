@@ -1,0 +1,15 @@
+.attachment-zone {
+  visibility: hidden;
+  position: absolute;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+img.file-icon {
+  width: 20px;
+  height: 20px;
+}

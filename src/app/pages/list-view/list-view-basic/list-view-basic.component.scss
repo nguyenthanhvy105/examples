@@ -1,0 +1,39 @@
+.list-container {
+  list-view {
+    font-size: 13px !important;
+    height: calc(100vh - 100px) !important;
+    .footer {
+      padding-left: 10px;
+    }
+    .content {
+      height: 100%;
+    }
+  }
+  .icon{
+    cursor: pointer;
+    color: #868d94;
+    position: absolute;
+    padding: 8px;
+    font-size: 14px;
+    &.icon-search{
+      right: 0;
+    }
+    &.icon-caret{
+      right:20px;
+    }
+  }
+
+  .item-list-content {
+    position: relative;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .text-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+

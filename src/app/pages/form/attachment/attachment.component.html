@@ -1,0 +1,45 @@
+<button type="button" (click)="fileInput.click()" class="btn btn-success btn-sm" style="margin-bottom: 10px;">
+    <i class="fa fa-upload" aria-hidden="true"></i> Chọn tài liệu đính kèm...
+</button>
+<span class="attachment-zone">
+  <input #fileInput type="file" ng2FileSelect [uploader]="uploader" multiple/>
+</span>
+<table class="table" *ngIf="attachments?.length>0 || uploader.queue?.length>0">
+    <thead>
+    <tr>
+        <th style="width: 20px"></th>
+        <th>Tên tài liệu</th>
+        <th style="width: 120px;"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let attachment of attachments">
+        <td><img [src]="attachment.name | fileIcon" class="file-icon"></td>
+        <td><strong><a href="javascript:;" appViewer
+                       [docId]="attachment.contentUuid"
+                       [ext]="attachment.name | fileExt"
+                       (click)="download(attachment)"
+                       [files]="attachments">{{attachment.name }}</a></strong></td>
+        <td nowrap class="text-right">
+            <button type="button" class="btn btn-danger btn-sm"
+                    (click)="removeAttachment(attachment)">
+                <i class="fa fa-trash"></i>
+            </button>
+        </td>
+    </tr>
+    <tr *ngFor="let item of uploader.queue">
+        <td colspan="3" *ngIf="uploader.options.isHTML5">
+            <div class="progress" style="margin-bottom: 0;">
+                <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': item.progress + '%' }"></div>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+
+</table>
+
+<app-confirm-dialog iconCls="icon-trash"
+                    title="Xóa ?"
+                    [content]="confirmMessage">
+</app-confirm-dialog>
+
