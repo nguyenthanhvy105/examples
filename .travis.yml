@@ -33,7 +33,7 @@ env:
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: "60607e4e9fcf3a2a662ba4b7e2a30a3b5b71a60b"
+  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep-history: true
   on:
     branch: master
