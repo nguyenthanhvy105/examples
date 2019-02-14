@@ -2,7 +2,6 @@ dist: trusty
 sudo: required
 language: node_js
 node_js:
-- '9'
 - '10'
 cache:
   directories:
@@ -20,9 +19,9 @@ matrix:
 before_install:
 - export CHROME_BIN=chromium-browser
 install:
-- yarn install
+- npm install
 script:
-- yarn run build
+- npm run build
 env:
   global:
     - DEPLOY_BRANCH="master"
