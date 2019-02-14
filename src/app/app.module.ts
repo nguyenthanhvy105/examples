@@ -42,8 +42,10 @@ export class AppModule {
                 private securityService: SecurityService,
                 private coreService: CoreService) {
         this.coreService.setEnvironment(environment);
+        /*
         if (this.coreService.getEnvironment().production) {
             setInterval(this.securityService.ping.bind(this), 2 * 60000);
         }
+        */
     }
 }
