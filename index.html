@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Examples Demo</title>
+    <base href="https://nguyenthanhvy105.github.io/examples/">    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style type="text/css">
+        @keyframes spinner {
+            to {transform: rotate(360deg);}
+        }
+        .loading:before {
+            content: '';
+            box-sizing: border-box;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-top: -15px;
+            margin-left: -15px;
+            border: 1px solid #ccc;
+            border-top-color: #07d;
+            animation: spinner .6s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <app-root>
+        <div class="loading"></div>
+    </app-root>
+
+    <script src="https://cdn.inetcloud.vn/data/api/lib/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.inetcloud.vn/data/api/lib/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.inetcloud.vn/data/api/lib/inet-core.min.js"></script>
+
+    <script type="text/javascript">
+        // Config server here
+        var pathServer = 'https://calista.inetcloud.vn/collaboration/vinaco';
+        // Don't need config anything else`
+        var arrPath = pathServer.split('/');
+        var domainPath = arrPath.slice(0, 3).join('/');
+        iNet.apply(iNet, {
+            prefix: 'vinaco',
+            imgFolder: '//media.inetcloud.vn/images/examples',
+            commonImageFolder: '//media.inetcloud.vn/images/common',
+            jsFolder: '',
+            webchat: 'http://vertx.inetcloud.vn:8082/eventbus',
+            firmPrefix: arrPath[4],
+            extension: '.cpx',
+            fileServer: '//media.inetcloud.vn/',
+            path: '/' + arrPath[3],
+            getUrl: function (url) {
+                return domainPath + iNet.path + '/smartcloud/' + url + iNet.extension;
+            },
+            getPUrl: function (url) {
+                return domainPath + iNet.path + '/' + iNet.firmPrefix + '/' + url + iNet.extension;
+            }
+        });
+        // Load user info from remote server
+
+        function loadUserInfo() {
+            /*
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open('GET', iNet.getPUrl('unicorn/page/user-info'), true);
+            xmlHttp.onload = function () {
+                if (!!this.responseText) {
+                    var data = JSON.parse(this.responseText);
+                    iNet.apply(iNet, data);
+                }
+            };
+            xmlHttp.send();
+            */
+
+            fetch(iNet.getPUrl('unicorn/page/user-info'))
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(data) {
+                    iNet.apply(iNet, data);
+                });
+        }
+        /**
+         * Load user info twice to make sure "iNet Developer Tool" get correct session
+         */
+        //loadUserInfo();
+        //loadUserInfo();
+    </script>
+<script type="text/javascript" src="runtime.js"></script><script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="styles.js"></script><script type="text/javascript" src="vendor.js"></script><script type="text/javascript" src="main.js"></script></body>
+</html>
