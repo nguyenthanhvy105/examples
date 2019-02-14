@@ -22,7 +22,7 @@ install:
 - npm install -g yarn
 - yarn install
 script:
-- yarn run build
+- yarn run deploy
 env:
   global:
     - DEPLOY_BRANCH="master"
