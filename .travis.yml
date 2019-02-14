@@ -17,6 +17,9 @@ addons:
 matrix:
   fast_finish: true
 before_install:
+- echo "$TRAVIS_BRANCH"
+- echo "$TRAVIS_PULL_REQUEST"
+- echo "$GITHUB_TOKEN"
 - export CHROME_BIN=chromium-browser
 install:
 - npm install
@@ -26,4 +29,12 @@ env:
   global:
     - DEPLOY_BRANCH="master"
     - SOURCE_DIR="dist"
+    - TARGET_BRANCH="gh-pages"
     - GIT_EMAIL="nguyenthanhvy105@gmail.com"
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  on:
+    branch: master
