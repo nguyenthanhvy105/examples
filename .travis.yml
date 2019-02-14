@@ -2,38 +2,33 @@ dist: trusty
 sudo: required
 language: node_js
 node_js:
-- '10'
+  - '10'
 cache:
   directories:
-  - node_modules
+    - node_modules
 os:
-- linux
+  - linux
 addons:
-  apt:
-    sources:
-    - google-chrome
-    packages:
-    - google-chrome-stable
+  chrome: stable
 matrix:
   fast_finish: true
-before_install:
-- export CHROME_BIN=chromium-browser
 install:
-- npm install -g yarn
-- yarn install
+  - npm install -g yarn
+  - yarn install
 script:
-- yarn run deploy
+  - yarn run deploy
 env:
   global:
     - DEPLOY_BRANCH="master"
-    - SOURCE_DIR="dist"
+    - SOURCE_DIR="dist/ng/examples"
     - TARGET_BRANCH="gh-pages"
     - GIT_EMAIL="nguyenthanhvy105@gmail.com"
 deploy:
   provider: pages
+  email: $GIT_EMAIL
   skip-cleanup: true
   github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep-history: true
-  local_dir: dist/ng/examples
+  local_dir: $SOURCE_DIR
   on:
-    branch: master
+    branch: $DEPLOY_BRANCH
