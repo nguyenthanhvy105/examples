@@ -19,7 +19,6 @@ matrix:
 before_install:
 - echo "$TRAVIS_BRANCH"
 - echo "$TRAVIS_PULL_REQUEST"
-- echo "$GITHUB_TOKEN"
 - export CHROME_BIN=chromium-browser
 install:
 - npm install
@@ -34,7 +33,7 @@ env:
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  github-token: "17612178845dc4a1acccf4ddbfc56504eda6fe3d"
   keep-history: true
   on:
     branch: master
