@@ -19,21 +19,21 @@ matrix:
 before_install:
 - export CHROME_BIN=chromium-browser
 install:
-- npm install
+- npm install -g yarn
+- yarn install
 script:
-- npm run build
+- yarn run build
 env:
   global:
     - DEPLOY_BRANCH="master"
-    - SOURCE_DIR="dist/ng/examples"
-    - TARGET_BRANCH="pages"
+    - SOURCE_DIR="dist"
+    - TARGET_BRANCH="gh-pages"
     - GIT_EMAIL="nguyenthanhvy105@gmail.com"
-before_deploy:
-  - cd dist/ng/examples
 deploy:
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep-history: true
+  local_dir: dist/ng/examples
   on:
     branch: master

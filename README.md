@@ -1,5 +1,11 @@
-### Tasks to do for running the project:
+
 Examples
+===
+Simple Admin App built using Angular 7 and Bootstrap 4
+
+[Demo](https://nguyenthanhvy105.github.io/examples)
+===
+Tasks to do for running the project:
 ===
 Quickly get a project started with any of our examples ranging from using parts of the framework to custom components and layouts.
 
@@ -19,8 +25,10 @@ Features
 - CAS Authentication
 - Custom components
 - Grid
-- Select
+- Select & Tags
 - ListView
+- Forms
+- File Upload
 
 Build
 ===
