@@ -33,7 +33,7 @@ env:
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: "17612178845dc4a1acccf4ddbfc56504eda6fe3d"
+  github-token: "60607e4e9fcf3a2a662ba4b7e2a30a3b5b71a60b"
   keep-history: true
   on:
     branch: master
