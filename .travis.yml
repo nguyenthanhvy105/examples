@@ -17,8 +17,6 @@ addons:
 matrix:
   fast_finish: true
 before_install:
-- echo "$TRAVIS_BRANCH"
-- echo "$TRAVIS_PULL_REQUEST"
 - export CHROME_BIN=chromium-browser
 install:
 - npm install
@@ -27,9 +25,11 @@ script:
 env:
   global:
     - DEPLOY_BRANCH="master"
-    - SOURCE_DIR="dist"
-    - TARGET_BRANCH="gh-pages"
+    - SOURCE_DIR="dist/ng/examples"
+    - TARGET_BRANCH="pages"
     - GIT_EMAIL="nguyenthanhvy105@gmail.com"
+before_deploy:
+  - cd dist/ng/examples
 deploy:
   provider: pages
   skip-cleanup: true
