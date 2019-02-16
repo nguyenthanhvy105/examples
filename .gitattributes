@@ -1,15 +1,2 @@
-# Set language
-*.ts linguist-language=TypeScript
-
-# Normalize line endings for all text files.
-* text=auto
-
-# Files that should always be normalized and converted to native line
-# endings on checkout.
-*.js text
-*.json text
-*.ts text
-*.md text
-*.yml text
-LICENSE text
-
+*.js text eol=lf
+*.ts text eol=lf
