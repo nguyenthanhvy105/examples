@@ -1,11 +1,15 @@
-# Auto detect text files and perform LF normalization
+# Set language
+*.ts linguist-language=TypeScript
+
+# Normalize line endings for all text files.
 * text=auto
 
-# JS and TS files must always use LF for tools to work
-*.js eol=lf
-*.ts eol=lf
-*.json eol=lf
-*.css eol=lf
-*.scss eol=lf
-*.html eol=lf
-*.svg eol=lf
+# Files that should always be normalized and converted to native line
+# endings on checkout.
+*.js text
+*.json text
+*.ts text
+*.md text
+*.yml text
+LICENSE text
+
