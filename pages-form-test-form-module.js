@@ -214,7 +214,7 @@ var AttachmentModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"admin-layout\">\n    <div class=\"nav-fixed-top cp-toolbar\">\n        <h5><i class=\"fa fa-cube\" aria-hidden=\"true\"></i> File Upload</h5>\n    </div>\n    <div class=\"cp-content\">\n        <div class=\"row-fluid pt-2\">\n            <form [formGroup]=\"frmFileUpload\">\n                <div class=\"row-fluid\">\n                    <div class=\"col-sm-6\">\n                        <div class=\"form-group row\">\n                            <label class=\"control-label col-form-label col-sm-4 font-weight-bold\">\n                                File Input :\n                            </label>\n                            <div class=\"col-sm-8 pl-0\">\n                                <label class=\"i-file-input\">\n                                    <input #fileUpload [formControl]=\"frmFileUpload.controls['fileUpload']\" required\n                                           name=\"fileUpload\" type=\"file\" accept=\"image/*\" (change)=\"changeFile($event)\"\n                                           class=\"form-control form-control-sm col-xs-12 col-sm-12\">\n                                    <span class=\"i-file-container\" [ngClass]=\"{'selected': fileName}\"\n                                          [attr.data-title]=\"'Choose...'\">\n                                                            <span class=\"i-file-name\"\n                                                                  [attr.data-title]=\"fileName || 'No File...'\">\n                                                                <i class=\"file-icon fa fa-upload\"></i>\n                                                            </span>\n                                                        </span>\n                                    <a class=\"remove\" *ngIf=\"fileName\" href=\"javascript:;\" (click)=\"clearForm()\">\n                                        <i class=\"fa fa-times\"></i>\n                                    </a>\n                                </label>\n                                <p class=\"pt-2\" *ngIf=\"data\">{{data | json}}</p>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"row-fluid\">\n                    <div class=\"col-sm-12\">\n                        <div class=\"form-group row\">\n                            <label class=\"control-label col-form-label col-sm-2 font-weight-bold\">\n                                Custom Upload :\n                            </label>\n                            <div class=\"col-sm-10 pl-0\">\n                                <app-attachment [attachments]=\"files\" (onUpload)=\"onUpload($event)\" (onRemove)=\"onRemove($event)\"></app-attachment>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </form>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"admin-layout\">\n    <div class=\"nav-fixed-top cp-toolbar\">\n        <h5><i class=\"fa fa-cube\" aria-hidden=\"true\"></i> File Upload</h5>\n    </div>\n    <div class=\"cp-content\">\n        <div class=\"row-fluid pt-2\">\n            <p class=\"text-primary font-weight-bold\">Only upload files to icloud on calista server</p>\n            <form [formGroup]=\"frmFileUpload\">\n                <div class=\"row-fluid\">\n                    <div class=\"col-sm-6\">\n                        <div class=\"form-group row\">\n                            <label class=\"control-label col-form-label col-sm-4 font-weight-bold\">\n                                File Input :\n                            </label>\n                            <div class=\"col-sm-8 pl-0\">\n                                <label class=\"i-file-input\">\n                                    <input #fileUpload [formControl]=\"frmFileUpload.controls['fileUpload']\" required\n                                           name=\"fileUpload\" type=\"file\" accept=\"image/*\" (change)=\"changeFile($event)\"\n                                           class=\"form-control form-control-sm col-xs-12 col-sm-12\">\n                                    <span class=\"i-file-container\" [ngClass]=\"{'selected': fileName}\"\n                                          [attr.data-title]=\"'Choose...'\">\n                                                            <span class=\"i-file-name\"\n                                                                  [attr.data-title]=\"fileName || 'No File...'\">\n                                                                <i class=\"file-icon fa fa-upload\"></i>\n                                                            </span>\n                                                        </span>\n                                    <a class=\"remove\" *ngIf=\"fileName\" href=\"javascript:;\" (click)=\"clearForm()\">\n                                        <i class=\"fa fa-times\"></i>\n                                    </a>\n                                </label>\n                                <p class=\"pt-2\" *ngIf=\"data\">{{data | json}}</p>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"row-fluid\">\n                    <div class=\"col-sm-12\">\n                        <div class=\"form-group row\">\n                            <label class=\"control-label col-form-label col-sm-2 font-weight-bold\">\n                                Custom Upload :\n                            </label>\n                            <div class=\"col-sm-10 pl-0\">\n                                <app-attachment [attachments]=\"files\" (onUpload)=\"onUpload($event)\" (onRemove)=\"onRemove($event)\"></app-attachment>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </form>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -467,6 +467,103 @@ var Developer = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/pages/form/number-format/number-format.component.html":
+/*!***********************************************************************!*\
+  !*** ./src/app/pages/form/number-format/number-format.component.html ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"admin-layout\">\n    <div class=\"nav-fixed-top cp-toolbar\">\n        <h5><i aria-hidden=\"true\" class=\"fa fa-cube\"></i> Number Formatter</h5>\n    </div>\n    <div class=\"cp-content\">\n\n        <form [formGroup]=\"demoForm\" class=\"mt-2\">\n            <p>Here are input example with appNumberSeparator Directive </p>\n            <div class=\"row-fluid\">\n                <div class=\"col-sm-6\">\n                    <div class=\"form-group row\">\n                        <label class=\"control-label col-form-label col-sm-4 lbl-bold\">Price: </label>\n                        <div class=\"col-sm-6 pl-0\">\n                            <input [formControl]=\"demoForm.controls['price']\"\n                                   [ngClass]=\"{'is-invalid':demoForm.controls['price'].hasError('required') && demoForm.controls['price'].touched || demoForm.controls['price'].hasError('pattern')}\"\n                                   [numberLength]=\"15\" appNumberSeparator class=\"form-control form-control-sm text-right\" name=\"price\" required\n                                   type=\"text\">\n                            <!-- validate -->\n                            <div *ngIf=\"demoForm.controls['price'].hasError('required') && demoForm.controls['price'].touched || demoForm.controls['price'].hasError('pattern')\">\n                                <div *ngIf=\"demoForm.controls['price'].hasError('required') && demoForm.controls['price'].touched\"\n                                     class=\"text-danger mt-2 text-df\">\n                                    <i class=\"fa fa-exclamation-triangle\"></i> Price field is required\n                                </div>\n                                <div *ngIf=\"demoForm.controls['price'].hasError('pattern')\"\n                                     class=\"text-danger mt-2 text-df\">\n                                    <i class=\"fa fa-exclamation-triangle\"></i> Price must be a valid number\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"form-group row\">\n                        <label class=\"control-label col-form-label col-sm-4 lbl-bold\">Custom separator : </label>\n                        <div class=\"col-sm-6 pl-0\">\n                            <input [formControl]=\"demoForm.controls['numberSeparator']\" [separator]=\"getDotSeparator()\" appNumberSeparator\n                                   class=\"form-control form-control-sm text-right col-xs-12 col-sm-12\" name=\"numberSeparator\"/>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"row-fluid\">\n                <h5>FormData:</h5>\n                <div class=\"col-sm-12\">{{data | json}}</div>\n            </div>\n        </form>\n    </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/pages/form/number-format/number-format.component.scss":
+/*!***********************************************************************!*\
+  !*** ./src/app/pages/form/number-format/number-format.component.scss ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2Zvcm0vbnVtYmVyLWZvcm1hdC9udW1iZXItZm9ybWF0LmNvbXBvbmVudC5zY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/pages/form/number-format/number-format.component.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/pages/form/number-format/number-format.component.ts ***!
+  \*********************************************************************/
+/*! exports provided: DOT_SEPARATOR, NumberFormatComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DOT_SEPARATOR", function() { return DOT_SEPARATOR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NumberFormatComponent", function() { return NumberFormatComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var inet_ui__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! inet-ui */ "./node_modules/inet-ui/esm5/inet-ui.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var DOT_SEPARATOR = '.';
+var NumberFormatComponent = /** @class */ (function () {
+    function NumberFormatComponent(fb, numberUtilsService) {
+        this.fb = fb;
+        this.numberUtilsService = numberUtilsService;
+        this.data = {};
+    }
+    NumberFormatComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.demoForm = this.fb.group({
+            price: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            numberSeparator: [null, null]
+        });
+        this.demoForm.controls['price'].setValue(2500000);
+        this.demoForm.controls['numberSeparator'].setValue(300000);
+        this.demoForm.valueChanges.subscribe(function (v) {
+            for (var key in v) {
+                switch (key) {
+                    case 'numberSeparator':
+                        _this.data[key] = _this.numberUtilsService.removeSeparator(v[key], DOT_SEPARATOR);
+                        break;
+                    default:
+                        _this.data[key] = _this.numberUtilsService.removeSeparator(v[key]);
+                        break;
+                }
+            }
+        });
+        //  trigger change
+        this.demoForm.updateValueAndValidity({ onlySelf: false, emitEvent: true });
+    };
+    NumberFormatComponent.prototype.getDotSeparator = function () {
+        return DOT_SEPARATOR;
+    };
+    NumberFormatComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-number-format',
+            template: __webpack_require__(/*! ./number-format.component.html */ "./src/app/pages/form/number-format/number-format.component.html"),
+            styles: [__webpack_require__(/*! ./number-format.component.scss */ "./src/app/pages/form/number-format/number-format.component.scss")]
+        }),
+        __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"],
+            inet_ui__WEBPACK_IMPORTED_MODULE_2__["NumberUtilsService"]])
+    ], NumberFormatComponent);
+    return NumberFormatComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/pages/form/test-form-routing.module.ts":
 /*!********************************************************!*\
   !*** ./src/app/pages/form/test-form-routing.module.ts ***!
@@ -481,12 +578,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _form_elements_form_elements_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form-elements/form-elements.component */ "./src/app/pages/form/form-elements/form-elements.component.ts");
 /* harmony import */ var _file_upload_file_upload_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./file-upload/file-upload.component */ "./src/app/pages/form/file-upload/file-upload.component.ts");
+/* harmony import */ var _number_format_number_format_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./number-format/number-format.component */ "./src/app/pages/form/number-format/number-format.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -500,6 +599,10 @@ var routes = [
     {
         path: 'file-upload',
         component: _file_upload_file_upload_component__WEBPACK_IMPORTED_MODULE_3__["FileUploadComponent"]
+    },
+    {
+        path: 'number-format',
+        component: _number_format_number_format_component__WEBPACK_IMPORTED_MODULE_4__["NumberFormatComponent"]
     }
 ];
 var TestFormRoutingModule = /** @class */ (function () {
@@ -535,6 +638,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _file_upload_file_upload_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./file-upload/file-upload.component */ "./src/app/pages/form/file-upload/file-upload.component.ts");
 /* harmony import */ var _attachment_attachment_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./attachment/attachment.module */ "./src/app/pages/form/attachment/attachment.module.ts");
+/* harmony import */ var _number_format_number_format_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./number-format/number-format.component */ "./src/app/pages/form/number-format/number-format.component.ts");
+/* harmony import */ var inet_ui__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! inet-ui */ "./node_modules/inet-ui/esm5/inet-ui.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -548,18 +653,21 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
 var TestFormModule = /** @class */ (function () {
     function TestFormModule() {
     }
     TestFormModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
-            declarations: [_form_elements_form_elements_component__WEBPACK_IMPORTED_MODULE_3__["FormElementsComponent"], _file_upload_file_upload_component__WEBPACK_IMPORTED_MODULE_5__["FileUploadComponent"]],
+            declarations: [_form_elements_form_elements_component__WEBPACK_IMPORTED_MODULE_3__["FormElementsComponent"], _file_upload_file_upload_component__WEBPACK_IMPORTED_MODULE_5__["FileUploadComponent"], _number_format_number_format_component__WEBPACK_IMPORTED_MODULE_7__["NumberFormatComponent"]],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
                 _test_form_routing_module__WEBPACK_IMPORTED_MODULE_2__["TestFormRoutingModule"],
-                _attachment_attachment_module__WEBPACK_IMPORTED_MODULE_6__["AttachmentModule"]
+                _attachment_attachment_module__WEBPACK_IMPORTED_MODULE_6__["AttachmentModule"],
+                inet_ui__WEBPACK_IMPORTED_MODULE_8__["NumberFormatModule"]
             ]
         })
     ], TestFormModule);
