@@ -1,12 +1,15 @@
 import {Component, OnInit} from '@angular/core';
-import { Observable } from 'rxjs';
+import {Observable} from 'rxjs';
 import {DataService, Person} from "../../data/data.service";
-import { map } from 'rxjs/operators';
+import {map} from 'rxjs/operators';
+import {Logger} from "inet-ui";
 
 @Component({
     selector: 'app-select-multi',
-    templateUrl: './select-mutil.component.html',
+    templateUrl: './select-mutil.component.html'
 })
+
+@Logger()
 export class SelectMultiComponent implements OnInit {
 
     people$1: Observable<any[]>;
@@ -32,7 +35,10 @@ export class SelectMultiComponent implements OnInit {
     people: Person[] = [];
     selectedPeople = [];
 
-    constructor(private dataService: DataService) { }
+    changed: boolean;
+
+    constructor(private dataService: DataService) {
+    }
 
     ngOnInit() {
         this.people$1 = this.dataService.getPeople();
@@ -41,16 +47,17 @@ export class SelectMultiComponent implements OnInit {
         this.githubUsers$ = this.dataService.getGithubAccounts('anjm');
 
         this.selectedPeople1 = [
-            { id: '5a15b13c663ea0af9ad0dae8', name: 'Mendoza Ruiz' },
-            { id: "5a15b13ca51b0aaf8a99c05a", name: "Franklin James"}
+            {id: '5a15b13c663ea0af9ad0dae8', name: 'Mendoza Ruiz'},
+            {id: "5a15b13ca51b0aaf8a99c05a", name: "Franklin James"}
         ];
 
         this.people$4 = this.dataService.getPeople();
         this.selectedPeople4 = [
-            { id: '5a15b13c2340978ec3d2c0ea', name: 'Rochelle Estes', disabled: true },
-            { id: '5a15b13c663ea0af9ad0dae8', name: 'Mendoza Ruiz' },
-            { id: '5a15b13c728cd3f43cc0fe8a', name: 'Marquez Nolan', disabled: true }
+            {id: '5a15b13c2340978ec3d2c0ea', name: 'Rochelle Estes', disabled: true},
+            {id: '5a15b13c663ea0af9ad0dae8', name: 'Mendoza Ruiz'}
+            // , { id: '5a15b13c728cd3f43cc0fe8a', name: 'Marquez Nolan', disabled: true }
         ];
+
 
         this.people$1.pipe(map(x => x.filter(y => !y.disabled)))
             .subscribe((res) => {
@@ -58,6 +65,19 @@ export class SelectMultiComponent implements OnInit {
                 this.selectedPeople = [this.people[0].id, this.people[1].id];
             });
 
+    }
+
+    changeModel() {
+        if (!this.changed) {
+            const newArr = [{id: '5a15b13cc3b9381ffcb1d6f7', name: 'Elsa Bradley'}];
+            this.selectedPeople1 = [...this.selectedPeople1, ...newArr];
+            this.changed = true;
+        }
+    }
+
+    onChange($event) {
+        console.log($event);
+        this.changed = this.selectedPeople1.length !== 0 ;
     }
 
 }

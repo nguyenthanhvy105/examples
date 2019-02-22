@@ -1,0 +1,46 @@
+<div class="admin-layout">
+    <div class="nav-fixed-top cp-toolbar">
+        <h5><i aria-hidden="true" class="fa fa-cube"></i> Number Formatter</h5>
+    </div>
+    <div class="cp-content">
+
+        <form [formGroup]="demoForm" class="mt-2">
+            <p>Here are input example with appNumberSeparator Directive </p>
+            <div class="row-fluid">
+                <div class="col-sm-6">
+                    <div class="form-group row">
+                        <label class="control-label col-form-label col-sm-4 lbl-bold">Price: </label>
+                        <div class="col-sm-6 pl-0">
+                            <input [formControl]="demoForm.controls['price']"
+                                   [ngClass]="{'is-invalid':demoForm.controls['price'].hasError('required') && demoForm.controls['price'].touched || demoForm.controls['price'].hasError('pattern')}"
+                                   [numberLength]="15" appNumberSeparator class="form-control form-control-sm text-right" name="price" required
+                                   type="text">
+                            <!-- validate -->
+                            <div *ngIf="demoForm.controls['price'].hasError('required') && demoForm.controls['price'].touched || demoForm.controls['price'].hasError('pattern')">
+                                <div *ngIf="demoForm.controls['price'].hasError('required') && demoForm.controls['price'].touched"
+                                     class="text-danger mt-2 text-df">
+                                    <i class="fa fa-exclamation-triangle"></i> Price field is required
+                                </div>
+                                <div *ngIf="demoForm.controls['price'].hasError('pattern')"
+                                     class="text-danger mt-2 text-df">
+                                    <i class="fa fa-exclamation-triangle"></i> Price must be a valid number
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="control-label col-form-label col-sm-4 lbl-bold">Custom separator : </label>
+                        <div class="col-sm-6 pl-0">
+                            <input [formControl]="demoForm.controls['numberSeparator']" [separator]="getDotSeparator()" appNumberSeparator
+                                   class="form-control form-control-sm text-right col-xs-12 col-sm-12" name="numberSeparator"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <h5>FormData:</h5>
+                <div class="col-sm-12">{{data | json}}</div>
+            </div>
+        </form>
+    </div>
+</div>
