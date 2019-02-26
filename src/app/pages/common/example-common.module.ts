@@ -4,10 +4,13 @@ import {ModalModule} from 'ngx-bootstrap';
 import {CoreModule} from "inet-core";
 import {CloudTranslateModule, InterceptorModule} from 'inet-ui';
 import {HttpClientModule} from '@angular/common/http';
+import {CustomTranslateLoader} from "../../i18n/custom-translate-loader";
 
 @NgModule({
     imports: [
-        CloudTranslateModule,
+        CloudTranslateModule.forRoot({
+            loader: CustomTranslateLoader
+        }),
         ModalModule.forRoot()
     ],
     declarations: [
