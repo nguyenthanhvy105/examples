@@ -431,6 +431,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_layout_menu_menu_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/layout/menu/menu.component */ "./src/app/pages/layout/menu/menu.component.ts");
 /* harmony import */ var _pages_common_example_common_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/common/example-common.module */ "./src/app/pages/common/example-common.module.ts");
 /* harmony import */ var _pages_home_home_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/home/home.component */ "./src/app/pages/home/home.component.ts");
+/* harmony import */ var _i18n_custom_translate_loader__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./i18n/custom-translate-loader */ "./src/app/i18n/custom-translate-loader.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -446,6 +447,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 /* Routing Module */
 
 /* App Root */
+
 
 
 
@@ -476,6 +478,9 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_1__["BrowserAnimationsModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
+                inet_ui__WEBPACK_IMPORTED_MODULE_7__["CloudTranslateModule"].forRoot({
+                    loader: _i18n_custom_translate_loader__WEBPACK_IMPORTED_MODULE_11__["CustomTranslateLoader"]
+                }),
                 _pages_common_example_common_module__WEBPACK_IMPORTED_MODULE_9__["ExampleCommonModule"],
                 inet_ui__WEBPACK_IMPORTED_MODULE_7__["BootstrapLayoutModule"],
                 inet_ui__WEBPACK_IMPORTED_MODULE_7__["WebsocketModule"]
@@ -491,6 +496,110 @@ var AppModule = /** @class */ (function () {
     return AppModule;
 }());
 
+
+
+/***/ }),
+
+/***/ "./src/app/i18n/custom-translate-loader.ts":
+/*!*************************************************!*\
+  !*** ./src/app/i18n/custom-translate-loader.ts ***!
+  \*************************************************/
+/*! exports provided: CustomTranslateLoader */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomTranslateLoader", function() { return CustomTranslateLoader; });
+/* harmony import */ var inet_ui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! inet-ui */ "./node_modules/inet-ui/esm5/inet-ui.js");
+/* harmony import */ var _vi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./vi */ "./src/app/i18n/vi.ts");
+/* harmony import */ var _en__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./en */ "./src/app/i18n/en.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+
+var CustomTranslateLoader = /** @class */ (function (_super) {
+    __extends(CustomTranslateLoader, _super);
+    function CustomTranslateLoader() {
+        var _this = _super.call(this) || this;
+        _this.assign('vi', _vi__WEBPACK_IMPORTED_MODULE_1__["viLocale"]);
+        _this.assign('en', _en__WEBPACK_IMPORTED_MODULE_2__["enLocale"]);
+        return _this;
+    }
+    return CustomTranslateLoader;
+}(inet_ui__WEBPACK_IMPORTED_MODULE_0__["CloudTransLoader"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/i18n/en.ts":
+/*!****************************!*\
+  !*** ./src/app/i18n/en.ts ***!
+  \****************************/
+/*! exports provided: enLocale */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "enLocale", function() { return enLocale; });
+var enLocale = {
+    MENU: {
+        HOME: 'Home'
+    },
+    GRID_COLUMNS: {
+        TITLE: 'Title',
+        DURATION: 'Duration',
+        COMPLETE: '% Complete',
+        START: 'Start',
+        FINISH: 'Finish',
+        COST: 'Cost',
+        EFFORT_DRIVEN: 'Effort Driven',
+        TOTAL: 'Total',
+        AVG: 'Avg'
+    }
+};
+
+
+/***/ }),
+
+/***/ "./src/app/i18n/vi.ts":
+/*!****************************!*\
+  !*** ./src/app/i18n/vi.ts ***!
+  \****************************/
+/*! exports provided: viLocale */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "viLocale", function() { return viLocale; });
+var viLocale = {
+    MENU: {
+        HOME: 'Trang chủ'
+    },
+    GRID_COLUMNS: {
+        TITLE: 'Tiêu đề',
+        DURATION: 'Thời gian',
+        COMPLETE: '% Hoàn thành',
+        START: 'Bắt đầu',
+        FINISH: 'Kết thúc',
+        COST: 'Chi phí',
+        EFFORT_DRIVEN: 'Trạng thái',
+        TOTAL: 'Tổng',
+        AVG: 'Trung bình'
+    }
+};
 
 
 /***/ }),
@@ -511,6 +620,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var inet_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! inet-core */ "./node_modules/inet-core/esm5/inet-core.js");
 /* harmony import */ var inet_ui__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! inet-ui */ "./node_modules/inet-ui/esm5/inet-ui.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _i18n_custom_translate_loader__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../i18n/custom-translate-loader */ "./src/app/i18n/custom-translate-loader.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -523,13 +633,16 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var ExampleCommonModule = /** @class */ (function () {
     function ExampleCommonModule() {
     }
     ExampleCommonModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             imports: [
-                inet_ui__WEBPACK_IMPORTED_MODULE_4__["CloudTranslateModule"],
+                inet_ui__WEBPACK_IMPORTED_MODULE_4__["CloudTranslateModule"].forRoot({
+                    loader: _i18n_custom_translate_loader__WEBPACK_IMPORTED_MODULE_6__["CustomTranslateLoader"]
+                }),
                 ngx_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ModalModule"].forRoot()
             ],
             declarations: [],
@@ -620,7 +733,7 @@ var HomeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul id=\"mainnav-menu\" class=\"menu-lg list-group\">\n    <li class=\"list-header\">Examples</li>\n    <li routerLinkActive=\"active\">\n        <a routerLink=\"home\" routerLinkActive=\"active\">\n            <i class=\"fa fa-home\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">Home</span>\n        </a>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#select-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-cog\"></i>\n            <span class=\"menu-title\">Select & Tags</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"select-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"select/tags\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-tags\"></i> Tags\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"select/multiselect\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-check-square\"></i> Multiselect\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#grid-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-table\"></i>\n            <span class=\"menu-title\">Grid</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"grid-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"grid/basic\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Basic\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"grid/editable\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-table\"></i> Editable\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#list-view-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-list\"></i>\n            <span class=\"menu-title\">ListView</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"list-view-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"list-view/basic\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Basic\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#forms-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-address-card\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">Forms</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"forms-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"form/elements\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Elements\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"form/number-format\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-calculator\"></i> Number Format\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"form/file-upload\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cloud-upload\"></i> File Upload\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active\">\n        <a href=\"https://valor-software.com/ngx-bootstrap/#/documentation#getting-started\" target=\"_blank\">\n            <i class=\"fa fa-codepen\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">ngx-bootstrap</span>\n        </a>\n    </li>\n</ul>\n"
+module.exports = "<ul id=\"mainnav-menu\" class=\"menu-lg list-group\">\n    <li class=\"list-header\">Examples</li>\n    <li routerLinkActive=\"active\">\n        <a routerLink=\"home\" routerLinkActive=\"active\">\n            <i class=\"fa fa-home\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">{{'MENU.HOME' | translate}}</span>\n        </a>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#select-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-cog\"></i>\n            <span class=\"menu-title\">Select & Tags</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"select-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"select/tags\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-tags\"></i> Tags\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"select/multiselect\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-check-square\"></i> Multiselect\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#grid-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-table\"></i>\n            <span class=\"menu-title\">Grid</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"grid-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"grid/basic\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Basic\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"grid/editable\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-table\"></i> Editable\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"grid/grouping\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-table\"></i> Grouping\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#list-view-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-list\"></i>\n            <span class=\"menu-title\">ListView</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"list-view-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"list-view/basic\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Basic\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#forms-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-address-card\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">Forms</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"forms-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"form/elements\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Elements\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"form/number-format\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-calculator\"></i> Number Format\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"form/file-upload\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cloud-upload\"></i> File Upload\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active\">\n        <a href=\"https://valor-software.com/ngx-bootstrap/#/documentation#getting-started\" target=\"_blank\">\n            <i class=\"fa fa-codepen\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">ngx-bootstrap</span>\n        </a>\n    </li>\n</ul>\n"
 
 /***/ }),
 
