@@ -44,7 +44,7 @@
 
     <script type="text/javascript">
         // Config server here
-        var pathServer = 'https://calista.inetcloud.vn/collaboration/vinaco';
+        var pathServer = 'https://calista-dev.inetcloud.vn/collaboration/vinaco';
         // Don't need config anything else`
         var arrPath = pathServer.split('/');
         var domainPath = arrPath.slice(0, 3).join('/');
@@ -54,7 +54,7 @@
             commonImageFolder: '//media.inetcloud.vn/images/common',
             jsFolder: '',
             webchat: 'http://vertx.inetcloud.vn:8082/eventbus',
-            firmPrefix: 'Examples',
+            firmPrefix: 'vinaco',
             extension: '.cpx',
             fileServer: '//media.inetcloud.vn/',
             path: '/' + arrPath[3],

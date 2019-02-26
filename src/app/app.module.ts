@@ -11,13 +11,14 @@ import {AppComponent} from './app.component';
 import {CoreService, SecurityService} from 'inet-core';
 import {environment} from '../environments/environment';
 import {
-    BootstrapLayoutModule,
+    BootstrapLayoutModule, CloudTranslateModule,
     SocketService,
     WebsocketModule
 } from 'inet-ui';
 import {MenuComponent} from './pages/layout/menu/menu.component';
 import {ExampleCommonModule} from "./pages/common/example-common.module";
 import { HomeComponent } from './pages/home/home.component';
+import {CustomTranslateLoader} from "./i18n/custom-translate-loader";
 
 @NgModule({
     declarations: [
@@ -29,6 +30,9 @@ import { HomeComponent } from './pages/home/home.component';
         BrowserModule,
         BrowserAnimationsModule,
         AppRoutingModule,
+        CloudTranslateModule.forRoot({
+            loader: CustomTranslateLoader
+        }),
         ExampleCommonModule,
         BootstrapLayoutModule,
         WebsocketModule

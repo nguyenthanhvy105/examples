@@ -3,7 +3,7 @@
     <li routerLinkActive="active">
         <a routerLink="home" routerLinkActive="active">
             <i class="fa fa-home" aria-hidden="true"></i>
-            <span class="menu-title">Home</span>
+            <span class="menu-title">{{'MENU.HOME' | translate}}</span>
         </a>
     </li>
     <li routerLinkActive="active active-sub">
@@ -40,6 +40,11 @@
             <li>
                 <a routerLink="grid/editable" routerLinkActive="active">
                     <i class="fa fa-table"></i> Editable
+                </a>
+            </li>
+            <li>
+                <a routerLink="grid/grouping" routerLinkActive="active">
+                    <i class="fa fa-table"></i> Grouping
                 </a>
             </li>
         </ul>
