@@ -33367,7 +33367,7 @@ return purify;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* flatpickr v4.5.4, @license MIT */
+/* flatpickr v4.5.5, @license MIT */
 (function (global, factory) {
      true ? module.exports = factory() :
     undefined;
@@ -33602,8 +33602,13 @@ return purify;
     }
     function createNumberInput(inputClassName, opts) {
         var wrapper = createElement("div", "numInputWrapper"), numInput = createElement("input", "numInput " + inputClassName), arrowUp = createElement("span", "arrowUp"), arrowDown = createElement("span", "arrowDown");
-        numInput.type = "text";
-        numInput.pattern = "\\d*";
+        if (navigator.userAgent.indexOf("MSIE 9.0") === -1) {
+            numInput.type = "number";
+        }
+        else {
+            numInput.type = "text";
+            numInput.pattern = "\\d*";
+        }
         if (opts !== undefined)
             for (var key in opts)
                 numInput.setAttribute(key, opts[key]);
@@ -34005,8 +34010,9 @@ return purify;
          * The handler for all events targeting the time inputs
          */
         function updateTime(e) {
-            if (self.selectedDates.length === 0)
-                return;
+            if (self.selectedDates.length === 0) {
+                setDefaultTime();
+            }
             if (e !== undefined && e.type !== "blur") {
                 timeWrapper(e);
             }
@@ -34499,10 +34505,11 @@ return purify;
             var yearInput = createNumberInput("cur-year", { tabindex: "-1" });
             var yearElement = yearInput.getElementsByTagName("input")[0];
             yearElement.setAttribute("aria-label", self.l10n.yearAriaLabel);
-            if (self.config.minDate)
-                yearElement.setAttribute("data-min", self.config.minDate.getFullYear().toString());
+            if (self.config.minDate) {
+                yearElement.setAttribute("min", self.config.minDate.getFullYear().toString());
+            }
             if (self.config.maxDate) {
-                yearElement.setAttribute("data-max", self.config.maxDate.getFullYear().toString());
+                yearElement.setAttribute("max", self.config.maxDate.getFullYear().toString());
                 yearElement.disabled =
                     !!self.config.minDate &&
                         self.config.minDate.getFullYear() === self.config.maxDate.getFullYear();
@@ -34584,12 +34591,12 @@ return purify;
             self.minuteElement.value = pad(self.latestSelectedDateObj
                 ? self.latestSelectedDateObj.getMinutes()
                 : self.config.defaultMinute);
-            self.hourElement.setAttribute("data-step", self.config.hourIncrement.toString());
-            self.minuteElement.setAttribute("data-step", self.config.minuteIncrement.toString());
-            self.hourElement.setAttribute("data-min", self.config.time_24hr ? "0" : "1");
-            self.hourElement.setAttribute("data-max", self.config.time_24hr ? "23" : "12");
-            self.minuteElement.setAttribute("data-min", "0");
-            self.minuteElement.setAttribute("data-max", "59");
+            self.hourElement.setAttribute("step", self.config.hourIncrement.toString());
+            self.minuteElement.setAttribute("step", self.config.minuteIncrement.toString());
+            self.hourElement.setAttribute("min", self.config.time_24hr ? "0" : "1");
+            self.hourElement.setAttribute("max", self.config.time_24hr ? "23" : "12");
+            self.minuteElement.setAttribute("min", "0");
+            self.minuteElement.setAttribute("max", "59");
             self.timeContainer.appendChild(hourInput);
             self.timeContainer.appendChild(separator);
             self.timeContainer.appendChild(minuteInput);
@@ -34602,9 +34609,9 @@ return purify;
                 self.secondElement.value = pad(self.latestSelectedDateObj
                     ? self.latestSelectedDateObj.getSeconds()
                     : self.config.defaultSeconds);
-                self.secondElement.setAttribute("data-step", self.minuteElement.getAttribute("data-step"));
-                self.secondElement.setAttribute("data-min", self.minuteElement.getAttribute("data-min"));
-                self.secondElement.setAttribute("data-max", self.minuteElement.getAttribute("data-max"));
+                self.secondElement.setAttribute("step", self.minuteElement.getAttribute("step"));
+                self.secondElement.setAttribute("min", "0");
+                self.secondElement.setAttribute("max", "59");
                 self.timeContainer.appendChild(createElement("span", "flatpickr-time-separator", ":"));
                 self.timeContainer.appendChild(secondInput);
             }
@@ -34669,8 +34676,9 @@ return purify;
             triggerEvent("onMonthChange");
             updateNavigationCurrentMonth();
         }
-        function clear(triggerChangeEvent) {
+        function clear(triggerChangeEvent, toInitial) {
             if (triggerChangeEvent === void 0) { triggerChangeEvent = true; }
+            if (toInitial === void 0) { toInitial = true; }
             self.input.value = "";
             if (self.altInput !== undefined)
                 self.altInput.value = "";
@@ -34678,8 +34686,10 @@ return purify;
                 self.mobileInput.value = "";
             self.selectedDates = [];
             self.latestSelectedDateObj = undefined;
-            self.currentYear = self._initialDate.getFullYear();
-            self.currentMonth = self._initialDate.getMonth();
+            if (toInitial === true) {
+                self.currentYear = self._initialDate.getFullYear();
+                self.currentMonth = self._initialDate.getMonth();
+            }
             self.showTimeInput = false;
             if (self.config.enableTime === true) {
                 setDefaultHours();
@@ -34916,8 +34926,10 @@ return purify;
                     self.timeContainer.contains(e.target);
                 switch (e.keyCode) {
                     case 13:
-                        if (isTimeObj)
+                        if (isTimeObj) {
                             updateTime();
+                            focusAndClose();
+                        }
                         else
                             selectDate(e);
                         break;
@@ -34974,12 +34986,6 @@ return purify;
                         }
                         break;
                     case 9:
-                        var childElementCount = self.calendarContainer.childElementCount;
-                        var expectedChildElementCount = 0;
-                        if (self.config.enableTime)
-                            expectedChildElementCount += 1;
-                        if (!self.config.noCalendar)
-                            expectedChildElementCount += 2;
                         if (isTimeObj) {
                             var elems = [
                                 self.hourElement,
@@ -34994,14 +35000,11 @@ return purify;
                                     e.preventDefault();
                                     target.focus();
                                 }
-                                else if (childElementCount <= expectedChildElementCount) {
-                                    self.element.focus();
+                                else if (e.shiftKey) {
+                                    e.preventDefault();
+                                    self._input.focus();
                                 }
                             }
-                            break;
-                        }
-                        if (childElementCount <= expectedChildElementCount) {
-                            self.element.focus();
                         }
                         break;
                     default:
@@ -35096,6 +35099,13 @@ return purify;
             if (self.isOpen && !self.config.static && !self.config.inline)
                 positionCalendar();
         }
+        function setDefaultTime() {
+            self.setDate(self.config.minDate !== undefined
+                ? new Date(self.config.minDate.getTime())
+                : new Date(), false);
+            setDefaultHours();
+            updateValue();
+        }
         function open(e, positionElement) {
             if (positionElement === void 0) { positionElement = self._positionElement; }
             if (self.isMobile === true) {
@@ -35119,18 +35129,10 @@ return purify;
                 self._input.classList.add("active");
                 triggerEvent("onOpen");
                 positionCalendar(positionElement);
-                self.calendarContainer.focus();
-                if (self.config.noCalendar === false) {
-                    focusOnDay(undefined, 0);
-                }
             }
             if (self.config.enableTime === true && self.config.noCalendar === true) {
                 if (self.selectedDates.length === 0) {
-                    self.setDate(self.config.minDate !== undefined
-                        ? new Date(self.config.minDate.getTime())
-                        : new Date(), false);
-                    setDefaultHours();
-                    updateValue();
+                    setDefaultTime();
                 }
                 if (self.config.allowInput === false &&
                     (e === undefined ||
@@ -35381,8 +35383,9 @@ return purify;
                     self.selectedDates.push(selectedDate);
             }
             else if (self.config.mode === "range") {
-                if (self.selectedDates.length === 2)
-                    self.clear(false);
+                if (self.selectedDates.length === 2) {
+                    self.clear(false, false);
+                }
                 self.latestSelectedDateObj = selectedDate;
                 self.selectedDates.push(selectedDate);
                 // unless selecting same date twice, sort ascendingly
@@ -35440,7 +35443,6 @@ return purify;
                     self.config[option] = arrayify(value);
             }
             self.redraw();
-            jumpToDate();
             updateValue(false);
         }
         function setSelectedDate(inputDate, format) {
@@ -35749,7 +35751,7 @@ return purify;
                 self.amPM.textContent =
                     self.l10n.amPM[int(self.amPM.textContent === self.l10n.amPM[0])];
             }
-            var min = parseFloat(input.getAttribute("data-min")), max = parseFloat(input.getAttribute("data-max")), step = parseFloat(input.getAttribute("data-step")), curValue = parseInt(input.value, 10), delta = e.delta ||
+            var min = parseFloat(input.getAttribute("min")), max = parseFloat(input.getAttribute("max")), step = parseFloat(input.getAttribute("step")), curValue = parseInt(input.value, 10), delta = e.delta ||
                 (isKeyDown ? (e.which === 38 ? 1 : -1) : 0);
             var newValue = curValue + step * delta;
             if (typeof input.value !== "undefined" && input.value.length === 2) {
@@ -35785,12 +35787,10 @@ return purify;
     }
     /* istanbul ignore next */
     function _flatpickr(nodeList, config) {
-        // spare ourselves some cycles
-        if (nodeList.length === 0) {
-            return [];
-        }
         // static list
-        var nodes = Array.from(nodeList).filter(function (x) { return x instanceof HTMLElement; });
+        var nodes = Array.prototype.slice
+            .call(nodeList)
+            .filter(function (x) { return x instanceof HTMLElement; });
         var instances = [];
         for (var i = 0; i < nodes.length; i++) {
             var node = nodes[i];
@@ -76822,7 +76822,7 @@ webpackContext.id = "./node_modules/moment-mini/locale sync recursive ^\\.\\/.*$
     var _self = this;
     var _selector;
 
-    if (typeof options === "undefined" || typeof options.cellRangeSelector === "undefined") {    
+    if (typeof options === "undefined" || typeof options.cellRangeSelector === "undefined") {
       _selector = new Slick.CellRangeSelector({
         "selectionCss": {
           "border": "2px solid black"
@@ -76893,7 +76893,7 @@ webpackContext.id = "./node_modules/moment-mini/locale sync recursive ^\\.\\/.*$
 
       // if range has not changed, don't fire onSelectedRangesChanged
       var rangeHasChanged = !rangesAreEqual(_ranges, ranges);
-      
+
       _ranges = removeInvalidRanges(ranges);
       if (rangeHasChanged) { _self.onSelectedRangesChanged.notify(_ranges); }
     }
@@ -76939,11 +76939,11 @@ webpackContext.id = "./node_modules/moment-mini/locale sync recursive ^\\.\\/.*$
       if (active && e.shiftKey && !metaKey && !e.altKey &&
         (e.which == 37 || e.which == 39 || e.which == 38 || e.which == 40)) {
 
-        ranges = getSelectedRanges();
+        ranges = getSelectedRanges().slice();
         if (!ranges.length)
           ranges.push(new Slick.Range(active.row, active.cell));
 
-        // keyboard can work with last range only          
+        // keyboard can work with last range only
         last = ranges.pop();
 
         // can't handle selection out of active cell
@@ -76966,7 +76966,7 @@ webpackContext.id = "./node_modules/moment-mini/locale sync recursive ^\\.\\/.*$
           dRow += dirRow;
         }
 
-        // define new selection range 
+        // define new selection range
         var new_last = new Slick.Range(active.row, active.cell, active.row + dirRow * dRow, active.cell + dirCell * dCell);
         if (removeInvalidRanges([new_last]).length) {
           ranges.push(new_last);
@@ -77018,6 +77018,7 @@ webpackContext.id = "./node_modules/moment-mini/locale sync recursive ^\\.\\/.*$
 
   function CheckboxSelectColumn(options) {
     var _grid;
+    var _canRowBeSelected = null;
     var _selectAll_UID = createUID();
     var _handler = new Slick.EventHandler();
     var _selectedRowsLookup = {};
@@ -77040,7 +77041,7 @@ webpackContext.id = "./node_modules/moment-mini/locale sync recursive ^\\.\\/.*$
       .subscribe(_grid.onSelectedRowsChanged, handleSelectedRowsChanged)
       .subscribe(_grid.onClick, handleClick)
       .subscribe(_grid.onKeyDown, handleKeyDown);
-      
+
       if (!_options.hideInFilterHeaderRow) {
         addCheckboxToFilterHeaderRow(grid);
       }
@@ -77059,17 +77060,13 @@ webpackContext.id = "./node_modules/moment-mini/locale sync recursive ^\\.\\/.*$
 
     function setOptions(options) {
       _options = $.extend(true, {}, _options, options);
-      
+
       if (_options.hideSelectAllCheckbox) {
         hideSelectAllFromColumnHeaderTitleRow();
         hideSelectAllFromColumnHeaderFilterRow();
       } else {
         if (!_options.hideInColumnTitleRow) {
-          if (_isSelectAllChecked) {
-            _grid.updateColumnHeader(_options.columnId, "<input id='header-selector" + _selectAll_UID + "' type='checkbox' checked='checked'><label for='header-selector" + _selectAll_UID + "'></label>", _options.toolTip);
-          } else {
-            _grid.updateColumnHeader(_options.columnId, "<input id='header-selector" + _selectAll_UID + "' type='checkbox'><label for='header-selector" + _selectAll_UID + "'></label>", _options.toolTip);
-          }
+          renderSelectAllCheckbox(_isSelectAllChecked);
           _handler.subscribe(_grid.onHeaderClick, handleHeaderClick);
         } else {
           hideSelectAllFromColumnHeaderTitleRow();
@@ -77082,7 +77079,7 @@ webpackContext.id = "./node_modules/moment-mini/locale sync recursive ^\\.\\/.*$
         } else {
           hideSelectAllFromColumnHeaderFilterRow();
         }
-      } 
+      }
     }
 
     function hideSelectAllFromColumnHeaderTitleRow() {
@@ -77096,12 +77093,32 @@ webpackContext.id = "./node_modules/moment-mini/locale sync recursive ^\\.\\/.*$
     function handleSelectedRowsChanged(e, args) {
       var selectedRows = _grid.getSelectedRows();
       var lookup = {}, row, i;
+      var disabledCount = 0;
+      if (typeof _canRowBeSelected === 'function') {
+          for (k = 0; k < _grid.getDataLength(); k++) {
+              // If we are allowed to select the row
+              var dataItem = _grid.getDataItem(k);
+              if (!checkcanRowBeSelected(i, dataItem, _grid)) {
+                  disabledCount++;
+              }
+          }
+      }
+
+      var removeList = [];
       for (i = 0; i < selectedRows.length; i++) {
         row = selectedRows[i];
-        lookup[row] = true;
-        if (lookup[row] !== _selectedRowsLookup[row]) {
-          _grid.invalidateRow(row);
-          delete _selectedRowsLookup[row];
+
+        // If we are allowed to select the row
+        var rowItem = _grid.getDataItem(row);
+        if (checkcanRowBeSelected(i, rowItem, _grid)) {
+          lookup[row] = true;
+          if (lookup[row] !== _selectedRowsLookup[row]) {
+            _grid.invalidateRow(row);
+            delete _selectedRowsLookup[row];
+          }
+        }
+        else {
+          removeList.push(row);
         }
       }
       for (i in _selectedRowsLookup) {
@@ -77109,18 +77126,22 @@ webpackContext.id = "./node_modules/moment-mini/locale sync recursive ^\\.\\/.*$
       }
       _selectedRowsLookup = lookup;
       _grid.render();
-      _isSelectAllChecked = selectedRows.length && selectedRows.length == _grid.getDataLength();
+      _isSelectAllChecked = selectedRows.length && selectedRows.length + disabledCount >= _grid.getDataLength();
 
       if (!_options.hideInColumnTitleRow && !_options.hideSelectAllCheckbox) {
-        if (_isSelectAllChecked) {
-          _grid.updateColumnHeader(_options.columnId, "<input id='header-selector" + _selectAll_UID + "' type='checkbox' checked='checked'><label for='header-selector" + _selectAll_UID + "'></label>", _options.toolTip);
-        } else {
-          _grid.updateColumnHeader(_options.columnId, "<input id='header-selector" + _selectAll_UID + "' type='checkbox'><label for='header-selector" + _selectAll_UID + "'></label>", _options.toolTip);
-        }
-      } 
+        renderSelectAllCheckbox(_isSelectAllChecked);
+      }
       if (!_options.hideInFilterHeaderRow) {
         var selectAllElm = $("#header-filter-selector" + _selectAll_UID);
         selectAllElm.prop("checked", _isSelectAllChecked);
+      }
+      // Remove items that shouln't of been selected in the first place (Got here Ctrl + click)
+      if (removeList.length > 0) {
+        for (i = 0; i < removeList.length; i++)  {
+          var remIdx = selectedRows.indexOf(removeList[i]);
+          selectedRows.splice(remIdx, 1);
+        }
+        _grid.setSelectedRows(selectedRows);
       }
     }
 
@@ -77154,6 +77175,11 @@ webpackContext.id = "./node_modules/moment-mini/locale sync recursive ^\\.\\/.*$
     }
 
     function toggleRowSelection(row) {
+      var dataContext = _grid.getDataItem(row);
+      if (!checkcanRowBeSelected(row, dataContext, _grid)) {
+        return;
+      }
+
       if (_selectedRowsLookup[row]) {
         _grid.setSelectedRows($.grep(_grid.getSelectedRows(), function (n) {
           return n != row
@@ -77162,7 +77188,6 @@ webpackContext.id = "./node_modules/moment-mini/locale sync recursive ^\\.\\/.*$
         _grid.setSelectedRows(_grid.getSelectedRows().concat(row));
       }
       _grid.setActiveCell(row, getCheckboxColumnCellIndex());
-      _grid.focus();
     }
 
     function selectRows(rowArray) {
@@ -77199,7 +77224,11 @@ webpackContext.id = "./node_modules/moment-mini/locale sync recursive ^\\.\\/.*$
         if ($(e.target).is(":checked")) {
           var rows = [];
           for (var i = 0; i < _grid.getDataLength(); i++) {
-            rows.push(i);
+            // Get the row and check it's a selectable row before pushing it onto the stack
+            var rowItem = _grid.getDataItem(i);
+            if (rowItem.selectableRow !== false) {
+              rows.push(i);
+            }
           }
           _grid.setSelectedRows(rows);
         } else {
@@ -77246,8 +77275,8 @@ webpackContext.id = "./node_modules/moment-mini/locale sync recursive ^\\.\\/.*$
           $(args.node).empty();
           $("<span id='filter-checkbox-selectall-container'><input id='header-filter-selector" + _selectAll_UID + "' type='checkbox'><label for='header-filter-selector" + _selectAll_UID + "'></label></span>")
             .appendTo(args.node)
-            .on('click', function(evnt) { 
-              handleHeaderClick(evnt, args) 
+            .on('click', function(evnt) {
+              handleHeaderClick(evnt, args)
             });
         }
       });
@@ -77257,16 +77286,45 @@ webpackContext.id = "./node_modules/moment-mini/locale sync recursive ^\\.\\/.*$
       return Math.round(10000000 * Math.random());
     }
 
-    function checkboxSelectionFormatter(row, cell, value, columnDef, dataContext) {
+    function checkboxSelectionFormatter(row, cell, value, columnDef, dataContext, grid) {
       var UID = createUID() + row;
 
       if (dataContext) {
-        return _selectedRowsLookup[row]
-            ? "<input id='selector" + UID + "' type='checkbox' checked='checked'><label for='selector" + UID + "'></label>"
-            : "<input id='selector" + UID + "' type='checkbox'><label for='selector" + UID + "'></label>";
+        if (!checkcanRowBeSelected(row, dataContext, grid)) {
+          return null;
+        } else {
+          return _selectedRowsLookup[row]
+              ? "<input id='selector" + UID + "' type='checkbox' checked='checked'><label for='selector" + UID + "'></label>"
+              : "<input id='selector" + UID + "' type='checkbox'><label for='selector" + UID + "'></label>";
+        }
       }
       return null;
     }
+
+    function checkcanRowBeSelected(row, dataContext, grid) {
+      if (typeof _canRowBeSelected === 'function') {
+        return _canRowBeSelected(row, dataContext, grid);
+      }
+      return true;
+    }
+
+    function renderSelectAllCheckbox(isSelectAllChecked) {
+      if (isSelectAllChecked) {
+        _grid.updateColumnHeader(_options.columnId, "<input id='header-selector" + _selectAll_UID + "' type='checkbox' checked='checked'><label for='header-selector" + _selectAll_UID + "'></label>", _options.toolTip);
+      } else {
+        _grid.updateColumnHeader(_options.columnId, "<input id='header-selector" + _selectAll_UID + "' type='checkbox'><label for='header-selector" + _selectAll_UID + "'></label>", _options.toolTip);
+      }
+    }
+
+    /**
+     * Method that user can pass to override the default behavior or making every row a selectable row.
+     * In order word, user can choose which rows to be selectable or not by providing his own logic.
+     * @param overrideFn: override function callback
+     */
+    function canRowBeSelected(overrideFn) {
+      _canRowBeSelected = overrideFn;
+    }
+
 
     $.extend(this, {
       "init": init,
@@ -77275,6 +77333,7 @@ webpackContext.id = "./node_modules/moment-mini/locale sync recursive ^\\.\\/.*$
       "selectRows": selectRows,
       "getColumnDefinition": getColumnDefinition,
       "getOptions": getOptions,
+      "canRowBeSelected": canRowBeSelected,
       "setOptions": setOptions,
     });
   }
@@ -79983,6 +80042,7 @@ webpackContext.id = "./node_modules/moment-mini/locale sync recursive ^\\.\\/.*$
     // events
     var onRowCountChanged = new Slick.Event();
     var onRowsChanged = new Slick.Event();
+    var onRowsOrCountChanged = new Slick.Event();   
     var onPagingInfoChanged = new Slick.Event();
 
     options = $.extend(true, {}, defaults, options);
@@ -80838,10 +80898,13 @@ webpackContext.id = "./node_modules/moment-mini/locale sync recursive ^\\.\\/.*$
         onPagingInfoChanged.notify(getPagingInfo(), null, self);
       }
       if (countBefore !== rows.length) {
-        onRowCountChanged.notify({previous: countBefore, current: rows.length, dataView: self}, null, self);
+        onRowCountChanged.notify({previous: countBefore, current: rows.length, dataView: self, callingOnRowsChanged: (diff.length > 0)}, null, self);
       }
       if (diff.length > 0) {
-        onRowsChanged.notify({rows: diff, dataView: self}, null, self);
+        onRowsChanged.notify({rows: diff, dataView: self, calledOnRowCountChanged: (countBefore !== rows.length)}, null, self);
+      }
+      if (countBefore !== rows.length || diff.length > 0) {
+        onRowsOrCountChanged.notify({rowsDiff: diff, previousRowCount: countBefore, currentRowCount: rows.length, dataView: self}, null, self);
       }
     }
 
@@ -80909,9 +80972,7 @@ webpackContext.id = "./node_modules/moment-mini/locale sync recursive ^\\.\\/.*$
         }
       });
 
-      this.onRowsChanged.subscribe(update);
-
-      this.onRowCountChanged.subscribe(update);
+      this.onRowsOrCountChanged.subscribe(update);
 
       return onSelectedRowIdsChanged;
     }
@@ -80955,14 +81016,11 @@ webpackContext.id = "./node_modules/moment-mini/locale sync recursive ^\\.\\/.*$
           storeCellCssStyles(args.hash);
         } else {
           grid.onCellCssStylesChanged.unsubscribe(styleChanged);
-          self.onRowsChanged.unsubscribe(update);
-          self.onRowCountChanged.unsubscribe(update);          
+          self.onRowsOrCountChanged.unsubscribe(update);
         }
       });
 
-      this.onRowsChanged.subscribe(update);
-
-      this.onRowCountChanged.subscribe(update);
+      this.onRowsOrCountChanged.subscribe(update);
     }
 
     $.extend(this, {
@@ -81016,6 +81074,7 @@ webpackContext.id = "./node_modules/moment-mini/locale sync recursive ^\\.\\/.*$
       // events
       "onRowCountChanged": onRowCountChanged,
       "onRowsChanged": onRowsChanged,
+      "onRowsOrCountChanged": onRowsOrCountChanged,
       "onPagingInfoChanged": onPagingInfoChanged
     });
   }
@@ -82469,6 +82528,7 @@ if (typeof Slick === "undefined") {
           if (!options.multiColumnSort) {
             trigger(self.onSort, {
               multiColumnSort: false,
+              columnId: (sortColumns.length > 0 ? column.id : null),
               sortCol: (sortColumns.length > 0 ? column : null),
               sortAsc: (sortColumns.length > 0 ? sortColumns[0].sortAsc : true)
             }, e);
@@ -82476,7 +82536,7 @@ if (typeof Slick === "undefined") {
             trigger(self.onSort, {
               multiColumnSort: true,
               sortCols: $.map(sortColumns, function(col) {
-                return {sortCol: columns[getColumnIndex(col.columnId)], sortAsc: col.sortAsc };
+                return {columnId: columns[getColumnIndex(col.columnId)].id, sortCol: columns[getColumnIndex(col.columnId)], sortAsc: col.sortAsc };
               })
             }, e);
           }
@@ -86312,7 +86372,7 @@ if (typeof Slick === "undefined") {
     // Public API
 
     $.extend(this, {
-      "slickGridVersion": "2.4.3",
+      "slickGridVersion": "2.4.4",
 
       // Events
       "onScroll": new Slick.Event(),
