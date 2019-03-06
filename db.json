@@ -1,9 +1,23 @@
 {
-  "system-userrole-list": {},
-  "gl-contact-profile-load": {},
-  "gl-organ-profile-load": {},
-  "system-userprofile-view": {},
-  "gl-country-list": {},
-  "gl-contact-profile-sex": {},
-  "cloud-subfirmrole-group": {}
+  "system-userrole-list": {
+    "uuid": "2c57842423cb56c931e32379"
+  },
+  "gl-contact-profile-load": {
+    "uuid": "4d8c1ebed14abbda38807243"
+  },
+  "gl-organ-profile-load": {
+    "uuid": "d23669606624aaa3baa2937c"
+  },
+  "system-userprofile-view": {
+    "uuid": "0dde1537288532171662436a"
+  },
+  "gl-country-list": {
+    "uuid": "d66c2d81ec32552a13dd9b87"
+  },
+  "gl-contact-profile-sex": {
+    "uuid": "008c66339bd28abe13bad88d"
+  },
+  "cloud-subfirmrole-group": {
+    "uuid": "ee940d95397bba5a28b983e2"
+  }
 }
