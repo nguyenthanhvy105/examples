@@ -28,6 +28,12 @@
             border-top-color: #07d;
             animation: spinner .6s linear infinite;
         }
+        .navbar-brand:before {
+            content: 'Examples';
+        }
+        #user-profile .dropdown-menu {
+            display: none !important;
+        }
     </style>
 </head>
 <body>
@@ -44,55 +50,28 @@
 
     <script type="text/javascript">
         // Config server here
-        var pathServer = 'https://calista-dev.inetcloud.vn/collaboration/vinaco';
+        var pathServer = 'http://localhost:3000';
         // Don't need config anything else`
         var arrPath = pathServer.split('/');
-        var domainPath = arrPath.slice(0, 3).join('/');
+        // var domainPath = arrPath.slice(0, 3).join('/');
         iNet.apply(iNet, {
-            prefix: 'Examples',
+            prefix: 'examples',
             imgFolder: '//media.inetcloud.vn/images/examples',
             commonImageFolder: '//media.inetcloud.vn/images/common',
             jsFolder: '',
             webchat: 'http://vertx.inetcloud.vn:8082/eventbus',
-            firmPrefix: 'Examples',
+            firmPrefix: 'examples',
             extension: '.cpx',
             fileServer: '//media.inetcloud.vn/',
             path: '/' + arrPath[3],
+            displayName: 'Demo',
             getUrl: function (url) {
-                return domainPath + iNet.path + '/smartcloud/' + url + iNet.extension;
+                return pathServer + '/' + url.replace(/\//g,'-');
             },
             getPUrl: function (url) {
-                return domainPath + iNet.path + '/' + iNet.firmPrefix + '/' + url + iNet.extension;
+                return pathServer + '/' + url.replace(/\//g,'-');
             }
         });
-        // Load user info from remote server
-
-        function loadUserInfo() {
-            /*
-            var xmlHttp = new XMLHttpRequest();
-            xmlHttp.open('GET', iNet.getPUrl('unicorn/page/user-info'), true);
-            xmlHttp.onload = function () {
-                if (!!this.responseText) {
-                    var data = JSON.parse(this.responseText);
-                    iNet.apply(iNet, data);
-                }
-            };
-            xmlHttp.send();
-            */
-
-            fetch(iNet.getPUrl('unicorn/page/user-info'))
-                .then(function(response) {
-                    return response.json();
-                })
-                .then(function(data) {
-                    iNet.apply(iNet, data);
-                });
-        }
-        /**
-         * Load user info twice to make sure "iNet Developer Tool" get correct session
-         */
-        //loadUserInfo();
-        //loadUserInfo();
     </script>
 </body>
 </html>
