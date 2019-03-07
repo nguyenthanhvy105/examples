@@ -432,6 +432,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_common_example_common_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/common/example-common.module */ "./src/app/pages/common/example-common.module.ts");
 /* harmony import */ var _pages_home_home_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/home/home.component */ "./src/app/pages/home/home.component.ts");
 /* harmony import */ var _i18n_custom_translate_loader__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./i18n/custom-translate-loader */ "./src/app/i18n/custom-translate-loader.ts");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -455,17 +456,17 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var AppModule = /** @class */ (function () {
-    function AppModule(socketService, securityService, coreService) {
+    function AppModule(socketService, securityService, coreService, translate) {
         this.socketService = socketService;
         this.securityService = securityService;
         this.coreService = coreService;
+        this.translate = translate;
         this.coreService.setEnvironment(_environments_environment__WEBPACK_IMPORTED_MODULE_6__["environment"]);
-        /*
-        if (this.coreService.getEnvironment().production) {
-            setInterval(this.securityService.ping.bind(this), 2 * 60000);
+        if (!this.coreService.getEnvironment().production) {
+            this.translate.use('en');
         }
-        */
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
@@ -491,7 +492,8 @@ var AppModule = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [inet_ui__WEBPACK_IMPORTED_MODULE_7__["SocketService"],
             inet_core__WEBPACK_IMPORTED_MODULE_5__["SecurityService"],
-            inet_core__WEBPACK_IMPORTED_MODULE_5__["CoreService"]])
+            inet_core__WEBPACK_IMPORTED_MODULE_5__["CoreService"],
+            _ngx_translate_core__WEBPACK_IMPORTED_MODULE_12__["TranslateService"]])
     ], AppModule);
     return AppModule;
 }());
@@ -568,6 +570,12 @@ var enLocale = {
         EFFORT_DRIVEN: 'Effort Driven',
         TOTAL: 'Total',
         AVG: 'Avg'
+    },
+    SEARCH: {
+        KEYWORD: 'Keyword'
+    },
+    FILTER: {
+        ALL: 'All'
     }
 };
 
@@ -598,6 +606,12 @@ var viLocale = {
         EFFORT_DRIVEN: 'Trạng thái',
         TOTAL: 'Tổng',
         AVG: 'Trung bình'
+    },
+    SEARCH: {
+        KEYWORD: 'Từ khóa'
+    },
+    FILTER: {
+        ALL: 'Tất cả'
     }
 };
 
@@ -670,7 +684,7 @@ var ExampleCommonModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"p-2\">\n    <h4>Examples</h4>\n    <p>Provides API, Layout, Component, Module for UI</p>\n    <p class=\"bd-lead\">Quickly get a project started with any of our examples ranging from using parts of the framework\n        to custom components and layouts.</p>\n    <h4>Components:</h4>\n    <ul>\n        <li><a routerLink=\"/select\">Select & Tags</a></li>\n        <li><a routerLink=\"/grid\">Grid</a></li>\n        <li><a routerLink=\"/list-view\">ListView</a></li>\n        <li><a routerLink=\"/form\">Forms</a></li>\n    </ul>\n    <h4>Source Code:</h4>\n    <a class=\"btn btn-primary btn-lg\" href=\"https://github.com/nguyenthanhvy105/examples\" target=\"_blank\">\n        <i class=\"fa fa-github\" aria-hidden=\"true\"></i>\n        GitHub</a>\n    <a class=\"ml-1 btn btn-success btn-lg\" href=\"https://github.com/nguyenthanhvy105/examples/archive/master.zip\">\n        <i class=\"fa fa-download\" aria-hidden=\"true\"></i>\n         Download</a>\n</div>\n"
+module.exports = "<div class=\"p-2\">\n    <h4>Examples</h4>\n    <div class=\"alert alert-block alert-success\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"alert\">\n            <i class=\"ace-icon fa fa-times\"></i>\n        </button>\n        Welcome to\n        <strong class=\"green\">\n            iNet UI\n        </strong>,\n        the lightweight, feature-rich and easy to use admin template.\n    </div>\n    <p>\n        <img src=\"http://img.shields.io/npm/v/inet-ui.svg?style=flat\">&nbsp;\n        <img src=\"http://img.shields.io/npm/dm/inet-ui.svg?style=flat\">&nbsp;\n        <img src=\"https://travis-ci.org/nguyenthanhvy105/examples.svg?branch=master\" alt=\"build:passed\">\n    </p>\n    <p>Provides API, Layout, Component, Module for UI</p>\n    <p class=\"bd-lead\">Quickly get a project started with any of our examples ranging from using parts of the framework\n        to custom components and layouts.</p>\n    <h4>Components:</h4>\n    <ul>\n        <li><a routerLink=\"/select\">Select & Tags</a></li>\n        <li><a routerLink=\"/grid\">Grid</a></li>\n        <li><a routerLink=\"/list-view\">ListView</a></li>\n        <li><a routerLink=\"/form\">Forms</a></li>\n    </ul>\n    <h4>Source Code:</h4>\n    <a class=\"btn btn-primary btn-lg\" href=\"https://github.com/nguyenthanhvy105/examples\" target=\"_blank\">\n        <i class=\"fa fa-github\" aria-hidden=\"true\"></i>\n        GitHub</a>\n    <a class=\"ml-1 btn btn-success btn-lg\" href=\"https://github.com/nguyenthanhvy105/examples/archive/master.zip\">\n        <i class=\"fa fa-download\" aria-hidden=\"true\"></i>\n         Download</a>\n</div>\n"
 
 /***/ }),
 

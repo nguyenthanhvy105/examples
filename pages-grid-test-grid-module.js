@@ -33367,7 +33367,7 @@ return purify;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* flatpickr v4.5.5, @license MIT */
+/* flatpickr v4.5.7, @license MIT */
 (function (global, factory) {
      true ? module.exports = factory() :
     undefined;
@@ -34814,7 +34814,6 @@ return purify;
                     return elem.contains(eventTarget_1);
                 });
                 if (lostFocus && isIgnored) {
-                    updateTime();
                     self.close();
                     if (self.config.mode === "range" && self.selectedDates.length === 1) {
                         self.clear(false);
@@ -35187,7 +35186,7 @@ return purify;
                 "disableMobile",
             ];
             var userConfig = __assign({}, instanceConfig, JSON.parse(JSON.stringify(element.dataset || {})));
-            var formats$$1 = {};
+            var formats = {};
             self.config.parseDate = userConfig.parseDate;
             self.config.formatDate = userConfig.formatDate;
             Object.defineProperty(self.config, "enable", {
@@ -35204,7 +35203,7 @@ return purify;
             });
             var timeMode = userConfig.mode === "time";
             if (!userConfig.dateFormat && (userConfig.enableTime || timeMode)) {
-                formats$$1.dateFormat =
+                formats.dateFormat =
                     userConfig.noCalendar || timeMode
                         ? "H:i" + (userConfig.enableSeconds ? ":S" : "")
                         : flatpickr.defaultConfig.dateFormat +
@@ -35214,7 +35213,7 @@ return purify;
             if (userConfig.altInput &&
                 (userConfig.enableTime || timeMode) &&
                 !userConfig.altFormat) {
-                formats$$1.altFormat =
+                formats.altFormat =
                     userConfig.noCalendar || timeMode
                         ? "h:i" + (userConfig.enableSeconds ? ":S K" : " K")
                         : flatpickr.defaultConfig.altFormat +
@@ -35243,7 +35242,7 @@ return purify;
                 self.config.noCalendar = true;
                 self.config.enableTime = true;
             }
-            Object.assign(self.config, formats$$1, userConfig);
+            Object.assign(self.config, formats, userConfig);
             for (var i = 0; i < boolOpts.length; i++)
                 self.config[boolOpts[i]] =
                     self.config[boolOpts[i]] === true ||
@@ -35324,6 +35323,9 @@ return purify;
             }
             else {
                 var doc = document.styleSheets[0];
+                // some testing environments don't have css support
+                if (doc === undefined)
+                    return;
                 var bodyWidth = window.document.body.offsetWidth;
                 var centerLeft = Math.max(0, bodyWidth / 2 - calendarWidth / 2);
                 var centerBefore = ".flatpickr-calendar.centerMost:before";
