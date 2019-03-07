@@ -13,7 +13,7 @@
                     <ng-template #toolbarTpl>
                         <nav class="nav nav-tabs text-center">
                             <span class="nav-item nav-link rounded-0 active" data-toggle="tab" role="tab">
-                                <i class="fa fa-list-ul" aria-hidden="true"></i> Tất cả
+                                <i class="fa fa-list-ul" aria-hidden="true"></i> {{'FILTER.ALL' | translate}}
                                 <span [hidden]="peoples.length<1" class="badge badge-pill badge-primary p-1 pl-2 pr-2">
                                 {{ peoples.length }}</span>
                             </span>
@@ -27,7 +27,7 @@
                                     <input [(ngModel)]="keyword" (keydown.enter)="search($event)" type="text"
                                            name="keyword"
                                            class="form-control" style="border-radius: 25rem"
-                                           placeholder="'Từ khóa tìm kiếm'">
+                                           placeholder="{{'SEARCH.KEYWORD' | translate}}">
                                     <i class="fa fa-search icon icon-search" (click)="search($event)"></i>
                                 </div>
                             </div>
@@ -54,7 +54,7 @@
                     </ng-template>
 
                     <ng-template #footerTpl>
-                        <div *ngIf="selectedPeople.length" class="mt-2">Có {{ selectedPeople.length }} item đã chọn</div>
+                        <div *ngIf="selectedPeople.length" class="mt-2">{{ selectedPeople.length }} item(s) selected</div>
                     </ng-template>
                 </list-view>
                 <div class="col-sm-8">

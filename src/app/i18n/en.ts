@@ -12,6 +12,12 @@ export let enLocale = {
         EFFORT_DRIVEN: 'Effort Driven',
         TOTAL: 'Total',
         AVG: 'Avg'
+    },
+    SEARCH: {
+        KEYWORD: 'Keyword'
+    },
+    FILTER: {
+        ALL: 'All'
     }
 };
 
