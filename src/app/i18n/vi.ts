@@ -12,5 +12,11 @@ export let viLocale = {
         EFFORT_DRIVEN: 'Trạng thái',
         TOTAL: 'Tổng',
         AVG: 'Trung bình'
+    },
+    SEARCH: {
+        KEYWORD: 'Từ khóa'
+    },
+    FILTER: {
+        ALL: 'Tất cả'
     }
 };

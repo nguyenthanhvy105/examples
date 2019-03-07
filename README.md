@@ -85,18 +85,6 @@ sudo npm i -g bower gulp-cli
 ```
 Run `gulp` to build the project for a module.
 
-## iNet Developer Tool - Chrome Extension
-
-Use extension to access remote server and prevent CORS when develop on localhost. 
-
-- Install extension 
-``` 
-https://chrome.google.com/webstore/detail/inet-developer-tool/hgmdmgbfllloocljiffneifcepeafkpg
-```
-- Config server domain and start: calista.inetcloud.vn,inetcloud.vn
-
-
-
 Contributors:
 ===
 - Vy Nguyen <ntvy@inetcloud.vn>

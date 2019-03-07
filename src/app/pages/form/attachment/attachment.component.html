@@ -1,5 +1,5 @@
 <button type="button" (click)="fileInput.click()" class="btn btn-success btn-sm" style="margin-bottom: 10px;">
-    <i class="fa fa-upload" aria-hidden="true"></i> Chọn tài liệu đính kèm...
+    <i class="fa fa-upload" aria-hidden="true"></i> Choosen...
 </button>
 <span class="attachment-zone">
   <input #fileInput type="file" ng2FileSelect [uploader]="uploader" multiple/>
@@ -8,7 +8,7 @@
     <thead>
     <tr>
         <th style="width: 20px"></th>
-        <th>Tên tài liệu</th>
+        <th>File name</th>
         <th style="width: 120px;"></th>
     </tr>
     </thead>
@@ -39,7 +39,7 @@
 </table>
 
 <app-confirm-dialog iconCls="icon-trash"
-                    title="Xóa ?"
+                    title="Delete File ?"
                     [content]="confirmMessage">
 </app-confirm-dialog>
 
