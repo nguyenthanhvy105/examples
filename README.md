@@ -1,6 +1,9 @@
 
 Examples
 ===
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/78c6575f8c2142a1b5552855a64c1696)](https://app.codacy.com/app/nguyenthanhvy105/examples?utm_source=github.com&utm_medium=referral&utm_content=nguyenthanhvy105/examples&utm_campaign=Badge_Grade_Settings)
+
 Simple Admin App built using Angular 7 and Bootstrap 4
 
 [Demo](https://nguyenthanhvy105.github.io/examples)
