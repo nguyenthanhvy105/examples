@@ -1,9 +1,16 @@
 <ul id="mainnav-menu" class="menu-lg list-group">
-    <li class="list-header">Examples</li>
+    <li class="list-header">Menu</li>
     <li routerLinkActive="active">
         <a routerLink="home" routerLinkActive="active">
             <i class="fa fa-home" aria-hidden="true"></i>
             <span class="menu-title">{{'MENU.HOME' | translate}}</span>
+        </a>
+    </li>
+    <li routerLinkActive="active">
+        <a routerLink="themes" routerLinkActive="active">
+            <i class="fa fa-picture-o" aria-hidden="true"></i>
+            <span class="menu-title">{{'MENU.THEME' | translate}}</span>
+            <span class="pull-right badge badge-warning">New</span>
         </a>
     </li>
     <li routerLinkActive="active active-sub">
