@@ -1,8 +1,9 @@
 
 Examples
 ===
-
+[![NPM version][npm-version-image]][npm-url] [![NPM downloads][npm-downloads-image]][downloads-url]
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/78c6575f8c2142a1b5552855a64c1696)](https://app.codacy.com/app/nguyenthanhvy105/examples?utm_source=github.com&utm_medium=referral&utm_content=nguyenthanhvy105/examples&utm_campaign=Badge_Grade_Settings)
+[![Build Status](https://travis-ci.org/nguyenthanhvy105/examples.svg?branch=master)](https://travis-ci.org/nguyenthanhvy105/examples)
 
 Simple Admin App built using Angular 7 and Bootstrap 4
 
@@ -94,3 +95,8 @@ Contributors:
 - Hanh Le <hanhld@inetcloud.vn>
 - An Tran <anttt@inetcloud.vn>
 - Van Nguyen <vannbt@inetcloud.vn>
+
+[npm-url]: https://npmjs.org/package/inet-ui
+[npm-version-image]: http://img.shields.io/npm/v/inet-ui.svg?style=flat
+[npm-downloads-image]: http://img.shields.io/npm/dm/inet-ui.svg?style=flat
+[downloads-url]: https://npmcharts.com/compare/inet-ui?minimal=true
