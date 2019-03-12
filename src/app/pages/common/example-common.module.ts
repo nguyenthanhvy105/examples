@@ -5,6 +5,7 @@ import {CoreModule} from "inet-core";
 import {CloudTranslateModule, InterceptorModule} from 'inet-ui';
 import {HttpClientModule} from '@angular/common/http';
 import {CustomTranslateLoader} from "../../i18n/custom-translate-loader";
+import {LayoutService} from "./layout.service";
 
 @NgModule({
     imports: [
@@ -22,7 +23,7 @@ import {CustomTranslateLoader} from "../../i18n/custom-translate-loader";
         CoreModule,
         CloudTranslateModule
     ],
-    providers: []
+    providers: [LayoutService]
 })
 export class ExampleCommonModule {
 }

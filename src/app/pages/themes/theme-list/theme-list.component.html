@@ -1,0 +1,57 @@
+<div class="admin-layout">
+  <div class="nav-fixed-top cp-toolbar">
+    <h5><i class="fa fa-picture-o" aria-hidden="true"></i> Themes</h5>
+  </div>
+  <div class="cp-content">
+    <div class="p-2">
+      <p class="m-2">Choose Theme:</p>
+      <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 shadow-sm">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Silver theme</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Lifetime free updates</li>
+              <li>Based on Bootstrap 4</li>
+              <li>Fully Responsive</li>
+              <li>Help center access</li>
+            </ul>
+            <button (click)="changeTheme('theme-silver')" [disabled]="currentTheme=='theme-silver'" type="button" class="btn btn-lg btn-block btn-primary">Apply</button>
+          </div>
+        </div>
+        <div class="card mb-4 shadow-sm">
+          <div class="card-header light-header">
+            <h4 class="my-0 font-weight-normal">Light theme</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Lifetime free updates</li>
+              <li>Based on Bootstrap 4</li>
+              <li>Fully Responsive</li>
+              <li>Help center access</li>
+            </ul>
+            <button (click)="changeTheme('theme-light')" [disabled]="currentTheme=='theme-light'" type="button" class="btn btn-lg btn-block btn-primary">Apply</button>
+          </div>
+        </div>
+        <div class="card mb-4 shadow-sm">
+          <div class="card-header dark-header">
+            <h4 class="my-0 font-weight-normal">Dark theme</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Lifetime free updates</li>
+              <li>Based on Bootstrap 4</li>
+              <li>Fully Responsive</li>
+              <li>Help center access</li>
+            </ul>
+            <button (click)="changeTheme('theme-dark')" [disabled]="currentTheme=='theme-dark'" type="button" class="btn btn-lg btn-block btn-primary">Apply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

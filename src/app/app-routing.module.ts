@@ -8,7 +8,9 @@ const routes: Routes = [
     {path: 'select', loadChildren: './pages/select/test-select.module#TestSelectModule'},
     {path: 'grid', loadChildren: './pages/grid/test-grid.module#TestGridModule'},
     {path: 'list-view', loadChildren: './pages/list-view/test-list-view.module#TestListViewModule'},
-    {path: 'form', loadChildren: './pages/form/test-form.module#TestFormModule'}
+    {path: 'form', loadChildren: './pages/form/test-form.module#TestFormModule'},
+    {path: 'themes', loadChildren: './pages/themes/themes.module#ThemesModule'}
+
 ];
 
 @NgModule({

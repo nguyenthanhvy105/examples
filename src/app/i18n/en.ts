@@ -1,6 +1,7 @@
 export let enLocale = {
     MENU: {
-        HOME: 'Home'
+        HOME: 'Home',
+        THEME: 'Themes'
     },
     GRID_COLUMNS: {
         TITLE: 'Title',

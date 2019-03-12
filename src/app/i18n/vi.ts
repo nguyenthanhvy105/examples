@@ -1,6 +1,7 @@
 export let viLocale = {
     MENU: {
-        HOME: 'Trang chủ'
+        HOME: 'Trang chủ',
+        THEME: 'Themes'
     },
     GRID_COLUMNS: {
         TITLE: 'Tiêu đề',
