@@ -306,6 +306,10 @@ var map = {
 		"./src/app/pages/select/test-select.module.ts",
 		"common",
 		"pages-select-test-select-module"
+	],
+	"./pages/themes/themes.module": [
+		"./src/app/pages/themes/themes.module.ts",
+		"pages-themes-themes-module"
 	]
 };
 function webpackAsyncContext(req) {
@@ -358,7 +362,8 @@ var routes = [
     { path: 'select', loadChildren: './pages/select/test-select.module#TestSelectModule' },
     { path: 'grid', loadChildren: './pages/grid/test-grid.module#TestGridModule' },
     { path: 'list-view', loadChildren: './pages/list-view/test-list-view.module#TestListViewModule' },
-    { path: 'form', loadChildren: './pages/form/test-form.module#TestFormModule' }
+    { path: 'form', loadChildren: './pages/form/test-form.module#TestFormModule' },
+    { path: 'themes', loadChildren: './pages/themes/themes.module#ThemesModule' }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -387,21 +392,35 @@ var AppRoutingModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _pages_common_layout_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/common/layout.service */ "./src/app/pages/common/layout.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(layoutService) {
+        this.layoutService = layoutService;
+        this.theme = this.layoutService.getTheme();
     }
+    AppComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.layoutService.onChangeTheme.subscribe(function (theme) {
+            _this.theme = theme;
+        });
+    };
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
-            template: "\n        <app-layout [homeRouterLink]=\"'home'\">\n            <ng-template #menu>\n                <app-example-menu></app-example-menu>\n            </ng-template>\n        </app-layout>"
-        })
+            template: "\n        <app-layout [theme]=\"theme\" [homeRouterLink]=\"'home'\">\n            <ng-template #menu>\n                <app-example-menu></app-example-menu>\n            </ng-template>\n        </app-layout>"
+        }),
+        __metadata("design:paramtypes", [_pages_common_layout_service__WEBPACK_IMPORTED_MODULE_1__["LayoutService"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -558,7 +577,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "enLocale", function() { return enLocale; });
 var enLocale = {
     MENU: {
-        HOME: 'Home'
+        HOME: 'Home',
+        THEME: 'Themes'
     },
     GRID_COLUMNS: {
         TITLE: 'Title',
@@ -594,7 +614,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "viLocale", function() { return viLocale; });
 var viLocale = {
     MENU: {
-        HOME: 'Trang chủ'
+        HOME: 'Trang chủ',
+        THEME: 'Themes'
     },
     GRID_COLUMNS: {
         TITLE: 'Tiêu đề',
@@ -635,12 +656,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var inet_ui__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! inet-ui */ "./node_modules/inet-ui/esm5/inet-ui.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _i18n_custom_translate_loader__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../i18n/custom-translate-loader */ "./src/app/i18n/custom-translate-loader.ts");
+/* harmony import */ var _layout_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./layout.service */ "./src/app/pages/common/layout.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -667,10 +690,65 @@ var ExampleCommonModule = /** @class */ (function () {
                 inet_core__WEBPACK_IMPORTED_MODULE_3__["CoreModule"],
                 inet_ui__WEBPACK_IMPORTED_MODULE_4__["CloudTranslateModule"]
             ],
-            providers: []
+            providers: [_layout_service__WEBPACK_IMPORTED_MODULE_7__["LayoutService"]]
         })
     ], ExampleCommonModule);
     return ExampleCommonModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/common/layout.service.ts":
+/*!************************************************!*\
+  !*** ./src/app/pages/common/layout.service.ts ***!
+  \************************************************/
+/*! exports provided: LayoutService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LayoutService", function() { return LayoutService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var LayoutService = /** @class */ (function () {
+    function LayoutService() {
+        // Observable change theme
+        this.emitChangeTheme = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
+        this.onChangeTheme = this.emitChangeTheme.asObservable();
+        this.currentTheme = 'theme-silver';
+        return LayoutService_1.instance = LayoutService_1.instance || this;
+    }
+    LayoutService_1 = LayoutService;
+    LayoutService.prototype.changeTheme = function (theme) {
+        if (theme) {
+            this.emitChangeTheme.next(theme);
+            this.currentTheme = theme;
+        }
+    };
+    LayoutService.prototype.getTheme = function () {
+        return this.currentTheme;
+    };
+    var LayoutService_1;
+    LayoutService = LayoutService_1 = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [])
+    ], LayoutService);
+    return LayoutService;
 }());
 
 
@@ -684,7 +762,7 @@ var ExampleCommonModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"p-2\">\n    <h4>Examples</h4>\n    <div class=\"alert alert-block alert-success\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"alert\">\n            <i class=\"ace-icon fa fa-times\"></i>\n        </button>\n        Welcome to\n        <strong class=\"green\">\n            iNet UI\n        </strong>,\n        the lightweight, feature-rich and easy to use admin template.\n    </div>\n    <p>\n        <a href=\"https://npmjs.org/package/inet-ui\"><img src=\"http://img.shields.io/npm/v/inet-ui.svg?style=flat\" /></a>&nbsp;\n        <a href=\"https://npmcharts.com/compare/inet-ui?minimal=true\"><img src=\"http://img.shields.io/npm/dm/inet-ui.svg?style=flat\" /></a>&nbsp;\n        <a href=\"https://www.codacy.com/app/nguyenthanhvy105/examples?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nguyenthanhvy105/examples&amp;utm_campaign=Badge_Grade\"><img src=\"https://api.codacy.com/project/badge/Grade/a9b84096d29f49738ba028f38e0606b7\"/></a>&nbsp;\n        <a href=\"https://travis-ci.org/nguyenthanhvy105/examples\"><img src=\"https://travis-ci.org/nguyenthanhvy105/examples.svg?branch=master\" alt=\"build:passed\"></a>\n    </p>\n    <p>Provides API, Layout, Component, Module for UI</p>\n    <p class=\"bd-lead\">Quickly get a project started with any of our examples ranging from using parts of the framework\n        to custom components and layouts.</p>\n    <h4>Components:</h4>\n    <ul>\n        <li><a routerLink=\"/select\">Select & Tags</a></li>\n        <li><a routerLink=\"/grid\">Grid</a></li>\n        <li><a routerLink=\"/list-view\">ListView</a></li>\n        <li><a routerLink=\"/form\">Forms</a></li>\n    </ul>\n    <h4>Source Code:</h4>\n    <a class=\"btn btn-primary btn-lg\" href=\"https://github.com/nguyenthanhvy105/examples\" target=\"_blank\">\n        <i class=\"fa fa-github\" aria-hidden=\"true\"></i>\n        GitHub</a>\n    <a class=\"ml-1 btn btn-success btn-lg\" href=\"https://github.com/nguyenthanhvy105/examples/archive/master.zip\">\n        <i class=\"fa fa-download\" aria-hidden=\"true\"></i>\n         Download</a>\n</div>\n"
+module.exports = "<div class=\"p-2\">\n    <h4>Examples</h4>\n    <div class=\"alert alert-block alert-success\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"alert\">\n            <i class=\"ace-icon fa fa-times\"></i>\n        </button>\n        Welcome to\n        <strong class=\"green\">\n            iNet UI\n        </strong>,\n        the lightweight, feature-rich and easy to use admin template.\n    </div>\n    <p>\n        <a href=\"https://npmjs.org/package/inet-ui\"><img src=\"http://img.shields.io/npm/v/inet-ui.svg?style=flat\" /></a>&nbsp;\n        <a href=\"https://npmcharts.com/compare/inet-ui?minimal=true\"><img src=\"http://img.shields.io/npm/dm/inet-ui.svg?style=flat\" /></a>&nbsp;\n        <a href=\"https://www.codacy.com/app/nguyenthanhvy105/examples?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nguyenthanhvy105/examples&amp;utm_campaign=Badge_Grade\"><img src=\"https://api.codacy.com/project/badge/Grade/a9b84096d29f49738ba028f38e0606b7\"/></a>&nbsp;\n        <a href=\"https://travis-ci.org/nguyenthanhvy105/examples\"><img src=\"https://travis-ci.org/nguyenthanhvy105/examples.svg?branch=master\" alt=\"build:passed\"></a>\n    </p>\n    <p>Provides API, Layout, Component, Module for UI</p>\n    <p class=\"bd-lead\">Quickly get a project started with any of our examples ranging from using parts of the framework\n        to custom components and layouts.</p>\n    <h4>Components:</h4>\n    <ul>\n        <li><a routerLink=\"/themes\">Themes</a></li>\n        <li><a routerLink=\"/select\">Select & Tags</a></li>\n        <li><a routerLink=\"/grid\">Grid</a></li>\n        <li><a routerLink=\"/list-view\">ListView</a></li>\n        <li><a routerLink=\"/form\">Forms</a></li>\n    </ul>\n    <h4>Source Code:</h4>\n    <a class=\"btn btn-primary btn-lg\" href=\"https://github.com/nguyenthanhvy105/examples\" target=\"_blank\">\n        <i class=\"fa fa-github\" aria-hidden=\"true\"></i>\n        GitHub</a>\n    <a class=\"ml-1 btn btn-success btn-lg\" href=\"https://github.com/nguyenthanhvy105/examples/archive/master.zip\">\n        <i class=\"fa fa-download\" aria-hidden=\"true\"></i>\n         Download</a>\n</div>\n"
 
 /***/ }),
 
@@ -747,7 +825,7 @@ var HomeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul id=\"mainnav-menu\" class=\"menu-lg list-group\">\n    <li class=\"list-header\">Examples</li>\n    <li routerLinkActive=\"active\">\n        <a routerLink=\"home\" routerLinkActive=\"active\">\n            <i class=\"fa fa-home\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">{{'MENU.HOME' | translate}}</span>\n        </a>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#select-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-cog\"></i>\n            <span class=\"menu-title\">Select & Tags</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"select-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"select/tags\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-tags\"></i> Tags\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"select/multiselect\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-check-square\"></i> Multiselect\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#grid-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-table\"></i>\n            <span class=\"menu-title\">Grid</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"grid-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"grid/basic\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Basic\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"grid/editable\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-table\"></i> Editable\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"grid/grouping\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-table\"></i> Grouping\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#list-view-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-list\"></i>\n            <span class=\"menu-title\">ListView</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"list-view-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"list-view/basic\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Basic\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#forms-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-address-card\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">Forms</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"forms-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"form/elements\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Elements\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"form/number-format\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-calculator\"></i> Number Format\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"form/file-upload\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cloud-upload\"></i> File Upload\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active\">\n        <a href=\"https://valor-software.com/ngx-bootstrap/#/documentation#getting-started\" target=\"_blank\">\n            <i class=\"fa fa-codepen\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">ngx-bootstrap</span>\n        </a>\n    </li>\n</ul>\n"
+module.exports = "<ul id=\"mainnav-menu\" class=\"menu-lg list-group\">\n    <li class=\"list-header\">Menu</li>\n    <li routerLinkActive=\"active\">\n        <a routerLink=\"home\" routerLinkActive=\"active\">\n            <i class=\"fa fa-home\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">{{'MENU.HOME' | translate}}</span>\n        </a>\n    </li>\n    <li routerLinkActive=\"active\">\n        <a routerLink=\"themes\" routerLinkActive=\"active\">\n            <i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">{{'MENU.THEME' | translate}}</span>\n            <span class=\"pull-right badge badge-warning\">New</span>\n        </a>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#select-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-cog\"></i>\n            <span class=\"menu-title\">Select & Tags</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"select-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"select/tags\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-tags\"></i> Tags\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"select/multiselect\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-check-square\"></i> Multiselect\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#grid-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-table\"></i>\n            <span class=\"menu-title\">Grid</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"grid-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"grid/basic\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Basic\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"grid/editable\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-table\"></i> Editable\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"grid/grouping\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-table\"></i> Grouping\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#list-view-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-list\"></i>\n            <span class=\"menu-title\">ListView</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"list-view-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"list-view/basic\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Basic\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#forms-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-address-card\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">Forms</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"forms-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"form/elements\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Elements\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"form/number-format\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-calculator\"></i> Number Format\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"form/file-upload\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cloud-upload\"></i> File Upload\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active\">\n        <a href=\"https://valor-software.com/ngx-bootstrap/#/documentation#getting-started\" target=\"_blank\">\n            <i class=\"fa fa-codepen\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">ngx-bootstrap</span>\n        </a>\n    </li>\n</ul>\n"
 
 /***/ }),
 

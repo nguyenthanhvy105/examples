@@ -87520,7 +87520,7 @@ var GridBasicComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  grid-editable works!\n</p>\n"
+module.exports = "<div class=\"admin-layout\">\n  <div class=\"nav-fixed-top cp-toolbar\">\n    <h5><i class=\"fa fa-table\" aria-hidden=\"true\"></i> Editable Grid</h5>\n  </div>\n  <div class=\"cp-content\">\n    <div class=\"p-2\">\n      <p>Coming soon !</p>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
