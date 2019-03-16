@@ -4,7 +4,7 @@
 /*!*******************************************************************!*\
   !*** ./node_modules/angular-slickgrid/fesm5/angular-slickgrid.js ***!
   \*******************************************************************/
-/*! exports provided: SlickgridConfig, SlickPaginationComponent, AngularSlickgridComponent, AngularSlickgridModule, CaseType, DelimiterType, ExtensionName, FieldType, FileType, FilterMultiplePassType, GridStateType, KeyCode, OperatorType, SortDirection, SortDirectionNumber, AngularUtilService, executeBackendProcessesCallback, onBackendError, CollectionService, ExportService, ExtensionService, FilterService, GraphqlService, GridOdataService, GridEventService, GridService, GridStateService, GroupingAndColspanService, OdataService, ResizerService, SharedService, SortService, addWhiteSpaces, htmlEncode, htmlDecode, htmlEntityDecode, htmlEntityEncode, arraysEqual, castToPromise, findOrDefault, decimalFormatted, getDescendantProperty, getScrollBarWidth, mapMomentDateFormatWithFieldType, mapFlatpickrDateFormatWithFieldType, mapOperatorType, mapOperatorByFieldType, parseUtcDate, sanitizeHtmlToText, titleCase, toCamelCase, toKebabCase, uniqueArray, unsubscribeAllObservables, Aggregators, Editors, AutoTooltipExtension, CellExternalCopyManagerExtension, CheckboxSelectorExtension, ColumnPickerExtension, DraggableGroupingExtension, ExtensionUtility, GridMenuExtension, GroupItemMetaProviderExtension, HeaderButtonExtension, HeaderMenuExtension, RowDetailViewExtension, RowMoveManagerExtension, RowSelectionExtension, FilterConditions, Filters, FilterFactory, Formatters, GroupTotalFormatters, Sorters, ɵa, ɵc, ɵb, ɵd, ɵe, ɵf, ɵg, ɵh, ɵi, ɵj, ɵk, ɵl, ɵm, ɵn, ɵo, ɵq, ɵr, ɵs, ɵt, ɵv, ɵw, ɵu, ɵp, ɵz, ɵx, ɵy, ɵba, ɵbb, ɵbc, ɵbd, ɵbe, ɵbf, ɵbg, ɵbh, ɵbi, ɵbj, ɵbk, ɵbm, ɵbl, ɵbn, ɵbo, ɵbp, ɵbq, ɵbr, ɵbs, ɵbt, ɵbw, ɵbv, ɵbu, ɵbx, ɵca, ɵby, ɵbz, ɵcd, ɵce, ɵcc, ɵcb, ɵcg, ɵcf, ɵcj, ɵci, ɵch, ɵck, ɵcl, ɵcm, ɵcn, ɵco, ɵcp, ɵcq, ɵct, ɵcs, ɵcr, ɵcu, ɵcv, ɵcx, ɵcw, ɵcy, ɵcz, ɵdb, ɵda, ɵdc, ɵdd, ɵde, ɵdg, ɵdh, ɵdj, ɵdl, ɵdk, ɵdi, ɵdf, ɵdn, ɵdm, ɵdp, ɵdo, ɵdq, ɵdr, ɵds */
+/*! exports provided: SlickgridConfig, SlickPaginationComponent, AngularSlickgridComponent, AngularSlickgridModule, CaseType, DelimiterType, EmitterType, ExtensionName, FieldType, FileType, FilterMultiplePassType, GridStateType, KeyCode, OperatorType, SortDirection, SortDirectionNumber, AngularUtilService, executeBackendProcessesCallback, onBackendError, CollectionService, ExportService, ExtensionService, FilterService, GraphqlService, GridOdataService, GridEventService, GridService, GridStateService, GroupingAndColspanService, OdataService, ResizerService, SharedService, SortService, addWhiteSpaces, htmlEncode, htmlDecode, htmlEntityDecode, htmlEntityEncode, arraysEqual, castToPromise, findOrDefault, decimalFormatted, getDescendantProperty, getScrollBarWidth, mapMomentDateFormatWithFieldType, mapFlatpickrDateFormatWithFieldType, mapOperatorType, mapOperatorByFieldType, parseUtcDate, sanitizeHtmlToText, titleCase, toCamelCase, toKebabCase, uniqueArray, unsubscribeAllObservables, Aggregators, Editors, AutoTooltipExtension, CellExternalCopyManagerExtension, CheckboxSelectorExtension, ColumnPickerExtension, DraggableGroupingExtension, ExtensionUtility, GridMenuExtension, GroupItemMetaProviderExtension, HeaderButtonExtension, HeaderMenuExtension, RowDetailViewExtension, RowMoveManagerExtension, RowSelectionExtension, FilterConditions, Filters, FilterFactory, Formatters, GroupTotalFormatters, Sorters, ɵa, ɵc, ɵb, ɵd, ɵe, ɵf, ɵg, ɵh, ɵi, ɵj, ɵk, ɵl, ɵm, ɵn, ɵo, ɵq, ɵr, ɵs, ɵt, ɵv, ɵw, ɵu, ɵp, ɵz, ɵx, ɵy, ɵba, ɵbb, ɵbc, ɵbd, ɵbe, ɵbf, ɵbg, ɵbh, ɵbi, ɵbj, ɵbk, ɵbm, ɵbl, ɵbn, ɵbo, ɵbp, ɵbq, ɵbr, ɵbs, ɵbt, ɵbw, ɵbv, ɵbu, ɵbx, ɵca, ɵby, ɵbz, ɵcd, ɵce, ɵcc, ɵcb, ɵcg, ɵcf, ɵcj, ɵci, ɵch, ɵck, ɵcl, ɵcm, ɵcn, ɵco, ɵcp, ɵcq, ɵct, ɵcs, ɵcr, ɵcu, ɵcv, ɵcx, ɵcw, ɵcy, ɵcz, ɵdb, ɵda, ɵdc, ɵdd, ɵde, ɵdg, ɵdh, ɵdj, ɵdl, ɵdk, ɵdi, ɵdf, ɵdn, ɵdm, ɵdp, ɵdo, ɵdq, ɵdr, ɵds */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15,6 +15,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AngularSlickgridModule", function() { return AngularSlickgridModule; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CaseType", function() { return CaseType; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DelimiterType", function() { return DelimiterType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EmitterType", function() { return EmitterType; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExtensionName", function() { return ExtensionName; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FieldType", function() { return FieldType; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FileType", function() { return FileType; });
@@ -418,6 +419,16 @@ var DelimiterType = {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/** @enum {string} */
+var EmitterType = {
+    local: 'local',
+    remote: 'remote',
+};
 
 /**
  * @fileoverview added by tsickle
@@ -961,6 +972,7 @@ var AngularUtilService = /** @class */ (function () {
     /**
      * @param {?} component
      * @param {?=} targetElement
+     * @param {?=} clearTargetContent
      * @return {?}
      */
     AngularUtilService.prototype.createAngularComponentAppendToDom = 
@@ -968,13 +980,18 @@ var AngularUtilService = /** @class */ (function () {
     /**
      * @param {?} component
      * @param {?=} targetElement
+     * @param {?=} clearTargetContent
      * @return {?}
      */
-    function (component, targetElement) {
+    function (component, targetElement, clearTargetContent) {
+        if (clearTargetContent === void 0) { clearTargetContent = false; }
         /** @type {?} */
         var componentOutput = this.createAngularComponent(component);
         // Append DOM element to the HTML element specified
         if (targetElement && targetElement.appendChild) {
+            if (clearTargetContent && targetElement.innerHTML) {
+                targetElement.innerHTML = '';
+            }
             targetElement.appendChild(componentOutput.domElement);
         }
         else {
@@ -1311,6 +1328,9 @@ function mapFlatpickrDateFormatWithFieldType(fieldType) {
         case FieldType.dateTimeIso:
             map = 'Y-m-d H:i:S';
             break;
+        case FieldType.dateTimeShortIso:
+            map = 'Y-m-d H:i';
+            break;
         case FieldType.dateTimeIsoAmPm:
             map = 'Y-m-d h:i:S K'; // there is no lowercase in Flatpickr :(
             break;
@@ -1325,6 +1345,9 @@ function mapFlatpickrDateFormatWithFieldType(fieldType) {
             break;
         case FieldType.dateTimeUs:
             map = 'm/d/Y H:i:S';
+            break;
+        case FieldType.dateTimeShortUs:
+            map = 'm/d/y H:i';
             break;
         case FieldType.dateTimeUsAmPm:
             map = 'm/d/Y h:i:S K'; // there is no lowercase in Flatpickr :(
@@ -2481,8 +2504,12 @@ var Constants = /** @class */ (function () {
     Constants.TEXT_SORT_DESCENDING = 'Sort Descending';
     Constants.TEXT_TOGGLE_FILTER_ROW = 'Toggle Filter Row';
     Constants.TEXT_TOGGLE_PRE_HEADER_ROW = 'Toggle Pre-Header Row';
+    Constants.VALIDATION_REQUIRED_FIELD = 'Field is required';
     Constants.VALIDATION_EDITOR_VALID_NUMBER = 'Please enter a valid number';
     Constants.VALIDATION_EDITOR_VALID_INTEGER = 'Please enter a valid integer number';
+    Constants.VALIDATION_EDITOR_INTEGER_BETWEEN = 'Please enter a valid integer number between {{minValue}} and {{maxValue}}';
+    Constants.VALIDATION_EDITOR_INTEGER_MAX = 'Please enter a valid integer number that is lower than {{maxValue}}';
+    Constants.VALIDATION_EDITOR_INTEGER_MIN = 'Please enter a valid integer number that is greater than {{minValue}}';
     Constants.VALIDATION_EDITOR_NUMBER_BETWEEN = 'Please enter a valid number between {{minValue}} and {{maxValue}}';
     Constants.VALIDATION_EDITOR_NUMBER_MAX = 'Please enter a valid number that is lower than {{maxValue}}';
     Constants.VALIDATION_EDITOR_NUMBER_MIN = 'Please enter a valid number that is greater than {{minValue}}';
@@ -3722,6 +3749,7 @@ var AutoCompleteFilter = /** @class */ (function () {
         this.translate = translate;
         this.collectionService = collectionService;
         this._clearFilterTriggered = false;
+        this._shouldTriggerQuery = true;
         this.isFilled = false;
         /**
          * The property name for values in the collection
@@ -3836,15 +3864,19 @@ var AutoCompleteFilter = /** @class */ (function () {
      */
     /**
      * Clear the filter value
+     * @param {?=} shouldTriggerQuery
      * @return {?}
      */
     AutoCompleteFilter.prototype.clear = /**
      * Clear the filter value
+     * @param {?=} shouldTriggerQuery
      * @return {?}
      */
-    function () {
+    function (shouldTriggerQuery) {
+        if (shouldTriggerQuery === void 0) { shouldTriggerQuery = true; }
         if (this.$filterElm) {
             this._clearFilterTriggered = true;
+            this._shouldTriggerQuery = shouldTriggerQuery;
             this.searchTerms = [];
             this.$filterElm.val('');
             this.$filterElm.trigger('keyup');
@@ -4072,19 +4104,21 @@ var AutoCompleteFilter = /** @class */ (function () {
             /** @type {?} */
             var value = e && e.target && e.target.value || '';
             if (_this._clearFilterTriggered) {
-                _this.callback(e, { columnDef: _this.columnDef, clearFilterTriggered: _this._clearFilterTriggered });
-                _this._clearFilterTriggered = false; // reset flag for next use
+                _this.callback(e, { columnDef: _this.columnDef, clearFilterTriggered: _this._clearFilterTriggered, shouldTriggerQuery: _this._shouldTriggerQuery });
                 _this.$filterElm.removeClass('filled');
             }
             else {
                 if (value === '') {
                     _this.$filterElm.removeClass('filled');
-                    _this.callback(e, { columnDef: _this.columnDef, operator: _this.operator, searchTerms: [value] });
+                    _this.callback(e, { columnDef: _this.columnDef, operator: _this.operator, searchTerms: [value], shouldTriggerQuery: _this._shouldTriggerQuery });
                 }
                 else {
                     _this.$filterElm.addClass('filled');
                 }
             }
+            // reset both flags for next use
+            _this._clearFilterTriggered = false;
+            _this._shouldTriggerQuery = true;
         });
     };
     /**
@@ -4108,7 +4142,7 @@ var AutoCompleteFilter = /** @class */ (function () {
         if (this.columnFilter && this.columnFilter.placeholder) {
             placeholder = this.columnFilter.placeholder;
         }
-        return "<input type=\"text\" class=\"form-control autocomplete search-filter filter-" + columnId + "\" placeholder=\"" + placeholder + "\">";
+        return "<input type=\"text\" autocomplete=\"off\" class=\"form-control autocomplete search-filter filter-" + columnId + "\" placeholder=\"" + placeholder + "\">";
     };
     /**
      * From the html template string, create a DOM element
@@ -4151,7 +4185,7 @@ var AutoCompleteFilter = /** @class */ (function () {
         }
         // user might pass his own autocomplete options
         /** @type {?} */
-        var autoCompleteOptions = this.columnDef && this.columnDef.filter && this.columnDef.filter.filterOptions;
+        var autoCompleteOptions = this.columnFilter.filterOptions;
         // when user passes it's own autocomplete options
         // we still need to provide our own "select" callback implementation
         if (autoCompleteOptions) {
@@ -4210,7 +4244,10 @@ var AutoCompleteFilter = /** @class */ (function () {
             /** @type {?} */
             var itemValue = typeof ui.item === 'string' ? ui.item : ui.item.value;
             this.$filterElm.val(itemLabel);
-            this.callback(event, { columnDef: this.columnDef, operator: this.operator, searchTerms: [itemValue] });
+            this.callback(event, { columnDef: this.columnDef, operator: this.operator, searchTerms: [itemValue], shouldTriggerQuery: this._shouldTriggerQuery });
+            // reset both flags for next use
+            this._clearFilterTriggered = false;
+            this._shouldTriggerQuery = true;
         }
         return false;
     };
@@ -4234,6 +4271,7 @@ var CompoundDateFilter = /** @class */ (function () {
     function CompoundDateFilter(translate) {
         this.translate = translate;
         this._clearFilterTriggered = false;
+        this._shouldTriggerQuery = true;
     }
     Object.defineProperty(CompoundDateFilter.prototype, "gridOptions", {
         /** Getter for the Grid Options pulled through the Grid Object */
@@ -4323,15 +4361,19 @@ var CompoundDateFilter = /** @class */ (function () {
      */
     /**
      * Clear the filter value
+     * @param {?=} shouldTriggerQuery
      * @return {?}
      */
     CompoundDateFilter.prototype.clear = /**
      * Clear the filter value
+     * @param {?=} shouldTriggerQuery
      * @return {?}
      */
-    function () {
+    function (shouldTriggerQuery) {
+        if (shouldTriggerQuery === void 0) { shouldTriggerQuery = true; }
         if (this.flatInstance && this.$selectOperatorElm) {
             this._clearFilterTriggered = true;
+            this._shouldTriggerQuery = shouldTriggerQuery;
             this.searchTerms = [];
             this.$selectOperatorElm.val(0);
             this.flatInstance.clear();
@@ -4427,6 +4469,9 @@ var CompoundDateFilter = /** @class */ (function () {
         if (outputFormat && (outputFormat === 'Z' || outputFormat.toLowerCase().includes('h'))) {
             pickerOptions.enableTime = true;
         }
+        // merge options with optional user's custom options
+        /** @type {?} */
+        var pickerMergedOptions = Object(tslib__WEBPACK_IMPORTED_MODULE_9__["__assign"])({}, pickerOptions, this.columnFilter.filterOptions);
         /** @type {?} */
         var placeholder = (this.gridOptions) ? (this.gridOptions.defaultFilterPlaceholder || '') : '';
         if (this.columnFilter && this.columnFilter.placeholder) {
@@ -4434,7 +4479,7 @@ var CompoundDateFilter = /** @class */ (function () {
         }
         /** @type {?} */
         var $filterInputElm = $("<div class=\"flatpickr\"><input type=\"text\" class=\"form-control\" data-input placeholder=\"" + placeholder + "\"></div>");
-        this.flatInstance = ($filterInputElm[0] && typeof $filterInputElm[0].flatpickr === 'function') ? $filterInputElm[0].flatpickr(pickerOptions) : flatpickr__WEBPACK_IMPORTED_MODULE_5___default()($filterInputElm, pickerOptions);
+        this.flatInstance = ($filterInputElm[0] && typeof $filterInputElm[0].flatpickr === 'function') ? $filterInputElm[0].flatpickr(pickerMergedOptions) : flatpickr__WEBPACK_IMPORTED_MODULE_5___default()($filterInputElm, pickerMergedOptions);
         return $filterInputElm;
     };
     /**
@@ -4569,16 +4614,18 @@ var CompoundDateFilter = /** @class */ (function () {
      */
     function (e) {
         if (this._clearFilterTriggered) {
-            this.callback(e, { columnDef: this.columnDef, clearFilterTriggered: this._clearFilterTriggered });
-            this._clearFilterTriggered = false; // reset flag for next use
+            this.callback(e, { columnDef: this.columnDef, clearFilterTriggered: this._clearFilterTriggered, shouldTriggerQuery: this._shouldTriggerQuery });
             this.$filterElm.removeClass('filled');
         }
         else {
             /** @type {?} */
             var selectedOperator = this.$selectOperatorElm.find('option:selected').text();
             (this._currentValue) ? this.$filterElm.addClass('filled') : this.$filterElm.removeClass('filled');
-            this.callback(e, { columnDef: this.columnDef, searchTerms: (this._currentValue ? [this._currentValue] : null), operator: selectedOperator || '' });
+            this.callback(e, { columnDef: this.columnDef, searchTerms: (this._currentValue ? [this._currentValue] : null), operator: selectedOperator || '', shouldTriggerQuery: this._shouldTriggerQuery });
         }
+        // reset both flags for next use
+        this._clearFilterTriggered = false;
+        this._shouldTriggerQuery = true;
     };
     /**
      * @private
@@ -4617,6 +4664,7 @@ var CompoundInputFilter = /** @class */ (function () {
     function CompoundInputFilter(translate) {
         this.translate = translate;
         this._clearFilterTriggered = false;
+        this._shouldTriggerQuery = true;
         this._inputType = 'text';
     }
     Object.defineProperty(CompoundInputFilter.prototype, "gridOptions", {
@@ -4726,15 +4774,19 @@ var CompoundInputFilter = /** @class */ (function () {
      */
     /**
      * Clear the filter value
+     * @param {?=} shouldTriggerQuery
      * @return {?}
      */
     CompoundInputFilter.prototype.clear = /**
      * Clear the filter value
+     * @param {?=} shouldTriggerQuery
      * @return {?}
      */
-    function () {
+    function (shouldTriggerQuery) {
+        if (shouldTriggerQuery === void 0) { shouldTriggerQuery = true; }
         if (this.$filterElm && this.$selectOperatorElm) {
             this._clearFilterTriggered = true;
+            this._shouldTriggerQuery = shouldTriggerQuery;
             this.searchTerms = [];
             this.$selectOperatorElm.val(0);
             this.$filterInputElm.val('');
@@ -4927,8 +4979,7 @@ var CompoundInputFilter = /** @class */ (function () {
      */
     function (e) {
         if (this._clearFilterTriggered) {
-            this.callback(e, { columnDef: this.columnDef, clearFilterTriggered: this._clearFilterTriggered });
-            this._clearFilterTriggered = false; // reset flag for next use
+            this.callback(e, { columnDef: this.columnDef, clearFilterTriggered: this._clearFilterTriggered, shouldTriggerQuery: this._shouldTriggerQuery });
             this.$filterElm.removeClass('filled');
         }
         else {
@@ -4937,8 +4988,11 @@ var CompoundInputFilter = /** @class */ (function () {
             /** @type {?} */
             var value = this.$filterInputElm.val();
             (value !== null && value !== undefined && value !== '') ? this.$filterElm.addClass('filled') : this.$filterElm.removeClass('filled');
-            this.callback(e, { columnDef: this.columnDef, searchTerms: (value ? [value] : null), operator: selectedOperator || '' });
+            this.callback(e, { columnDef: this.columnDef, searchTerms: (value ? [value] : null), operator: selectedOperator || '', shouldTriggerQuery: this._shouldTriggerQuery });
         }
+        // reset both flags for next use
+        this._clearFilterTriggered = false;
+        this._shouldTriggerQuery = true;
     };
     return CompoundInputFilter;
 }());
@@ -4988,6 +5042,7 @@ var DEFAULT_STEP = 1;
 var CompoundSliderFilter = /** @class */ (function () {
     function CompoundSliderFilter() {
         this._clearFilterTriggered = false;
+        this._shouldTriggerQuery = true;
     }
     Object.defineProperty(CompoundSliderFilter.prototype, "gridOptions", {
         /** Getter for the Grid Options pulled through the Grid Object */
@@ -5101,15 +5156,19 @@ var CompoundSliderFilter = /** @class */ (function () {
      */
     /**
      * Clear the filter value
+     * @param {?=} shouldTriggerQuery
      * @return {?}
      */
     CompoundSliderFilter.prototype.clear = /**
      * Clear the filter value
+     * @param {?=} shouldTriggerQuery
      * @return {?}
      */
-    function () {
+    function (shouldTriggerQuery) {
+        if (shouldTriggerQuery === void 0) { shouldTriggerQuery = true; }
         if (this.$filterElm && this.$selectOperatorElm) {
             this._clearFilterTriggered = true;
+            this._shouldTriggerQuery = shouldTriggerQuery;
             this.searchTerms = [];
             /** @type {?} */
             var clearedValue = this.filterParams.hasOwnProperty('sliderStartValue') ? this.filterParams.sliderStartValue : DEFAULT_MIN_VALUE;
@@ -5329,8 +5388,7 @@ var CompoundSliderFilter = /** @class */ (function () {
      */
     function (e) {
         if (this._clearFilterTriggered) {
-            this.callback(e, { columnDef: this.columnDef, clearFilterTriggered: this._clearFilterTriggered });
-            this._clearFilterTriggered = false; // reset flag for next use
+            this.callback(e, { columnDef: this.columnDef, clearFilterTriggered: this._clearFilterTriggered, shouldTriggerQuery: this._shouldTriggerQuery });
         }
         else {
             /** @type {?} */
@@ -5338,8 +5396,11 @@ var CompoundSliderFilter = /** @class */ (function () {
             /** @type {?} */
             var value = this.$filterInputElm.val();
             (value) ? this.$filterElm.addClass('filled') : this.$filterElm.removeClass('filled');
-            this.callback(e, { columnDef: this.columnDef, searchTerms: (value ? [value] : null), operator: selectedOperator || '' });
+            this.callback(e, { columnDef: this.columnDef, searchTerms: (value ? [value] : null), operator: selectedOperator || '', shouldTriggerQuery: this._shouldTriggerQuery });
         }
+        // reset both flags for next use
+        this._clearFilterTriggered = false;
+        this._shouldTriggerQuery = true;
     };
     return CompoundSliderFilter;
 }());
@@ -5351,6 +5412,7 @@ var CompoundSliderFilter = /** @class */ (function () {
 var InputFilter = /** @class */ (function () {
     function InputFilter() {
         this._clearFilterTriggered = false;
+        this._shouldTriggerQuery = true;
         this._inputType = 'text';
     }
     Object.defineProperty(InputFilter.prototype, "columnFilter", {
@@ -5444,14 +5506,16 @@ var InputFilter = /** @class */ (function () {
             /** @type {?} */
             var value = e && e.target && e.target.value || '';
             if (_this._clearFilterTriggered) {
-                _this.callback(e, { columnDef: _this.columnDef, clearFilterTriggered: _this._clearFilterTriggered });
-                _this._clearFilterTriggered = false; // reset flag for next use
+                _this.callback(e, { columnDef: _this.columnDef, clearFilterTriggered: _this._clearFilterTriggered, shouldTriggerQuery: _this._shouldTriggerQuery });
                 _this.$filterElm.removeClass('filled');
             }
             else {
                 value === '' ? _this.$filterElm.removeClass('filled') : _this.$filterElm.addClass('filled');
-                _this.callback(e, { columnDef: _this.columnDef, operator: _this.operator, searchTerms: [value] });
+                _this.callback(e, { columnDef: _this.columnDef, operator: _this.operator, searchTerms: [value], shouldTriggerQuery: _this._shouldTriggerQuery });
             }
+            // reset both flags for next use
+            _this._clearFilterTriggered = false;
+            _this._shouldTriggerQuery = true;
         });
     };
     /**
@@ -5459,15 +5523,19 @@ var InputFilter = /** @class */ (function () {
      */
     /**
      * Clear the filter value
+     * @param {?=} shouldTriggerQuery
      * @return {?}
      */
     InputFilter.prototype.clear = /**
      * Clear the filter value
+     * @param {?=} shouldTriggerQuery
      * @return {?}
      */
-    function () {
+    function (shouldTriggerQuery) {
+        if (shouldTriggerQuery === void 0) { shouldTriggerQuery = true; }
         if (this.$filterElm) {
             this._clearFilterTriggered = true;
+            this._shouldTriggerQuery = shouldTriggerQuery;
             this.searchTerms = [];
             this.$filterElm.val('');
             this.$filterElm.trigger('keyup');
@@ -5658,14 +5726,16 @@ var InputMaskFilter = /** @class */ (function (_super) {
                 }
             }
             if (_this._clearFilterTriggered) {
-                _this.callback(e, { columnDef: _this.columnDef, clearFilterTriggered: _this._clearFilterTriggered });
-                _this._clearFilterTriggered = false; // reset flag for next use
+                _this.callback(e, { columnDef: _this.columnDef, clearFilterTriggered: _this._clearFilterTriggered, shouldTriggerQuery: _this._shouldTriggerQuery });
                 _this.$filterElm.removeClass('filled');
             }
             else {
                 _this.$filterElm.addClass('filled');
-                _this.callback(e, { columnDef: _this.columnDef, operator: _this.operator, searchTerms: [value] });
+                _this.callback(e, { columnDef: _this.columnDef, operator: _this.operator, searchTerms: [value], shouldTriggerQuery: _this._shouldTriggerQuery });
             }
+            // reset both flags for next use
+            _this._clearFilterTriggered = false;
+            _this._shouldTriggerQuery = true;
         });
     };
     /** From a regular string, we will use the mask to output a new string */
@@ -5784,6 +5854,7 @@ var SelectFilter = /** @class */ (function () {
         this.collectionService = collectionService;
         this.isMultipleSelect = isMultipleSelect;
         this._isFilterFirstRender = true;
+        this._shouldTriggerQuery = true;
         this.isFilled = false;
         this.enableTranslateLabel = false;
         this.subscriptions = [];
@@ -5818,7 +5889,9 @@ var SelectFilter = /** @class */ (function () {
                     _this.$filterElm.removeClass('filled');
                     _this.$filterElm.siblings('div .search-filter').removeClass('filled');
                 }
-                _this.callback(undefined, { columnDef: _this.columnDef, operator: _this.operator, searchTerms: selectedItems });
+                _this.callback(undefined, { columnDef: _this.columnDef, operator: _this.operator, searchTerms: selectedItems, shouldTriggerQuery: _this._shouldTriggerQuery });
+                // reset flag for next use
+                _this._shouldTriggerQuery = true;
             }
         };
         if (this.isMultipleSelect) {
@@ -5951,20 +6024,26 @@ var SelectFilter = /** @class */ (function () {
      */
     /**
      * Clear the filter values
+     * @param {?=} shouldTriggerQuery
      * @return {?}
      */
     SelectFilter.prototype.clear = /**
      * Clear the filter values
+     * @param {?=} shouldTriggerQuery
      * @return {?}
      */
-    function () {
+    function (shouldTriggerQuery) {
+        if (shouldTriggerQuery === void 0) { shouldTriggerQuery = true; }
         if (this.$filterElm && this.$filterElm.multipleSelect) {
             // reload the filter element by it's id, to make sure it's still a valid element (because of some issue in the GraphQL example)
             this.$filterElm.multipleSelect('setSelects', []);
             this.$filterElm.removeClass('filled');
             this.$filterElm.siblings('div .search-filter').removeClass('filled');
             this.searchTerms = [];
-            this.callback(undefined, { columnDef: this.columnDef, clearFilterTriggered: true });
+            this._shouldTriggerQuery = shouldTriggerQuery;
+            this.callback(undefined, { columnDef: this.columnDef, clearFilterTriggered: true, shouldTriggerQuery: this._shouldTriggerQuery });
+            // reset both flags for next use
+            this._shouldTriggerQuery = true;
         }
     };
     /**
@@ -6383,6 +6462,7 @@ var NativeSelectFilter = /** @class */ (function () {
     function NativeSelectFilter(translate) {
         this.translate = translate;
         this._clearFilterTriggered = false;
+        this._shouldTriggerQuery = true;
     }
     Object.defineProperty(NativeSelectFilter.prototype, "operator", {
         get: /**
@@ -6430,14 +6510,16 @@ var NativeSelectFilter = /** @class */ (function () {
             /** @type {?} */
             var value = e && e.target && e.target.value || '';
             if (_this._clearFilterTriggered) {
-                _this.callback(e, { columnDef: _this.columnDef, clearFilterTriggered: _this._clearFilterTriggered });
-                _this._clearFilterTriggered = false; // reset flag for next use
+                _this.callback(e, { columnDef: _this.columnDef, clearFilterTriggered: _this._clearFilterTriggered, shouldTriggerQuery: _this._shouldTriggerQuery });
                 _this.$filterElm.removeClass('filled');
             }
             else {
                 value === '' ? _this.$filterElm.removeClass('filled') : _this.$filterElm.addClass('filled');
-                _this.callback(e, { columnDef: _this.columnDef, operator: _this.operator, searchTerms: [value] });
+                _this.callback(e, { columnDef: _this.columnDef, operator: _this.operator, searchTerms: [value], shouldTriggerQuery: _this._shouldTriggerQuery });
             }
+            // reset both flags for next use
+            _this._clearFilterTriggered = false;
+            _this._shouldTriggerQuery = true;
         });
     };
     /**
@@ -6445,15 +6527,19 @@ var NativeSelectFilter = /** @class */ (function () {
      */
     /**
      * Clear the filter values
+     * @param {?=} shouldTriggerQuery
      * @return {?}
      */
     NativeSelectFilter.prototype.clear = /**
      * Clear the filter values
+     * @param {?=} shouldTriggerQuery
      * @return {?}
      */
-    function () {
+    function (shouldTriggerQuery) {
+        if (shouldTriggerQuery === void 0) { shouldTriggerQuery = true; }
         if (this.$filterElm) {
             this._clearFilterTriggered = true;
+            this._shouldTriggerQuery = shouldTriggerQuery;
             this.searchTerms = [];
             this.$filterElm.val('');
             this.$filterElm.trigger('change');
@@ -6618,6 +6704,7 @@ var DEFAULT_STEP$1 = 1;
 var SliderFilter = /** @class */ (function () {
     function SliderFilter() {
         this._clearFilterTriggered = false;
+        this._shouldTriggerQuery = true;
     }
     Object.defineProperty(SliderFilter.prototype, "filterParams", {
         /** Getter for the Filter Generic Params */
@@ -6694,14 +6781,16 @@ var SliderFilter = /** @class */ (function () {
             /** @type {?} */
             var value = e && e.target && e.target.value || '';
             if (_this._clearFilterTriggered) {
-                _this.callback(e, { columnDef: _this.columnDef, clearFilterTriggered: _this._clearFilterTriggered });
-                _this._clearFilterTriggered = false; // reset flag for next use
+                _this.callback(e, { columnDef: _this.columnDef, clearFilterTriggered: _this._clearFilterTriggered, shouldTriggerQuery: _this._shouldTriggerQuery });
                 _this.$filterElm.removeClass('filled');
             }
             else {
                 value === '' ? _this.$filterElm.removeClass('filled') : _this.$filterElm.addClass('filled');
-                _this.callback(e, { columnDef: _this.columnDef, operator: _this.operator, searchTerms: [value] });
+                _this.callback(e, { columnDef: _this.columnDef, operator: _this.operator, searchTerms: [value], shouldTriggerQuery: _this._shouldTriggerQuery });
             }
+            // reset both flags for next use
+            _this._clearFilterTriggered = false;
+            _this._shouldTriggerQuery = true;
         });
         // if user chose to display the slider number on the right side, then update it every time it changes
         // we need to use both "input" and "change" event to be all cross-browser
@@ -6720,15 +6809,19 @@ var SliderFilter = /** @class */ (function () {
      */
     /**
      * Clear the filter value
+     * @param {?=} shouldTriggerQuery
      * @return {?}
      */
     SliderFilter.prototype.clear = /**
      * Clear the filter value
+     * @param {?=} shouldTriggerQuery
      * @return {?}
      */
-    function () {
+    function (shouldTriggerQuery) {
+        if (shouldTriggerQuery === void 0) { shouldTriggerQuery = true; }
         if (this.$filterElm) {
             this._clearFilterTriggered = true;
+            this._shouldTriggerQuery = shouldTriggerQuery;
             this.searchTerms = [];
             /** @type {?} */
             var clearedValue = this.filterParams.hasOwnProperty('sliderStartValue') ? this.filterParams.sliderStartValue : DEFAULT_MIN_VALUE$1;
@@ -7229,13 +7322,16 @@ var FilterService = /** @class */ (function () {
             if (event && event.keyCode !== KeyCode.ENTER && (event.type === 'input' || event.type === 'keyup' || event.type === 'keydown')) {
                 debounceTypingDelay = backendApi.filterTypingDebounce || DEFAULT_FILTER_TYPING_DEBOUNCE;
             }
-            // call the service to get a query back
-            if (debounceTypingDelay > 0) {
-                clearTimeout(timer);
-                timer = setTimeout(function () { return _this.executeBackendCallback(event, args, startTime_1, backendApi); }, debounceTypingDelay);
-            }
-            else {
-                this.executeBackendCallback(event, args, startTime_1, backendApi);
+            // query backend, except when it's called by a ClearFilters then we won't
+            if (args && args.shouldTriggerQuery) {
+                // call the service to get a query back
+                if (debounceTypingDelay > 0) {
+                    clearTimeout(timer);
+                    timer = setTimeout(function () { return _this.executeBackendCallback(event, args, startTime_1, backendApi); }, debounceTypingDelay);
+                }
+                else {
+                    this.executeBackendCallback(event, args, startTime_1, backendApi);
+                }
             }
         }
         catch (error) {
@@ -7265,9 +7361,9 @@ var FilterService = /** @class */ (function () {
                     case 0: return [4 /*yield*/, backendApi.service.processOnFilterChanged(event, args)];
                     case 1:
                         query = _a.sent();
-                        // emit an onFilterChanged event when it's not called by clearAllFilters
+                        // emit an onFilterChanged event when it's not called by a clear filter
                         if (args && !args.clearFilterTriggered) {
-                            this.emitFilterChanged('remote');
+                            this.emitFilterChanged(EmitterType.remote);
                         }
                         // the processes can be Observables (like HttpClient) or Promises
                         process = backendApi.process(query);
@@ -7312,9 +7408,9 @@ var FilterService = /** @class */ (function () {
             if (columnId != null) {
                 dataView.refresh();
             }
-            // emit an onFilterChanged event when it's not called by clearAllFilters
+            // emit an onFilterChanged event when it's not called by a clear filter
             if (args && !args.clearFilterTriggered) {
-                _this.emitFilterChanged('local');
+                _this.emitFilterChanged(EmitterType.local);
             }
         });
         // subscribe to SlickGrid onHeaderRowCellRendered event to create filter template
@@ -7323,18 +7419,20 @@ var FilterService = /** @class */ (function () {
         });
     };
     /**
+     * @param {?} event
      * @param {?} columnId
      * @return {?}
      */
     FilterService.prototype.clearFilterByColumnId = /**
+     * @param {?} event
      * @param {?} columnId
      * @return {?}
      */
-    function (columnId) {
+    function (event, columnId) {
         /** @type {?} */
         var colFilter = this._filters.find(function (filter) { return filter.columnDef.id === columnId; });
         if (colFilter && colFilter.clear) {
-            colFilter.clear();
+            colFilter.clear(true);
         }
         // we need to loop through all columnFilters and delete the filter found
         // only trying to clear columnFilter (without looping through) would not trigger a dataset change
@@ -7343,10 +7441,17 @@ var FilterService = /** @class */ (function () {
                 delete this._columnFilters[colId];
             }
         }
-        // emit an event when filter is cleared
         /** @type {?} */
-        var sender = this._gridOptions && this._gridOptions.backendServiceApi ? 'remote' : 'local';
-        this.emitFilterChanged(sender);
+        var emitter = EmitterType.local;
+        /** @type {?} */
+        var isBackendApi = this._gridOptions && this._gridOptions.backendServiceApi || false;
+        // when using a backend service, we need to manually trigger a filter change
+        if (isBackendApi) {
+            emitter = EmitterType.remote;
+            this.onBackendFilterChange((/** @type {?} */ (event)), { grid: this._grid, columnFilters: this._columnFilters });
+        }
+        // emit an event when filter is cleared
+        this.emitFilterChanged(emitter);
     };
     /** Clear the search filters (below the column titles) */
     /**
@@ -7361,7 +7466,7 @@ var FilterService = /** @class */ (function () {
         this._filters.forEach(function (filter) {
             if (filter && filter.clear) {
                 // clear element and trigger a change
-                filter.clear();
+                filter.clear(false);
             }
         });
         // we need to loop through all columnFilters and delete them 1 by 1
@@ -7372,10 +7477,15 @@ var FilterService = /** @class */ (function () {
             }
         }
         // we also need to refresh the dataView and optionally the grid (it's optional since we use DataView)
-        if (this._dataView) {
+        if (this._dataView && this._grid) {
             this._dataView.refresh();
             this._grid.invalidate();
-            this._grid.render();
+        }
+        // when using backend service, we need to query only once so it's better to do it here
+        if (this._gridOptions && this._gridOptions.backendServiceApi) {
+            /** @type {?} */
+            var callbackArgs = { clearFilterTriggered: true, shouldTriggerQuery: true, grid: this._grid, columnFilters: this._columnFilters };
+            this.executeBackendCallback(undefined, callbackArgs, new Date(), this._gridOptions.backendServiceApi);
         }
         // emit an event when filters are all cleared
         this.onFilterCleared.next(true);
@@ -7649,7 +7759,8 @@ var FilterService = /** @class */ (function () {
             var eventKeyCode = e && e.keyCode;
             if (eventKeyCode === KeyCode.ENTER || !isequal(oldColumnFilters, this._columnFilters)) {
                 this.triggerEvent(this._slickSubscriber, {
-                    clearFilterTriggered: args && args.clearFilterTriggered,
+                    clearFilterTriggered: args.clearFilterTriggered,
+                    shouldTriggerQuery: args.shouldTriggerQuery,
                     columnId: columnId,
                     columnDef: args.columnDef || null,
                     columnFilters: this._columnFilters,
@@ -7740,7 +7851,7 @@ var FilterService = /** @class */ (function () {
      * @return {?}
      */
     function (caller) {
-        if (caller === 'remote' && this._gridOptions && this._gridOptions.backendServiceApi) {
+        if (caller === EmitterType.remote && this._gridOptions && this._gridOptions.backendServiceApi) {
             /** @type {?} */
             var currentFilters = [];
             /** @type {?} */
@@ -7750,7 +7861,7 @@ var FilterService = /** @class */ (function () {
             }
             this.onFilterChanged.next(currentFilters);
         }
-        else if (caller === 'local') {
+        else if (caller === EmitterType.local) {
             this.onFilterChanged.next(this.getCurrentLocalFilters());
         }
     };
@@ -7950,7 +8061,7 @@ var SortService = /** @class */ (function () {
             }
             /** @type {?} */
             var query = backendApi.service.processOnSortChanged(event, args);
-            this.emitSortChanged('remote');
+            this.emitSortChanged(EmitterType.remote);
             // the processes can be Observables (like HttpClient) or Promises
             /** @type {?} */
             var process_1 = backendApi.process(query);
@@ -8007,34 +8118,46 @@ var SortService = /** @class */ (function () {
                 });
             }
             _this.onLocalSortChanged(grid, dataView, sortColumns);
-            _this.emitSortChanged('local');
+            _this.emitSortChanged(EmitterType.local);
         });
     };
     /**
+     * @param {?=} triggerQueryEvent
      * @return {?}
      */
     SortService.prototype.clearSorting = /**
+     * @param {?=} triggerQueryEvent
      * @return {?}
      */
-    function () {
+    function (triggerQueryEvent) {
+        if (triggerQueryEvent === void 0) { triggerQueryEvent = true; }
         if (this._grid && this._gridOptions && this._dataView) {
             // remove any sort icons (this setSortColumns function call really does only that)
             this._grid.setSortColumns([]);
             // we also need to trigger a sort change
             // for a backend grid, we will trigger a backend sort changed with an empty sort columns array
             // however for a local grid, we need to pass a sort column and so we will sort by the 1st column
-            if (this._isBackendGrid) {
-                this.onBackendSortChanged(undefined, { grid: this._grid, sortCols: [] });
+            if (triggerQueryEvent) {
+                if (this._isBackendGrid) {
+                    this.onBackendSortChanged(undefined, { grid: this._grid, sortCols: [] });
+                }
+                else {
+                    if (this._columnDefinitions && Array.isArray(this._columnDefinitions)) {
+                        this.onLocalSortChanged(this._grid, this._dataView, new Array({ sortAsc: true, sortCol: this._columnDefinitions[0] }));
+                    }
+                }
             }
-            else {
-                if (this._columnDefinitions && Array.isArray(this._columnDefinitions)) {
-                    this.onLocalSortChanged(this._grid, this._dataView, new Array({ sortAsc: true, sortCol: this._columnDefinitions[0] }));
+            else if (this._isBackendGrid) {
+                /** @type {?} */
+                var backendService = this._gridOptions && this._gridOptions.backendServiceApi && this._gridOptions.backendServiceApi.service;
+                if (backendService && backendService.clearSorters) {
+                    backendService.clearSorters();
                 }
             }
         }
         // set current sorter to empty & emit a sort changed event
         this._currentLocalSorters = [];
-        // emit an event when filters are all cleared
+        // emit an event when sorts are all cleared
         this.onSortCleared.next(true);
     };
     /**
@@ -8158,7 +8281,7 @@ var SortService = /** @class */ (function () {
                         /** @type {?} */
                         var sortDirection = columnSortObj.sortAsc ? SortDirectionNumber.asc : SortDirectionNumber.desc;
                         /** @type {?} */
-                        var sortField = columnSortObj.sortCol.queryField || columnSortObj.sortCol.queryFieldFilter || columnSortObj.sortCol.field;
+                        var sortField = columnSortObj.sortCol.queryField || columnSortObj.sortCol.queryFieldSorter || columnSortObj.sortCol.field;
                         /** @type {?} */
                         var fieldType = columnSortObj.sortCol.type || FieldType.string;
                         /** @type {?} */
@@ -8223,7 +8346,7 @@ var SortService = /** @class */ (function () {
      * @return {?}
      */
     function (sender) {
-        if (sender === 'remote' && this._gridOptions && this._gridOptions.backendServiceApi) {
+        if (sender === EmitterType.remote && this._gridOptions && this._gridOptions.backendServiceApi) {
             /** @type {?} */
             var currentSorters = [];
             /** @type {?} */
@@ -8233,7 +8356,7 @@ var SortService = /** @class */ (function () {
             }
             this.onSortChanged.next(currentSorters);
         }
-        else if (sender === 'local') {
+        else if (sender === EmitterType.local) {
             this.onSortChanged.next(this.getCurrentLocalSorters());
         }
     };
@@ -8267,6 +8390,17 @@ var GridMenuExtension = /** @class */ (function () {
         if (this._extension && this._extension.destroy) {
             this._extension.destroy();
         }
+    };
+    /**
+     * @param {?} e
+     * @return {?}
+     */
+    GridMenuExtension.prototype.showGridMenu = /**
+     * @param {?} e
+     * @return {?}
+     */
+    function (e) {
+        this._extension.showGridMenu(e);
     };
     /** Create the Header Menu and expose all the available hooks that user can subscribe (onCommand, onBeforeMenuShow, ...) */
     /**
@@ -8999,17 +9133,17 @@ var HeaderMenuExtension = /** @class */ (function () {
     /** Execute the Header Menu Commands that was triggered by the onCommand subscribe */
     /**
      * Execute the Header Menu Commands that was triggered by the onCommand subscribe
-     * @param {?} e
+     * @param {?} event
      * @param {?} args
      * @return {?}
      */
     HeaderMenuExtension.prototype.executeHeaderMenuInternalCommands = /**
      * Execute the Header Menu Commands that was triggered by the onCommand subscribe
-     * @param {?} e
+     * @param {?} event
      * @param {?} args
      * @return {?}
      */
-    function (e, args) {
+    function (event, args) {
         if (args && args.command) {
             switch (args.command) {
                 case 'hide':
@@ -9019,16 +9153,16 @@ var HeaderMenuExtension = /** @class */ (function () {
                     }
                     break;
                 case 'clear-filter':
-                    this.clearColumnFilter(e, args);
+                    this.clearColumnFilter(event, args);
                     break;
                 case 'clear-sort':
-                    this.clearColumnSort(e, args);
+                    this.clearColumnSort(event, args);
                     break;
                 case 'sort-asc':
                 case 'sort-desc':
                     /** @type {?} */
                     var isSortingAsc = (args.command === 'sort-asc');
-                    this.sortColumn(e, args, isSortingAsc);
+                    this.sortColumn(event, args, isSortingAsc);
                     break;
                 default:
                     break;
@@ -9142,7 +9276,7 @@ var HeaderMenuExtension = /** @class */ (function () {
     /**
      * Sort the current column
      * @private
-     * @param {?} e
+     * @param {?} event
      * @param {?} args
      * @param {?=} isSortingAsc
      * @return {?}
@@ -9150,12 +9284,12 @@ var HeaderMenuExtension = /** @class */ (function () {
     HeaderMenuExtension.prototype.sortColumn = /**
      * Sort the current column
      * @private
-     * @param {?} e
+     * @param {?} event
      * @param {?} args
      * @param {?=} isSortingAsc
      * @return {?}
      */
-    function (e, args, isSortingAsc) {
+    function (event, args, isSortingAsc) {
         if (isSortingAsc === void 0) { isSortingAsc = true; }
         if (args && args.column) {
             // get previously sorted columns
@@ -9164,7 +9298,7 @@ var HeaderMenuExtension = /** @class */ (function () {
             // add to the column array, the column sorted by the header menu
             sortedColsWithoutCurrent.push({ sortCol: args.column, sortAsc: isSortingAsc });
             if (this.sharedService.gridOptions.backendServiceApi) {
-                this.sortService.onBackendSortChanged(e, { multiColumnSort: true, sortCols: sortedColsWithoutCurrent, grid: this.sharedService.grid });
+                this.sortService.onBackendSortChanged(event, { multiColumnSort: true, sortCols: sortedColsWithoutCurrent, grid: this.sharedService.grid });
             }
             else if (this.sharedService.dataView) {
                 this.sortService.onLocalSortChanged(this.sharedService.grid, this.sharedService.dataView, sortedColsWithoutCurrent);
@@ -9192,38 +9326,38 @@ var HeaderMenuExtension = /** @class */ (function () {
     /**
      * Clear the Filter on the current column (if it's actually filtered)
      * @private
-     * @param {?} e
+     * @param {?} event
      * @param {?} args
      * @return {?}
      */
     HeaderMenuExtension.prototype.clearColumnFilter = /**
      * Clear the Filter on the current column (if it's actually filtered)
      * @private
-     * @param {?} e
+     * @param {?} event
      * @param {?} args
      * @return {?}
      */
-    function (e, args) {
+    function (event, args) {
         if (args && args.column) {
-            this.filterService.clearFilterByColumnId(args.column.id);
+            this.filterService.clearFilterByColumnId(event, args.column.id);
         }
     };
     /** Clear the Sort on the current column (if it's actually sorted) */
     /**
      * Clear the Sort on the current column (if it's actually sorted)
      * @private
-     * @param {?} e
+     * @param {?} event
      * @param {?} args
      * @return {?}
      */
     HeaderMenuExtension.prototype.clearColumnSort = /**
      * Clear the Sort on the current column (if it's actually sorted)
      * @private
-     * @param {?} e
+     * @param {?} event
      * @param {?} args
      * @return {?}
      */
-    function (e, args) {
+    function (event, args) {
         if (args && args.column && this.sharedService) {
             // get previously sorted columns
             /** @type {?} */
@@ -9232,7 +9366,7 @@ var HeaderMenuExtension = /** @class */ (function () {
             var sortedColsWithoutCurrent = this.sortService.getPreviousColumnSorts(args.column.id + '');
             if (allSortedCols.length !== sortedColsWithoutCurrent.length) {
                 if (this.sharedService.gridOptions && this.sharedService.gridOptions.backendServiceApi) {
-                    this.sortService.onBackendSortChanged(e, { multiColumnSort: true, sortCols: sortedColsWithoutCurrent, grid: this.sharedService.grid });
+                    this.sortService.onBackendSortChanged(event, { multiColumnSort: true, sortCols: sortedColsWithoutCurrent, grid: this.sharedService.grid });
                 }
                 else if (this.sharedService.dataView) {
                     this.sortService.onLocalSortChanged(this.sharedService.grid, this.sharedService.dataView, sortedColsWithoutCurrent, true);
@@ -9734,7 +9868,7 @@ var RowDetailViewExtension = /** @class */ (function () {
         /** @type {?} */
         var containerElements = document.getElementsByClassName("" + PRELOAD_CONTAINER_PREFIX);
         if (containerElements && containerElements.length) {
-            this.angularUtilService.createAngularComponentAppendToDom(this._preloadComponent, containerElements[0]);
+            this.angularUtilService.createAngularComponentAppendToDom(this._preloadComponent, containerElements[0], true);
         }
     };
     /** Render (or rerender) the View Component (Row Detail) */
@@ -9755,7 +9889,7 @@ var RowDetailViewExtension = /** @class */ (function () {
         var containerElements = document.getElementsByClassName("" + ROW_DETAIL_CONTAINER_PREFIX + item.id);
         if (containerElements && containerElements.length) {
             /** @type {?} */
-            var componentOutput = this.angularUtilService.createAngularComponentAppendToDom(this._viewComponent, containerElements[0]);
+            var componentOutput = this.angularUtilService.createAngularComponentAppendToDom(this._viewComponent, containerElements[0], true);
             if (componentOutput && componentOutput.componentRef && componentOutput.componentRef.instance) {
                 Object.assign(componentOutput.componentRef.instance, { model: item });
                 /** @type {?} */
@@ -10002,6 +10136,31 @@ var ExtensionService = /** @class */ (function () {
     function (name) {
         return this.extensionList.find(function (p) { return p.name === name; });
     };
+    /**
+     * Get the instance of the SlickGrid addon (control or plugin).
+     * This is the raw addon coming directly from SlickGrid itself, not to confuse with Angular-Slickgrid extension
+     *  @param name
+     */
+    /**
+     * Get the instance of the SlickGrid addon (control or plugin).
+     * This is the raw addon coming directly from SlickGrid itself, not to confuse with Angular-Slickgrid extension
+     * @param {?} name
+     * @return {?}
+     */
+    ExtensionService.prototype.getSlickgridAddonInstance = /**
+     * Get the instance of the SlickGrid addon (control or plugin).
+     * This is the raw addon coming directly from SlickGrid itself, not to confuse with Angular-Slickgrid extension
+     * @param {?} name
+     * @return {?}
+     */
+    function (name) {
+        /** @type {?} */
+        var extension = this.getExtensionByName(name);
+        if (extension && extension.addon) {
+            return extension.addon;
+        }
+        return null;
+    };
     /** Auto-resize all the column in the grid to fit the grid width */
     /**
      * Auto-resize all the column in the grid to fit the grid width
@@ -10033,32 +10192,32 @@ var ExtensionService = /** @class */ (function () {
         // Auto Tooltip Plugin
         if (this.sharedService.gridOptions.enableAutoTooltip) {
             if (this.autoTooltipExtension && this.autoTooltipExtension.register) {
-                this.extensionList.push({ name: ExtensionName.autoTooltip, class: this.autoTooltipExtension, extension: this.autoTooltipExtension.register() });
+                this.extensionList.push({ name: ExtensionName.autoTooltip, class: this.autoTooltipExtension, addon: this.autoTooltipExtension.register() });
             }
         }
         // Column Picker Control
         if (this.sharedService.gridOptions.enableColumnPicker) {
             if (this.columnPickerExtension && this.columnPickerExtension.register) {
-                this.extensionList.push({ name: ExtensionName.columnPicker, class: this.columnPickerExtension, extension: this.columnPickerExtension.register() });
+                this.extensionList.push({ name: ExtensionName.columnPicker, class: this.columnPickerExtension, addon: this.columnPickerExtension.register() });
             }
         }
         // Draggable Grouping Plugin
         if (this.sharedService.gridOptions.enableDraggableGrouping) {
             if (this.draggableGroupingExtension && this.draggableGroupingExtension.register) {
-                this.extensionList.push({ name: ExtensionName.draggableGrouping, class: this.draggableGroupingExtension, extension: this.draggableGroupingExtension.register() });
+                this.extensionList.push({ name: ExtensionName.draggableGrouping, class: this.draggableGroupingExtension, addon: this.draggableGroupingExtension.register() });
             }
         }
         // Grid Menu Control
         if (this.sharedService.gridOptions.enableGridMenu) {
             if (this.gridMenuExtension && this.gridMenuExtension.register) {
-                this.extensionList.push({ name: ExtensionName.gridMenu, class: this.gridMenuExtension, extension: this.gridMenuExtension.register() });
+                this.extensionList.push({ name: ExtensionName.gridMenu, class: this.gridMenuExtension, addon: this.gridMenuExtension.register() });
             }
         }
         // Grouping Plugin & Draggable Grouping Plugin
         // register the group item metadata provider to add expand/collapse group handlers
         if (this.sharedService.gridOptions.enableDraggableGrouping || this.sharedService.gridOptions.enableGrouping) {
             if (this.groupItemMetaExtension && this.groupItemMetaExtension.register) {
-                this.extensionList.push({ name: ExtensionName.groupItemMetaProvider, class: this.groupItemMetaExtension, extension: this.groupItemMetaExtension.register() });
+                this.extensionList.push({ name: ExtensionName.groupItemMetaProvider, class: this.groupItemMetaExtension, addon: this.groupItemMetaExtension.register() });
             }
         }
         // Checkbox Selector Plugin
@@ -10066,7 +10225,7 @@ var ExtensionService = /** @class */ (function () {
             if (this.checkboxSelectorExtension && this.checkboxSelectorExtension.register) {
                 /** @type {?} */
                 var rowSelectionExtension = this.getExtensionByName(ExtensionName.rowSelection);
-                this.extensionList.push({ name: ExtensionName.checkboxSelector, class: this.checkboxSelectorExtension, extension: this.checkboxSelectorExtension.register(rowSelectionExtension) });
+                this.extensionList.push({ name: ExtensionName.checkboxSelector, class: this.checkboxSelectorExtension, addon: this.checkboxSelectorExtension.register(rowSelectionExtension) });
             }
         }
         // Row Detail View Plugin
@@ -10074,37 +10233,37 @@ var ExtensionService = /** @class */ (function () {
             if (this.rowDetailViewExtension && this.rowDetailViewExtension.register) {
                 /** @type {?} */
                 var rowSelectionExtension = this.getExtensionByName(ExtensionName.rowSelection);
-                this.extensionList.push({ name: ExtensionName.rowDetailView, class: this.rowDetailViewExtension, extension: this.rowDetailViewExtension.register(rowSelectionExtension) });
+                this.extensionList.push({ name: ExtensionName.rowDetailView, class: this.rowDetailViewExtension, addon: this.rowDetailViewExtension.register(rowSelectionExtension) });
             }
         }
         // Row Move Manager Plugin
         if (this.sharedService.gridOptions.enableRowMoveManager) {
             if (this.rowMoveManagerExtension && this.rowMoveManagerExtension.register) {
-                this.extensionList.push({ name: ExtensionName.rowMoveManager, class: this.rowMoveManagerExtension, extension: this.rowMoveManagerExtension.register() });
+                this.extensionList.push({ name: ExtensionName.rowMoveManager, class: this.rowMoveManagerExtension, addon: this.rowMoveManagerExtension.register() });
             }
         }
         // Row Selection Plugin
         if (!this.sharedService.gridOptions.enableCheckboxSelector && this.sharedService.gridOptions.enableRowSelection) {
             if (this.rowSelectionExtension && this.rowSelectionExtension.register) {
-                this.extensionList.push({ name: ExtensionName.rowSelection, class: this.rowSelectionExtension, extension: this.rowSelectionExtension.register() });
+                this.extensionList.push({ name: ExtensionName.rowSelection, class: this.rowSelectionExtension, addon: this.rowSelectionExtension.register() });
             }
         }
         // Header Button Plugin
         if (this.sharedService.gridOptions.enableHeaderButton) {
             if (this.headerButtonExtension && this.headerButtonExtension.register) {
-                this.extensionList.push({ name: ExtensionName.headerButton, class: this.headerButtonExtension, extension: this.headerButtonExtension.register() });
+                this.extensionList.push({ name: ExtensionName.headerButton, class: this.headerButtonExtension, addon: this.headerButtonExtension.register() });
             }
         }
         // Header Menu Plugin
         if (this.sharedService.gridOptions.enableHeaderMenu) {
             if (this.headerMenuExtension && this.headerMenuExtension.register) {
-                this.extensionList.push({ name: ExtensionName.headerMenu, class: this.headerMenuExtension, extension: this.headerMenuExtension.register() });
+                this.extensionList.push({ name: ExtensionName.headerMenu, class: this.headerMenuExtension, addon: this.headerMenuExtension.register() });
             }
         }
         // Cell External Copy Manager Plugin (Excel Like)
         if (this.sharedService.gridOptions.enableExcelCopyBuffer) {
             if (this.cellExternalCopyExtension && this.cellExternalCopyExtension.register) {
-                this.extensionList.push({ name: ExtensionName.cellExternalCopyManager, class: this.cellExternalCopyExtension, extension: this.cellExternalCopyExtension.register() });
+                this.extensionList.push({ name: ExtensionName.cellExternalCopyManager, class: this.cellExternalCopyExtension, addon: this.cellExternalCopyExtension.register() });
             }
         }
         // manually register other plugins
@@ -10112,12 +10271,12 @@ var ExtensionService = /** @class */ (function () {
             if (Array.isArray(this.sharedService.gridOptions.registerPlugins)) {
                 this.sharedService.gridOptions.registerPlugins.forEach(function (plugin) {
                     _this.sharedService.grid.registerPlugin(plugin);
-                    _this.extensionList.push({ name: ExtensionName.noname, class: null, extension: plugin });
+                    _this.extensionList.push({ name: ExtensionName.noname, class: null, addon: plugin });
                 });
             }
             else {
                 this.sharedService.grid.registerPlugin(this.sharedService.gridOptions.registerPlugins);
-                this.extensionList.push({ name: ExtensionName.noname, class: null, extension: this.sharedService.gridOptions.registerPlugins });
+                this.extensionList.push({ name: ExtensionName.noname, class: null, addon: this.sharedService.gridOptions.registerPlugins });
             }
         }
     };
@@ -10642,7 +10801,6 @@ var DEFAULT_ITEMS_PER_PAGE = 25;
 var DEFAULT_PAGE_SIZE = 20;
 var GraphqlService = /** @class */ (function () {
     function GraphqlService() {
-        this.defaultOrderBy = { field: 'id', direction: SortDirection.ASC };
         this.defaultPaginationOptions = {
             first: DEFAULT_ITEMS_PER_PAGE,
             offset: 0
@@ -10829,6 +10987,26 @@ var GraphqlService = /** @class */ (function () {
             .replace(/\"|\:|null/g, '')
             .replace(/^\{/, '')
             .replace(/\}$/, '');
+    };
+    /**
+     * @return {?}
+     */
+    GraphqlService.prototype.clearFilters = /**
+     * @return {?}
+     */
+    function () {
+        this._currentFilters = [];
+        this.updateOptions({ filteringOptions: [] });
+    };
+    /**
+     * @return {?}
+     */
+    GraphqlService.prototype.clearSorters = /**
+     * @return {?}
+     */
+    function () {
+        this._currentSorters = [];
+        this.updateOptions({ sortingOptions: [] });
     };
     /**
      * @param {?=} serviceOptions
@@ -11319,34 +11497,28 @@ var GraphqlService = /** @class */ (function () {
         else if (sortColumns && !presetSorters) {
             // build the orderBy array, it could be multisort, example
             // orderBy:[{field: lastName, direction: ASC}, {field: firstName, direction: DESC}]
-            if (sortColumns && sortColumns.length === 0) {
-                graphqlSorters = new Array(this.defaultOrderBy); // when empty, use the default sort
-                currentSorters = new Array({ columnId: this.defaultOrderBy.field, direction: this.defaultOrderBy.direction });
-            }
-            else {
-                if (sortColumns) {
+            if (Array.isArray(sortColumns) && sortColumns.length > 0) {
+                try {
+                    for (var sortColumns_1 = Object(tslib__WEBPACK_IMPORTED_MODULE_9__["__values"])(sortColumns), sortColumns_1_1 = sortColumns_1.next(); !sortColumns_1_1.done; sortColumns_1_1 = sortColumns_1.next()) {
+                        var column = sortColumns_1_1.value;
+                        if (column && column.sortCol) {
+                            currentSorters.push({
+                                columnId: column.sortCol.id + '',
+                                direction: column.sortAsc ? SortDirection.ASC : SortDirection.DESC
+                            });
+                            graphqlSorters.push({
+                                field: (column.sortCol.queryField || column.sortCol.queryFieldSorter || column.sortCol.field || column.sortCol.id) + '',
+                                direction: column.sortAsc ? SortDirection.ASC : SortDirection.DESC
+                            });
+                        }
+                    }
+                }
+                catch (e_3_1) { e_3 = { error: e_3_1 }; }
+                finally {
                     try {
-                        for (var sortColumns_1 = Object(tslib__WEBPACK_IMPORTED_MODULE_9__["__values"])(sortColumns), sortColumns_1_1 = sortColumns_1.next(); !sortColumns_1_1.done; sortColumns_1_1 = sortColumns_1.next()) {
-                            var column = sortColumns_1_1.value;
-                            if (column && column.sortCol) {
-                                currentSorters.push({
-                                    columnId: column.sortCol.id + '',
-                                    direction: column.sortAsc ? SortDirection.ASC : SortDirection.DESC
-                                });
-                                graphqlSorters.push({
-                                    field: (column.sortCol.queryField || column.sortCol.queryFieldSorter || column.sortCol.field || column.sortCol.id) + '',
-                                    direction: column.sortAsc ? SortDirection.ASC : SortDirection.DESC
-                                });
-                            }
-                        }
+                        if (sortColumns_1_1 && !sortColumns_1_1.done && (_a = sortColumns_1.return)) _a.call(sortColumns_1);
                     }
-                    catch (e_3_1) { e_3 = { error: e_3_1 }; }
-                    finally {
-                        try {
-                            if (sortColumns_1_1 && !sortColumns_1_1.done && (_a = sortColumns_1.return)) _a.call(sortColumns_1);
-                        }
-                        finally { if (e_3) throw e_3.error; }
-                    }
+                    finally { if (e_3) throw e_3.error; }
                 }
             }
         }
@@ -11848,6 +12020,26 @@ var GridOdataService = /** @class */ (function () {
      */
     function () {
         return this.odataService.buildQuery();
+    };
+    /**
+     * @return {?}
+     */
+    GridOdataService.prototype.clearFilters = /**
+     * @return {?}
+     */
+    function () {
+        this._currentFilters = [];
+        this.updateOptions({ filteringOptions: [] });
+    };
+    /**
+     * @return {?}
+     */
+    GridOdataService.prototype.clearSorters = /**
+     * @return {?}
+     */
+    function () {
+        this._currentSorters = [];
+        this.updateOptions({ sortingOptions: [] });
     };
     /**
      * @param {?} options
@@ -12910,7 +13102,7 @@ var GridStateService = /** @class */ (function () {
             // this also requires the Row Selection Model to be registered as well
             /** @type {?} */
             var rowSelectionExtension = this.extensionService && this.extensionService.getExtensionByName && this.extensionService.getExtensionByName(ExtensionName.rowSelection);
-            if (rowSelectionExtension && rowSelectionExtension.extension) {
+            if (rowSelectionExtension && rowSelectionExtension.addon) {
                 this._grid.setSelectedRows([]);
             }
         }
@@ -13017,6 +13209,24 @@ var GridService = /** @class */ (function () {
     function (grid, dataView) {
         this._grid = grid;
         this._dataView = dataView;
+    };
+    /** Clear all Filters & Sorts */
+    /**
+     * Clear all Filters & Sorts
+     * @return {?}
+     */
+    GridService.prototype.clearAllFiltersAndSorts = /**
+     * Clear all Filters & Sorts
+     * @return {?}
+     */
+    function () {
+        // call both clear Filters & Sort but only trigger the last one to avoid sending multiple backend queries
+        if (this.sortService && this.sortService.clearSorting) {
+            this.sortService.clearSorting(false); // skip event trigger on this one
+        }
+        if (this.filterService && this.filterService.clearFilters) {
+            this.filterService.clearFilters();
+        }
     };
     /**
      * From a SlickGrid Event triggered get the Column Definition and Item Data Context
@@ -13969,13 +14179,13 @@ var ResizerService = /** @class */ (function () {
         /** @type {?} */
         var availableWidth = containerElm.width() || 0;
         /** @type {?} */
-        var maxHeight = (autoResizeOptions && autoResizeOptions.maxHeight && autoResizeOptions.maxHeight > 0) ? autoResizeOptions.maxHeight : undefined;
+        var maxHeight = autoResizeOptions && autoResizeOptions.maxHeight || undefined;
         /** @type {?} */
-        var minHeight = (autoResizeOptions && autoResizeOptions.minHeight && autoResizeOptions.minHeight < 0) ? autoResizeOptions.minHeight : DATAGRID_MIN_HEIGHT;
+        var minHeight = autoResizeOptions && autoResizeOptions.minHeight || DATAGRID_MIN_HEIGHT;
         /** @type {?} */
-        var maxWidth = (autoResizeOptions && autoResizeOptions.maxWidth && autoResizeOptions.maxWidth > 0) ? autoResizeOptions.maxWidth : undefined;
+        var maxWidth = autoResizeOptions && autoResizeOptions.maxWidth || undefined;
         /** @type {?} */
-        var minWidth = (autoResizeOptions && autoResizeOptions.minWidth && autoResizeOptions.minWidth < 0) ? autoResizeOptions.minWidth : DATAGRID_MIN_WIDTH;
+        var minWidth = autoResizeOptions && autoResizeOptions.minWidth || DATAGRID_MIN_WIDTH;
         /** @type {?} */
         var newHeight = availableHeight;
         /** @type {?} */
@@ -14127,9 +14337,11 @@ var ResizerService = /** @class */ (function () {
             /** @type {?} */
             var newWidth = (newSizes && newSizes.width) ? newSizes.width : availableDimensions.width;
             // apply these new height/width to the datagrid
-            gridElm.height(newHeight);
+            if (!this._gridOptions.autoHeight) {
+                gridElm.height(newHeight);
+                gridContainerElm.height(newHeight);
+            }
             gridElm.width(newWidth);
-            gridContainerElm.height(newHeight);
             gridContainerElm.width(newWidth);
             // resize the slickgrid canvas on all browser except some IE versions
             // exclude all IE below IE11
@@ -14451,6 +14663,16 @@ AutoCompleteEditor = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(AutoCompleteEditor.prototype, "hasAutoCommitEdit", {
+        get: /**
+         * @return {?}
+         */
+        function () {
+            return this.args.grid.getOptions().autoCommitEdit;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(AutoCompleteEditor.prototype, "validator", {
         /** Get the Validator function, can be passed in Editor property or Column Definition */
         get: /**
@@ -14479,9 +14701,10 @@ AutoCompleteEditor = /** @class */ (function () {
         this.valueName = this.customStructure && this.customStructure.value || 'value';
         this.$input = $("<input type=\"text\" class=\"autocomplete editor-text editor-" + columnId + "\" placeholder=\"" + placeholder + "\" />")
             .appendTo(this.args.container)
-            .on('keydown.nav', function (e) {
-            if (e.keyCode === KeyCode.LEFT || e.keyCode === KeyCode.RIGHT) {
-                e.stopImmediatePropagation();
+            .on('keydown.nav', function (event) {
+            _this._lastInputEvent = event;
+            if (event.keyCode === KeyCode.LEFT || event.keyCode === KeyCode.RIGHT) {
+                event.stopImmediatePropagation();
             }
         });
         // user might pass his own autocomplete options
@@ -14561,12 +14784,37 @@ AutoCompleteEditor = /** @class */ (function () {
      */
     function (item) {
         /** @type {?} */
-        var data = item[this.args.column.field] || '';
-        this._currentValue = data;
-        this._defaultTextValue = typeof data === 'string' ? data : data[this.labelName];
-        this.$input.val(this._defaultTextValue);
-        this.$input[0].defaultValue = this._defaultTextValue;
-        this.$input.select();
+        var fieldName = this.columnDef && this.columnDef.field;
+        // when it's a complex object, then pull the object name only, e.g.: "user.firstName" => "user"
+        /** @type {?} */
+        var fieldNameFromComplexObject = fieldName.indexOf('.') ? fieldName.substring(0, fieldName.indexOf('.')) : '';
+        if (item && this.columnDef && (item.hasOwnProperty(fieldName) || item.hasOwnProperty(fieldNameFromComplexObject))) {
+            /** @type {?} */
+            var data = item[fieldNameFromComplexObject || fieldName];
+            this._currentValue = data;
+            this._defaultTextValue = typeof data === 'string' ? data : data[this.labelName];
+            this.$input.val(this._defaultTextValue);
+            this.$input[0].defaultValue = this._defaultTextValue;
+            this.$input.select();
+        }
+    };
+    /**
+     * @return {?}
+     */
+    AutoCompleteEditor.prototype.save = /**
+     * @return {?}
+     */
+    function () {
+        /** @type {?} */
+        var validation = this.validate();
+        if (validation && validation.valid) {
+            if (this.hasAutoCommitEdit) {
+                this.args.grid.getEditorLock().commitCurrentEdit();
+            }
+            else {
+                this.args.commitChanges();
+            }
+        }
     };
     /**
      * @return {?}
@@ -14576,15 +14824,20 @@ AutoCompleteEditor = /** @class */ (function () {
      */
     function () {
         var _a;
-        // if user provided a custom structure, we need to reswap the properties
-        // we do this because autocomplete needed label/value pair which might not be what the user provided
-        if (this.customStructure && this._currentValue.label && this._currentValue.value) {
-            return _a = {},
-                _a[this.labelName] = this._currentValue.label,
-                _a[this.valueName] = this._currentValue.value,
-                _a;
+        // if user provided a custom structure, we will serialize the value returned from the object with custom structure
+        if (this.customStructure && this._currentValue.hasOwnProperty(this.labelName)) {
+            return this._currentValue[this.labelName];
         }
-        return this.columnDef.type === FieldType.object ? this._currentValue : this._currentValue.label;
+        else if (this._currentValue.label) {
+            if (this.columnDef.type === FieldType.object) {
+                return _a = {},
+                    _a[this.labelName] = this._currentValue.label,
+                    _a[this.valueName] = this._currentValue.value,
+                    _a;
+            }
+            return this._currentValue.label;
+        }
+        return this._currentValue;
     };
     /**
      * @param {?} item
@@ -14597,7 +14850,12 @@ AutoCompleteEditor = /** @class */ (function () {
      * @return {?}
      */
     function (item, state) {
-        item[this.args.column.field] = state;
+        /** @type {?} */
+        var fieldName = this.columnDef && this.columnDef.field;
+        // when it's a complex object, then pull the object name only, e.g.: "user.firstName" => "user"
+        /** @type {?} */
+        var fieldNameFromComplexObject = fieldName.indexOf('.') ? fieldName.substring(0, fieldName.indexOf('.')) : '';
+        item[fieldNameFromComplexObject || fieldName] = state;
     };
     /**
      * @return {?}
@@ -14606,6 +14864,11 @@ AutoCompleteEditor = /** @class */ (function () {
      * @return {?}
      */
     function () {
+        /** @type {?} */
+        var lastEvent = this._lastInputEvent && this._lastInputEvent.keyCode;
+        if (this.columnEditor && this.columnEditor.alwaysSaveOnEnterKey && lastEvent === KeyCode.ENTER) {
+            return true;
+        }
         return (!(this.$input.val() === '' && this._defaultTextValue === null)) && (this.$input.val() !== this._defaultTextValue);
     };
     /**
@@ -14615,17 +14878,22 @@ AutoCompleteEditor = /** @class */ (function () {
      * @return {?}
      */
     function () {
+        /** @type {?} */
+        var isRequired = this.columnEditor.required;
+        /** @type {?} */
+        var elmValue = this.$input && this.$input.val && this.$input.val();
+        /** @type {?} */
+        var errorMsg = this.columnEditor.errorMessage;
         if (this.validator) {
-            /** @type {?} */
-            var value = this.$input && this.$input.val && this.$input.val();
-            /** @type {?} */
-            var validationResults = this.validator(value, this.args);
-            if (!validationResults.valid) {
-                return validationResults;
-            }
+            return this.validator(elmValue, this.args);
         }
-        // by default the editor is always valid
-        // if user want it to be a required checkbox, he would have to provide his own validator
+        // by default the editor is almost always valid (except when it's required but not provided)
+        if (isRequired && elmValue === '') {
+            return {
+                valid: false,
+                msg: errorMsg || Constants.VALIDATION_REQUIRED_FIELD
+            };
+        }
         return {
             valid: true,
             msg: null
@@ -14789,12 +15057,19 @@ CheckboxEditor = /** @class */ (function () {
      * @return {?}
      */
     function (item) {
-        this.defaultValue = !!item[this.columnDef.field];
-        if (this.defaultValue) {
-            this.$input.prop('checked', true);
-        }
-        else {
-            this.$input.prop('checked', false);
+        /** @type {?} */
+        var fieldName = this.columnDef && this.columnDef.field;
+        // when it's a complex object, then pull the object name only, e.g.: "user.firstName" => "user"
+        /** @type {?} */
+        var fieldNameFromComplexObject = fieldName.indexOf('.') ? fieldName.substring(0, fieldName.indexOf('.')) : '';
+        if (item && this.columnDef && (item.hasOwnProperty(fieldName) || item.hasOwnProperty(fieldNameFromComplexObject))) {
+            this.defaultValue = !!item[fieldNameFromComplexObject || fieldName];
+            if (this.defaultValue) {
+                this.$input.prop('checked', true);
+            }
+            else {
+                this.$input.prop('checked', false);
+            }
         }
     };
     /**
@@ -14826,7 +15101,12 @@ CheckboxEditor = /** @class */ (function () {
      * @return {?}
      */
     function (item, state) {
-        item[this.columnDef.field] = state;
+        /** @type {?} */
+        var fieldName = this.columnDef && this.columnDef.field;
+        // when it's a complex object, then pull the object name only, e.g.: "user.firstName" => "user"
+        /** @type {?} */
+        var fieldNameFromComplexObject = fieldName.indexOf('.') ? fieldName.substring(0, fieldName.indexOf('.')) : '';
+        item[fieldNameFromComplexObject || fieldName] = state;
     };
     /**
      * @return {?}
@@ -14844,17 +15124,22 @@ CheckboxEditor = /** @class */ (function () {
      * @return {?}
      */
     function () {
+        /** @type {?} */
+        var isRequired = this.columnEditor.required;
+        /** @type {?} */
+        var isChecked = this.$input && this.$input.prop && this.$input.prop('checked');
+        /** @type {?} */
+        var errorMsg = this.columnEditor.errorMessage;
         if (this.validator) {
-            /** @type {?} */
-            var value = this.$input && this.$input.val && this.$input.val();
-            /** @type {?} */
-            var validationResults = this.validator(value, this.args);
-            if (!validationResults.valid) {
-                return validationResults;
-            }
+            return this.validator(isChecked, this.args);
         }
-        // by default the editor is always valid
-        // if user want it to be a required checkbox, he would have to provide his own validator
+        // by default the editor is almost always valid (except when it's required but not provided)
+        if (isRequired && !isChecked) {
+            return {
+                valid: false,
+                msg: errorMsg || Constants.VALIDATION_REQUIRED_FIELD
+            };
+        }
         return {
             valid: true,
             msg: null
@@ -14956,9 +15241,12 @@ DateEditor = /** @class */ (function () {
                     _this.save();
                 },
             };
+            // merge options with optional user's custom options
+            /** @type {?} */
+            var pickerMergedOptions = Object(tslib__WEBPACK_IMPORTED_MODULE_9__["__assign"])({}, pickerOptions, this.columnEditor.editorOptions);
             this.$input = $("<input type=\"text\" data-defaultDate=\"" + this.defaultDate + "\" class=\"editor-text editor-" + columnId + " flatpickr\" placeholder=\"" + placeholder + "\" />");
             this.$input.appendTo(this.args.container);
-            this.flatInstance = (this.$input[0] && typeof this.$input[0].flatpickr === 'function') ? this.$input[0].flatpickr(pickerOptions) : null;
+            this.flatInstance = (this.$input[0] && typeof this.$input[0].flatpickr === 'function') ? this.$input[0].flatpickr(pickerMergedOptions) : null;
             this.show();
         }
     };
@@ -15081,8 +15369,15 @@ DateEditor = /** @class */ (function () {
      * @return {?}
      */
     function (item) {
-        this.defaultDate = item[this.args.column.field];
-        this.flatInstance.setDate(item[this.args.column.field]);
+        /** @type {?} */
+        var fieldName = this.columnDef && this.columnDef.field;
+        // when it's a complex object, then pull the object name only, e.g.: "user.firstName" => "user"
+        /** @type {?} */
+        var fieldNameFromComplexObject = fieldName.indexOf('.') ? fieldName.substring(0, fieldName.indexOf('.')) : '';
+        if (item && this.columnDef && (item.hasOwnProperty(fieldName) || item.hasOwnProperty(fieldNameFromComplexObject))) {
+            this.defaultDate = item[fieldNameFromComplexObject || fieldName];
+            this.flatInstance.setDate(item[this.args.column.field]);
+        }
     };
     /**
      * @return {?}
@@ -15117,8 +15412,13 @@ DateEditor = /** @class */ (function () {
             return;
         }
         /** @type {?} */
+        var fieldName = this.columnDef && this.columnDef.field;
+        /** @type {?} */
         var outputFormat = mapMomentDateFormatWithFieldType(this.args.column.type || FieldType.dateIso);
-        item[this.args.column.field] = moment$8(state, outputFormat).toDate();
+        // when it's a complex object, then pull the object name only, e.g.: "user.firstName" => "user"
+        /** @type {?} */
+        var fieldNameFromComplexObject = fieldName.indexOf('.') ? fieldName.substring(0, fieldName.indexOf('.')) : '';
+        item[fieldNameFromComplexObject || fieldName] = moment$8(state, outputFormat).toDate();
     };
     /**
      * @return {?}
@@ -15136,17 +15436,24 @@ DateEditor = /** @class */ (function () {
      * @return {?}
      */
     function () {
+        /** @type {?} */
+        var isRequired = this.columnEditor.required;
+        /** @type {?} */
+        var elmValue = this.$input && this.$input.val && this.$input.val();
+        /** @type {?} */
+        var errorMsg = this.columnEditor.errorMessage;
         if (this.validator) {
             /** @type {?} */
             var value = this.$input && this.$input.val && this.$input.val();
-            /** @type {?} */
-            var validationResults = this.validator(value, this.args);
-            if (!validationResults.valid) {
-                return validationResults;
-            }
+            return this.validator(value, this.args);
         }
-        // by default the editor is always valid
-        // if user want it to be a required checkbox, he would have to provide his own validator
+        // by default the editor is almost always valid (except when it's required but not provided)
+        if (isRequired && elmValue === '') {
+            return {
+                valid: false,
+                msg: errorMsg || Constants.VALIDATION_REQUIRED_FIELD
+            };
+        }
         return {
             valid: true,
             msg: null
@@ -15234,9 +15541,10 @@ FloatEditor = /** @class */ (function () {
         var placeholder = this.columnEditor && this.columnEditor.placeholder || '';
         this.$input = $("<input type=\"number\" class=\"editor-text editor-" + columnId + "\" placeholder=\"" + placeholder + "\" step=\"" + this.getInputDecimalSteps() + "\" />")
             .appendTo(this.args.container)
-            .on('keydown.nav', function (e) {
-            if (e.keyCode === KeyCode.LEFT || e.keyCode === KeyCode.RIGHT) {
-                e.stopImmediatePropagation();
+            .on('keydown.nav', function (event) {
+            _this._lastInputEvent = event;
+            if (event.keyCode === KeyCode.LEFT || event.keyCode === KeyCode.RIGHT) {
+                event.stopImmediatePropagation();
             }
         });
         // the lib does not get the focus out event for some reason
@@ -15318,17 +15626,24 @@ FloatEditor = /** @class */ (function () {
      * @return {?}
      */
     function (item) {
-        this.defaultValue = item[this.columnDef.field];
         /** @type {?} */
-        var decPlaces = this.getDecimalPlaces();
-        if (decPlaces !== null
-            && (this.defaultValue || this.defaultValue === 0)
-            && this.defaultValue.toFixed) {
-            this.defaultValue = this.defaultValue.toFixed(decPlaces);
+        var fieldName = this.columnDef && this.columnDef.field;
+        // when it's a complex object, then pull the object name only, e.g.: "user.firstName" => "user"
+        /** @type {?} */
+        var fieldNameFromComplexObject = fieldName.indexOf('.') ? fieldName.substring(0, fieldName.indexOf('.')) : '';
+        if (item && this.columnDef && (item.hasOwnProperty(fieldName) || item.hasOwnProperty(fieldNameFromComplexObject))) {
+            this.defaultValue = item[fieldNameFromComplexObject || fieldName];
+            /** @type {?} */
+            var decPlaces = this.getDecimalPlaces();
+            if (decPlaces !== null
+                && (this.defaultValue || this.defaultValue === 0)
+                && this.defaultValue.toFixed) {
+                this.defaultValue = this.defaultValue.toFixed(decPlaces);
+            }
+            this.$input.val(this.defaultValue);
+            this.$input[0].defaultValue = this.defaultValue;
+            this.$input.select();
         }
-        this.$input.val(this.defaultValue);
-        this.$input[0].defaultValue = this.defaultValue;
-        this.$input.select();
     };
     /**
      * @return {?}
@@ -15338,7 +15653,12 @@ FloatEditor = /** @class */ (function () {
      */
     function () {
         /** @type {?} */
-        var rtn = parseFloat(this.$input.val()) || 0;
+        var elmValue = this.$input.val();
+        if (elmValue === '' || isNaN(elmValue)) {
+            return elmValue;
+        }
+        /** @type {?} */
+        var rtn = parseFloat(elmValue);
         /** @type {?} */
         var decPlaces = this.getDecimalPlaces();
         if (decPlaces !== null
@@ -15359,7 +15679,12 @@ FloatEditor = /** @class */ (function () {
      * @return {?}
      */
     function (item, state) {
-        item[this.columnDef.field] = state;
+        /** @type {?} */
+        var fieldName = this.columnDef && this.columnDef.field;
+        // when it's a complex object, then pull the object name only, e.g.: "user.firstName" => "user"
+        /** @type {?} */
+        var fieldNameFromComplexObject = fieldName.indexOf('.') ? fieldName.substring(0, fieldName.indexOf('.')) : '';
+        item[fieldNameFromComplexObject || fieldName] = state;
     };
     /**
      * @return {?}
@@ -15370,6 +15695,11 @@ FloatEditor = /** @class */ (function () {
     function () {
         /** @type {?} */
         var elmValue = this.$input.val();
+        /** @type {?} */
+        var lastEvent = this._lastInputEvent && this._lastInputEvent.keyCode;
+        if (this.columnEditor && this.columnEditor.alwaysSaveOnEnterKey && lastEvent === KeyCode.ENTER) {
+            return true;
+        }
         return (!(elmValue === '' && this.defaultValue === null)) && (elmValue !== this.defaultValue);
     };
     /**
@@ -15404,6 +15734,8 @@ FloatEditor = /** @class */ (function () {
         /** @type {?} */
         var decPlaces = this.getDecimalPlaces();
         /** @type {?} */
+        var isRequired = this.columnEditor.required;
+        /** @type {?} */
         var minValue = this.columnEditor.minValue;
         /** @type {?} */
         var maxValue = this.columnEditor.maxValue;
@@ -15416,58 +15748,52 @@ FloatEditor = /** @class */ (function () {
             '{{minDecimal}}': 0,
             '{{maxDecimal}}': decPlaces
         };
+        /** @type {?} */
+        var isValid = true;
+        /** @type {?} */
+        var outputMsg = '';
         if (this.validator) {
-            /** @type {?} */
-            var validationResults = this.validator(elmValue, this.args);
-            if (!validationResults.valid) {
-                return validationResults;
-            }
+            return this.validator(elmValue, this.args);
+        }
+        else if (isRequired && elmValue === '') {
+            isValid = false;
+            outputMsg = errorMsg || Constants.VALIDATION_REQUIRED_FIELD;
         }
         else if (isNaN((/** @type {?} */ (elmValue))) || (decPlaces === 0 && !/^[-+]?(\d+(\.)?(\d)*)$/.test(elmValue))) {
             // when decimal value is 0 (which is the default), we accept 0 or more decimal values
-            return {
-                valid: false,
-                msg: errorMsg || Constants.VALIDATION_EDITOR_VALID_NUMBER
-            };
+            isValid = false;
+            outputMsg = errorMsg || Constants.VALIDATION_EDITOR_VALID_NUMBER;
         }
         else if (minValue !== undefined && maxValue !== undefined && floatNumber !== null && (floatNumber < minValue || floatNumber > maxValue)) {
             // MIN & MAX Values provided
             // when decimal value is bigger than 0, we only accept the decimal values as that value set
             // for example if we set decimalPlaces to 2, we will only accept numbers between 0 and 2 decimals
-            return {
-                valid: false,
-                msg: errorMsg || Constants.VALIDATION_EDITOR_NUMBER_BETWEEN.replace(/{{minValue}}|{{maxValue}}/gi, function (matched) { return mapValidation[matched]; })
-            };
+            isValid = false;
+            outputMsg = errorMsg || Constants.VALIDATION_EDITOR_NUMBER_BETWEEN.replace(/{{minValue}}|{{maxValue}}/gi, function (matched) { return mapValidation[matched]; });
         }
         else if (minValue !== undefined && floatNumber !== null && floatNumber <= minValue) {
             // MIN VALUE ONLY
             // when decimal value is bigger than 0, we only accept the decimal values as that value set
             // for example if we set decimalPlaces to 2, we will only accept numbers between 0 and 2 decimals
-            return {
-                valid: false,
-                msg: errorMsg || Constants.VALIDATION_EDITOR_NUMBER_MIN.replace(/{{minValue}}/gi, function (matched) { return mapValidation[matched]; })
-            };
+            isValid = false;
+            outputMsg = errorMsg || Constants.VALIDATION_EDITOR_NUMBER_MIN.replace(/{{minValue}}/gi, function (matched) { return mapValidation[matched]; });
         }
         else if (maxValue !== undefined && floatNumber !== null && floatNumber >= maxValue) {
             // MAX VALUE ONLY
             // when decimal value is bigger than 0, we only accept the decimal values as that value set
             // for example if we set decimalPlaces to 2, we will only accept numbers between 0 and 2 decimals
-            return {
-                valid: false,
-                msg: errorMsg || Constants.VALIDATION_EDITOR_NUMBER_MAX.replace(/{{maxValue}}/gi, function (matched) { return mapValidation[matched]; })
-            };
+            isValid = false;
+            outputMsg = errorMsg || Constants.VALIDATION_EDITOR_NUMBER_MAX.replace(/{{maxValue}}/gi, function (matched) { return mapValidation[matched]; });
         }
         else if ((decPlaces > 0 && !new RegExp("^(\\d*(\\.)?(\\d){0," + decPlaces + "})$").test(elmValue))) {
             // when decimal value is bigger than 0, we only accept the decimal values as that value set
             // for example if we set decimalPlaces to 2, we will only accept numbers between 0 and 2 decimals
-            return {
-                valid: false,
-                msg: errorMsg || Constants.VALIDATION_EDITOR_DECIMAL_BETWEEN.replace(/{{minDecimal}}|{{maxDecimal}}/gi, function (matched) { return mapValidation[matched]; })
-            };
+            isValid = false;
+            outputMsg = errorMsg || Constants.VALIDATION_EDITOR_DECIMAL_BETWEEN.replace(/{{minDecimal}}|{{maxDecimal}}/gi, function (matched) { return mapValidation[matched]; });
         }
         return {
-            valid: true,
-            msg: null
+            valid: isValid,
+            msg: outputMsg
         };
     };
     return FloatEditor;
@@ -15550,9 +15876,10 @@ IntegerEditor = /** @class */ (function () {
         var placeholder = this.columnEditor && this.columnEditor.placeholder || '';
         this.$input = $("<input type=\"number\" class=\"editor-text editor-" + columnId + "\" placeholder=\"" + placeholder + "\" />")
             .appendTo(this.args.container)
-            .on('keydown.nav', function (e) {
-            if (e.keyCode === KeyCode.LEFT || e.keyCode === KeyCode.RIGHT) {
-                e.stopImmediatePropagation();
+            .on('keydown.nav', function (event) {
+            _this._lastInputEvent = event;
+            if (event.keyCode === KeyCode.LEFT || event.keyCode === KeyCode.RIGHT) {
+                event.stopImmediatePropagation();
             }
         });
         // the lib does not get the focus out event for some reason
@@ -15600,10 +15927,17 @@ IntegerEditor = /** @class */ (function () {
      * @return {?}
      */
     function (item) {
-        this.defaultValue = parseInt(item[this.args.column.field], 10);
-        this.$input.val(this.defaultValue);
-        this.$input[0].defaultValue = this.defaultValue;
-        this.$input.select();
+        /** @type {?} */
+        var fieldName = this.columnDef && this.columnDef.field;
+        // when it's a complex object, then pull the object name only, e.g.: "user.firstName" => "user"
+        /** @type {?} */
+        var fieldNameFromComplexObject = fieldName.indexOf('.') ? fieldName.substring(0, fieldName.indexOf('.')) : '';
+        if (item && this.columnDef && (item.hasOwnProperty(fieldName) || item.hasOwnProperty(fieldNameFromComplexObject))) {
+            this.defaultValue = parseInt(item[fieldNameFromComplexObject || fieldName], 10);
+            this.$input.val(this.defaultValue);
+            this.$input[0].defaultValue = this.defaultValue;
+            this.$input.select();
+        }
     };
     /**
      * @return {?}
@@ -15612,7 +15946,12 @@ IntegerEditor = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        return parseInt((/** @type {?} */ (this.$input.val())), 10) || 0;
+        /** @type {?} */
+        var elmValue = this.$input.val();
+        if (elmValue === '' || isNaN(elmValue)) {
+            return elmValue;
+        }
+        return parseInt(elmValue, 10) || 0;
     };
     /**
      * @param {?} item
@@ -15625,7 +15964,12 @@ IntegerEditor = /** @class */ (function () {
      * @return {?}
      */
     function (item, state) {
-        item[this.args.column.field] = state;
+        /** @type {?} */
+        var fieldName = this.columnDef && this.columnDef.field;
+        // when it's a complex object, then pull the object name only, e.g.: "user.firstName" => "user"
+        /** @type {?} */
+        var fieldNameFromComplexObject = fieldName.indexOf('.') ? fieldName.substring(0, fieldName.indexOf('.')) : '';
+        item[fieldNameFromComplexObject || fieldName] = state;
     };
     /**
      * @return {?}
@@ -15638,7 +15982,12 @@ IntegerEditor = /** @class */ (function () {
         var elmValue = this.$input.val();
         /** @type {?} */
         var value = isNaN(elmValue) ? elmValue : parseInt(elmValue, 10);
-        return (!(value === '' && this.defaultValue === null)) && (value !== this.defaultValue);
+        /** @type {?} */
+        var lastEvent = this._lastInputEvent && this._lastInputEvent.keyCode;
+        if (this.columnEditor && this.columnEditor.alwaysSaveOnEnterKey && lastEvent === KeyCode.ENTER) {
+            return true;
+        }
+        return (!(value === '' && this.defaultValue === null && lastEvent !== KeyCode.ENTER)) && (value !== this.defaultValue);
     };
     /**
      * @return {?}
@@ -15668,23 +16017,59 @@ IntegerEditor = /** @class */ (function () {
         /** @type {?} */
         var elmValue = this.$input.val();
         /** @type {?} */
-        var errorMsg = this.columnEditor.params && this.columnEditor.errorMessage;
+        var intNumber = !isNaN((/** @type {?} */ (elmValue))) ? parseInt(elmValue, 10) : null;
+        /** @type {?} */
+        var errorMsg = this.columnEditor.errorMessage;
+        /** @type {?} */
+        var isRequired = this.columnEditor.required;
+        /** @type {?} */
+        var minValue = this.columnEditor.minValue;
+        /** @type {?} */
+        var maxValue = this.columnEditor.maxValue;
+        /** @type {?} */
+        var mapValidation = {
+            '{{minValue}}': minValue,
+            '{{maxValue}}': maxValue
+        };
+        /** @type {?} */
+        var isValid = true;
+        /** @type {?} */
+        var outputMsg = '';
         if (this.validator) {
-            /** @type {?} */
-            var validationResults = this.validator(elmValue, this.args);
-            if (!validationResults.valid) {
-                return validationResults;
-            }
+            return this.validator(elmValue, this.args);
+        }
+        else if (isRequired && elmValue === '') {
+            isValid = false;
+            outputMsg = errorMsg || Constants.VALIDATION_REQUIRED_FIELD;
         }
         else if (isNaN((/** @type {?} */ (elmValue))) || !/^[+-]?\d+$/.test(elmValue)) {
-            return {
-                valid: false,
-                msg: errorMsg || Constants.VALIDATION_EDITOR_VALID_INTEGER
-            };
+            isValid = false;
+            outputMsg = errorMsg || Constants.VALIDATION_EDITOR_VALID_INTEGER;
+        }
+        else if (minValue !== undefined && maxValue !== undefined && intNumber !== null && (intNumber < minValue || intNumber > maxValue)) {
+            // MIN & MAX Values provided
+            // when decimal value is bigger than 0, we only accept the decimal values as that value set
+            // for example if we set decimalPlaces to 2, we will only accept numbers between 0 and 2 decimals
+            isValid = false;
+            outputMsg = errorMsg || Constants.VALIDATION_EDITOR_INTEGER_BETWEEN.replace(/{{minValue}}|{{maxValue}}/gi, function (matched) { return mapValidation[matched]; });
+        }
+        else if (minValue !== undefined && intNumber !== null && intNumber <= minValue) {
+            // MIN VALUE ONLY
+            // when decimal value is bigger than 0, we only accept the decimal values as that value set
+            // for example if we set decimalPlaces to 2, we will only accept numbers between 0 and 2 decimals
+            isValid = false;
+            outputMsg = errorMsg || Constants.VALIDATION_EDITOR_INTEGER_MIN.replace(/{{minValue}}/gi, function (matched) { return mapValidation[matched]; });
+        }
+        else if (maxValue !== undefined && intNumber !== null && intNumber >= maxValue) {
+            // MAX VALUE ONLY
+            // when decimal value is bigger than 0, we only accept the decimal values as that value set
+            // for example if we set decimalPlaces to 2, we will only accept numbers between 0 and 2 decimals
+            isValid = false;
+            outputMsg = errorMsg || Constants.VALIDATION_EDITOR_INTEGER_MAX.replace(/{{maxValue}}/gi, function (matched) { return mapValidation[matched]; });
         }
         return {
-            valid: true,
-            msg: null
+            valid: isValid,
+            msg: outputMsg
         };
     };
     return IntegerEditor;
@@ -15792,49 +16177,31 @@ LongTextEditor = /** @class */ (function () {
         this.$textarea.focus().select();
     };
     /**
-     * @param {?} e
+     * @param {?} event
      * @return {?}
      */
     LongTextEditor.prototype.handleKeyDown = /**
-     * @param {?} e
+     * @param {?} event
      * @return {?}
      */
-    function (e) {
-        if (e.which === KeyCode.ENTER && e.ctrlKey) {
+    function (event) {
+        if (event.which === KeyCode.ENTER && event.ctrlKey) {
             this.save();
         }
-        else if (e.which === KeyCode.ESCAPE) {
-            e.preventDefault();
+        else if (event.which === KeyCode.ESCAPE) {
+            event.preventDefault();
             this.cancel();
         }
-        else if (e.which === KeyCode.TAB && e.shiftKey) {
-            e.preventDefault();
+        else if (event.which === KeyCode.TAB && event.shiftKey) {
+            event.preventDefault();
             if (this.args && this.args.grid) {
                 this.args.grid.navigatePrev();
             }
         }
-        else if (e.which === KeyCode.TAB) {
-            e.preventDefault();
+        else if (event.which === KeyCode.TAB) {
+            event.preventDefault();
             if (this.args && this.args.grid) {
                 this.args.grid.navigateNext();
-            }
-        }
-    };
-    /**
-     * @return {?}
-     */
-    LongTextEditor.prototype.save = /**
-     * @return {?}
-     */
-    function () {
-        /** @type {?} */
-        var validation = this.validate();
-        if (validation && validation.valid) {
-            if (this.hasAutoCommitEdit) {
-                this.args.grid.getEditorLock().commitCurrentEdit();
-            }
-            else {
-                this.args.commitChanges();
             }
         }
     };
@@ -15902,6 +16269,26 @@ LongTextEditor = /** @class */ (function () {
     /**
      * @return {?}
      */
+    LongTextEditor.prototype.getValue = /**
+     * @return {?}
+     */
+    function () {
+        return this.$textarea.val();
+    };
+    /**
+     * @param {?} val
+     * @return {?}
+     */
+    LongTextEditor.prototype.setValue = /**
+     * @param {?} val
+     * @return {?}
+     */
+    function (val) {
+        this.$textarea.val(val);
+    };
+    /**
+     * @return {?}
+     */
     LongTextEditor.prototype.getColumnEditor = /**
      * @return {?}
      */
@@ -15917,8 +16304,16 @@ LongTextEditor = /** @class */ (function () {
      * @return {?}
      */
     function (item) {
-        this.$textarea.val(this.defaultValue = item[this.columnDef.field]);
-        this.$textarea.select();
+        /** @type {?} */
+        var fieldName = this.columnDef && this.columnDef.field;
+        // when it's a complex object, then pull the object name only, e.g.: "user.firstName" => "user"
+        /** @type {?} */
+        var fieldNameFromComplexObject = fieldName.indexOf('.') ? fieldName.substring(0, fieldName.indexOf('.')) : '';
+        if (item && this.columnDef && (item.hasOwnProperty(fieldName) || item.hasOwnProperty(fieldNameFromComplexObject))) {
+            this.defaultValue = item[fieldNameFromComplexObject || fieldName];
+            this.$textarea.val(this.defaultValue);
+            this.$textarea.select();
+        }
     };
     /**
      * @return {?}
@@ -15940,7 +16335,12 @@ LongTextEditor = /** @class */ (function () {
      * @return {?}
      */
     function (item, state) {
-        item[this.columnDef.field] = state;
+        /** @type {?} */
+        var fieldName = this.columnDef && this.columnDef.field;
+        // when it's a complex object, then pull the object name only, e.g.: "user.firstName" => "user"
+        /** @type {?} */
+        var fieldNameFromComplexObject = fieldName.indexOf('.') ? fieldName.substring(0, fieldName.indexOf('.')) : '';
+        item[fieldNameFromComplexObject || fieldName] = state;
     };
     /**
      * @return {?}
@@ -15949,7 +16349,28 @@ LongTextEditor = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        return (!(this.$textarea.val() === '' && this.defaultValue == null)) && (this.$textarea.val() !== this.defaultValue);
+        return (!(this.$textarea.val() === '' && this.defaultValue === null)) && (this.$textarea.val() !== this.defaultValue);
+    };
+    /**
+     * @return {?}
+     */
+    LongTextEditor.prototype.save = /**
+     * @return {?}
+     */
+    function () {
+        /** @type {?} */
+        var validation = this.validate();
+        if (validation && validation.valid) {
+            if (this.hasAutoCommitEdit) {
+                this.args.grid.getEditorLock().commitCurrentEdit();
+            }
+            else {
+                this.args.commitChanges();
+            }
+        }
+        else {
+            this.args.commitChanges();
+        }
     };
     /**
      * @return {?}
@@ -15958,17 +16379,24 @@ LongTextEditor = /** @class */ (function () {
      * @return {?}
      */
     function () {
+        /** @type {?} */
+        var isRequired = this.columnEditor.required;
+        /** @type {?} */
+        var elmValue = this.$textarea && this.$textarea.val && this.$textarea.val();
+        /** @type {?} */
+        var errorMsg = this.columnEditor.errorMessage;
         if (this.validator) {
             /** @type {?} */
             var value = this.$textarea && this.$textarea.val && this.$textarea.val();
-            /** @type {?} */
-            var validationResults = this.validator(value, this.args);
-            if (!validationResults.valid) {
-                return validationResults;
-            }
+            return this.validator(value, this.args);
         }
-        // by default the editor is always valid
-        // if user want it to be a required checkbox, he would have to provide his own validator
+        // by default the editor is almost always valid (except when it's required but not provided)
+        if (isRequired && elmValue === '') {
+            return {
+                valid: false,
+                msg: errorMsg || Constants.VALIDATION_REQUIRED_FIELD
+            };
+        }
         return {
             valid: true,
             msg: null
@@ -16027,7 +16455,7 @@ SelectEditor = /** @class */ (function () {
             },
             onBlur: function () { return _this.destroy(); },
             onClose: function () {
-                if (!_this._destroying && args.grid.getOptions().autoCommitEdit) {
+                if (!_this._destroying && _this.hasAutoCommitEdit) {
                     // do not use args.commitChanges() as this sets the focus to the next
                     // row. Also the select list will stay shown when clicking off the grid
                     args.grid.getEditorLock().commitCurrentEdit();
@@ -16110,6 +16538,16 @@ SelectEditor = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(SelectEditor.prototype, "hasAutoCommitEdit", {
+        get: /**
+         * @return {?}
+         */
+        function () {
+            return this.args.grid.getOptions().autoCommitEdit;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(SelectEditor.prototype, "currentValues", {
         /**
          * The current selected values (multiple select) from the collection
@@ -16138,6 +16576,14 @@ SelectEditor = /** @class */ (function () {
                 var prefixText = c[_this.labelPrefixName] || '';
                 /** @type {?} */
                 var suffixText = c[_this.labelSuffixName] || '';
+                // when it's a complex object, then pull the object name only, e.g.: "user.firstName" => "user"
+                /** @type {?} */
+                var fieldName = _this.columnDef && _this.columnDef.field;
+                /** @type {?} */
+                var fieldNameFromComplexObject = fieldName.indexOf('.') ? fieldName.substring(0, fieldName.indexOf('.')) : '';
+                if (fieldNameFromComplexObject && typeof c === 'object') {
+                    return c;
+                }
                 // also translate prefix/suffix if enableTranslateLabel is true and text is a string
                 prefixText = (_this.enableTranslateLabel && prefixText && typeof prefixText === 'string') ? _this._translate.instant(prefixText || ' ') : prefixText;
                 suffixText = (_this.enableTranslateLabel && suffixText && typeof suffixText === 'string') ? _this._translate.instant(suffixText || ' ') : suffixText;
@@ -16173,7 +16619,15 @@ SelectEditor = /** @class */ (function () {
             var isIncludingPrefixSuffix = this.collectionOptions && this.collectionOptions.includePrefixSuffixToSelectedValues || false;
             /** @type {?} */
             var itemFound = findOrDefault(this.collection, function (c) { return c[_this.valueName].toString() === _this.$editorElm.val(); });
-            if (itemFound) {
+            // when it's a complex object, then pull the object name only, e.g.: "user.firstName" => "user"
+            /** @type {?} */
+            var fieldName = this.columnDef && this.columnDef.field;
+            /** @type {?} */
+            var fieldNameFromComplexObject = fieldName.indexOf('.') ? fieldName.substring(0, fieldName.indexOf('.')) : '';
+            if (fieldNameFromComplexObject && typeof itemFound === 'object') {
+                return itemFound;
+            }
+            else if (itemFound) {
                 /** @type {?} */
                 var labelText = itemFound[this.valueName];
                 if (isIncludingPrefixSuffix) {
@@ -16246,7 +16700,12 @@ SelectEditor = /** @class */ (function () {
      * @return {?}
      */
     function (item, state) {
-        item[this.columnDef.field] = state;
+        /** @type {?} */
+        var fieldName = this.columnDef && this.columnDef.field;
+        // when it's a complex object, then pull the object name only, e.g.: "user.firstName" => "user"
+        /** @type {?} */
+        var fieldNameFromComplexObject = fieldName.indexOf('.') ? fieldName.substring(0, fieldName.indexOf('.')) : '';
+        item[fieldNameFromComplexObject || fieldName] = state;
     };
     /**
      * @return {?}
@@ -16274,43 +16733,56 @@ SelectEditor = /** @class */ (function () {
      * @return {?}
      */
     function (item) {
-        if (this.isMultipleSelect) {
-            this.loadMultipleValues(item);
+        /** @type {?} */
+        var fieldName = this.columnDef && this.columnDef.field;
+        // when it's a complex object, then pull the object name only, e.g.: "user.firstName" => "user"
+        /** @type {?} */
+        var fieldNameFromComplexObject = fieldName.indexOf('.') ? fieldName.substring(0, fieldName.indexOf('.')) : '';
+        if (item && this.columnDef && (item.hasOwnProperty(fieldName) || item.hasOwnProperty(fieldNameFromComplexObject))) {
+            /** @type {?} */
+            var currentValue = item[fieldNameFromComplexObject || fieldName];
+            /** @type {?} */
+            var loadValue = fieldNameFromComplexObject && currentValue.hasOwnProperty(this.valueName) ? currentValue[this.valueName] : currentValue;
+            if (this.isMultipleSelect && Array.isArray(loadValue)) {
+                this.loadMultipleValues(loadValue);
+            }
+            else {
+                this.loadSingleValue(loadValue);
+            }
+            this.refresh();
         }
-        else {
-            this.loadSingleValue(item);
-        }
-        this.refresh();
     };
     /**
-     * @param {?} items
+     * @param {?} currentValues
      * @return {?}
      */
     SelectEditor.prototype.loadMultipleValues = /**
-     * @param {?} items
+     * @param {?} currentValues
      * @return {?}
      */
-    function (items) {
+    function (currentValues) {
         var _this = this;
         // convert to string because that is how the DOM will return these values
-        this.defaultValue = items[this.columnDef.field].map(function (i) { return i.toString(); });
-        this.$editorElm.find('option').each(function (i, $e) {
-            $e.selected = (_this.defaultValue.indexOf($e.value) !== -1);
-        });
+        if (Array.isArray(currentValues)) {
+            this.defaultValue = currentValues.map(function (i) { return i.toString(); });
+            this.$editorElm.find('option').each(function (i, $e) {
+                $e.selected = (_this.defaultValue.indexOf($e.value) !== -1);
+            });
+        }
     };
     /**
-     * @param {?} item
+     * @param {?} currentValue
      * @return {?}
      */
     SelectEditor.prototype.loadSingleValue = /**
-     * @param {?} item
+     * @param {?} currentValue
      * @return {?}
      */
-    function (item) {
+    function (currentValue) {
         var _this = this;
         // convert to string because that is how the DOM will return these values
         // make sure the prop exists first
-        this.defaultValue = item[this.columnDef.field] && item[this.columnDef.field].toString();
+        this.defaultValue = currentValue && currentValue.toString();
         this.$editorElm.find('option').each(function (i, $e) {
             $e.selected = (_this.defaultValue === $e.value);
         });
@@ -16354,17 +16826,24 @@ SelectEditor = /** @class */ (function () {
      * @return {?}
      */
     function () {
+        /** @type {?} */
+        var isRequired = this.columnEditor.required;
+        /** @type {?} */
+        var elmValue = this.$editorElm && this.$editorElm.val && this.$editorElm.val();
+        /** @type {?} */
+        var errorMsg = this.columnEditor.errorMessage;
         if (this.validator) {
             /** @type {?} */
             var value = this.isMultipleSelect ? this.currentValues : this.currentValue;
-            /** @type {?} */
-            var validationResults = this.validator(value, this.args);
-            if (!validationResults.valid) {
-                return validationResults;
-            }
+            return this.validator(value, this.args);
         }
-        // by default the editor is always valid
-        // if user want it to be a required checkbox, he would have to provide his own validator
+        // by default the editor is almost always valid (except when it's required but not provided)
+        if (isRequired && (elmValue === '' || (Array.isArray(elmValue) && elmValue.length === 0))) {
+            return {
+                valid: false,
+                msg: errorMsg || Constants.VALIDATION_REQUIRED_FIELD
+            };
+        }
         return {
             valid: true,
             msg: null
@@ -16405,7 +16884,7 @@ SelectEditor = /** @class */ (function () {
             /** @type {?} */
             var filterBy = this.columnEditor.collectionFilterBy;
             /** @type {?} */
-            var filterCollectionBy = this.columnEditor.collectionOptions && this.columnEditor.collectionOptions.filterAfterEachPass || null;
+            var filterCollectionBy = this.columnEditor.collectionOptions && this.columnEditor.collectionOptions.filterResultAfterEachPass || null;
             outputCollection = this._collectionService.filterCollection(outputCollection, filterBy, filterCollectionBy);
         }
         return outputCollection;
@@ -16745,11 +17224,12 @@ var SliderEditor = /** @class */ (function () {
         // if user chose to display the slider number on the right side, then update it every time it changes
         // we need to use both "input" and "change" event to be all cross-browser
         if (!this.editorParams.hideSliderNumber) {
-            this.$editorElm.on('input change', function (e) {
+            this.$editorElm.on('input change', function (event) {
+                _this._lastInputEvent = event;
                 /** @type {?} */
-                var value = e && e.target && e.target.value || '';
+                var value = event && event.target && event.target.value || '';
                 if (value) {
-                    document.getElementById(_this._elementRangeOutputId).innerHTML = e.target.value;
+                    document.getElementById(_this._elementRangeOutputId).innerHTML = event.target.value;
                 }
             });
         }
@@ -16779,11 +17259,15 @@ var SliderEditor = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        if (this.args.grid.getOptions().autoCommitEdit) {
-            this.args.grid.getEditorLock().commitCurrentEdit();
-        }
-        else {
-            this.args.commitChanges();
+        /** @type {?} */
+        var validation = this.validate();
+        if (validation && validation.valid) {
+            if (this.args.grid.getOptions().autoCommitEdit) {
+                this.args.grid.getEditorLock().commitCurrentEdit();
+            }
+            else {
+                this.args.commitChanges();
+            }
         }
     };
     /**
@@ -16805,11 +17289,17 @@ var SliderEditor = /** @class */ (function () {
      * @return {?}
      */
     function (item) {
-        // this.$input.val(this.defaultValue = item[this.columnDef.field]);
-        this.defaultValue = item[this.columnDef.field];
-        this.$input.val(this.defaultValue);
-        this.$input[0].defaultValue = this.defaultValue;
-        this.$sliderNumber.html(this.defaultValue);
+        /** @type {?} */
+        var fieldName = this.columnDef && this.columnDef.field;
+        // when it's a complex object, then pull the object name only, e.g.: "user.firstName" => "user"
+        /** @type {?} */
+        var fieldNameFromComplexObject = fieldName.indexOf('.') ? fieldName.substring(0, fieldName.indexOf('.')) : '';
+        if (item && this.columnDef && (item.hasOwnProperty(fieldName) || item.hasOwnProperty(fieldNameFromComplexObject))) {
+            this.defaultValue = item[fieldNameFromComplexObject || fieldName];
+            this.$input.val(this.defaultValue);
+            this.$input[0].defaultValue = this.defaultValue;
+            this.$sliderNumber.html(this.defaultValue);
+        }
     };
     /**
      * @return {?}
@@ -16831,7 +17321,12 @@ var SliderEditor = /** @class */ (function () {
      * @return {?}
      */
     function (item, state) {
-        item[this.columnDef.field] = state;
+        /** @type {?} */
+        var fieldName = this.columnDef && this.columnDef.field;
+        // when it's a complex object, then pull the object name only, e.g.: "user.firstName" => "user"
+        /** @type {?} */
+        var fieldNameFromComplexObject = fieldName.indexOf('.') ? fieldName.substring(0, fieldName.indexOf('.')) : '';
+        item[fieldNameFromComplexObject || fieldName] = state;
     };
     /**
      * @return {?}
@@ -16842,6 +17337,11 @@ var SliderEditor = /** @class */ (function () {
     function () {
         /** @type {?} */
         var elmValue = this.$input.val();
+        /** @type {?} */
+        var lastEvent = this._lastInputEvent && this._lastInputEvent.keyCode;
+        if (this.columnEditor && this.columnEditor.alwaysSaveOnEnterKey && lastEvent === KeyCode.ENTER) {
+            return true;
+        }
         return (!(elmValue === '' && this.defaultValue === null)) && (elmValue !== this.defaultValue);
     };
     /**
@@ -16854,6 +17354,8 @@ var SliderEditor = /** @class */ (function () {
         /** @type {?} */
         var elmValue = this.$input.val();
         /** @type {?} */
+        var isRequired = this.columnEditor.required;
+        /** @type {?} */
         var minValue = this.columnEditor.minValue;
         /** @type {?} */
         var maxValue = this.columnEditor.maxValue;
@@ -16865,11 +17367,13 @@ var SliderEditor = /** @class */ (function () {
             '{{maxValue}}': maxValue
         };
         if (this.validator) {
-            /** @type {?} */
-            var validationResults = this.validator(elmValue, this.args);
-            if (!validationResults.valid) {
-                return validationResults;
-            }
+            return this.validator(elmValue, this.args);
+        }
+        else if (isRequired && elmValue === '') {
+            return {
+                valid: false,
+                msg: errorMsg || Constants.VALIDATION_REQUIRED_FIELD
+            };
         }
         else if (minValue !== undefined && (elmValue < minValue || elmValue > maxValue)) {
             // when decimal value is bigger than 0, we only accept the decimal values as that value set
@@ -17005,9 +17509,10 @@ TextEditor = /** @class */ (function () {
         var placeholder = this.columnEditor && this.columnEditor.placeholder || '';
         this.$input = $("<input type=\"text\" class=\"editor-text editor-" + columnId + "\" placeholder=\"" + placeholder + "\" />")
             .appendTo(this.args.container)
-            .on('keydown.nav', function (e) {
-            if (e.keyCode === KeyCode.LEFT || e.keyCode === KeyCode.RIGHT) {
-                e.stopImmediatePropagation();
+            .on('keydown.nav', function (event) {
+            _this._lastInputEvent = event;
+            if (event.keyCode === KeyCode.LEFT || event.keyCode === KeyCode.RIGHT) {
+                event.stopImmediatePropagation();
             }
         });
         // the lib does not get the focus out event for some reason
@@ -17066,10 +17571,17 @@ TextEditor = /** @class */ (function () {
      * @return {?}
      */
     function (item) {
-        this.defaultValue = item[this.args.column.field] || '';
-        this.$input.val(this.defaultValue);
-        this.$input[0].defaultValue = this.defaultValue;
-        this.$input.select();
+        /** @type {?} */
+        var fieldName = this.columnDef && this.columnDef.field;
+        // when it's a complex object, then pull the object name only, e.g.: "user.firstName" => "user"
+        /** @type {?} */
+        var fieldNameFromComplexObject = fieldName.indexOf('.') ? fieldName.substring(0, fieldName.indexOf('.')) : '';
+        if (item && this.columnDef && (item.hasOwnProperty(fieldName) || item.hasOwnProperty(fieldNameFromComplexObject))) {
+            this.defaultValue = item[fieldNameFromComplexObject || fieldName] || '';
+            this.$input.val(this.defaultValue);
+            this.$input[0].defaultValue = this.defaultValue;
+            this.$input.select();
+        }
     };
     /**
      * @return {?}
@@ -17091,7 +17603,12 @@ TextEditor = /** @class */ (function () {
      * @return {?}
      */
     function (item, state) {
-        item[this.args.column.field] = state;
+        /** @type {?} */
+        var fieldName = this.columnDef && this.columnDef.field;
+        // when it's a complex object, then pull the object name only, e.g.: "user.firstName" => "user"
+        /** @type {?} */
+        var fieldNameFromComplexObject = fieldName.indexOf('.') ? fieldName.substring(0, fieldName.indexOf('.')) : '';
+        item[fieldNameFromComplexObject || fieldName] = state;
     };
     /**
      * @return {?}
@@ -17100,6 +17617,11 @@ TextEditor = /** @class */ (function () {
      * @return {?}
      */
     function () {
+        /** @type {?} */
+        var lastEvent = this._lastInputEvent && this._lastInputEvent.keyCode;
+        if (this.columnEditor && this.columnEditor.alwaysSaveOnEnterKey && lastEvent === KeyCode.ENTER) {
+            return true;
+        }
         return (!(this.$input.val() === '' && this.defaultValue === null)) && (this.$input.val() !== this.defaultValue);
     };
     /**
@@ -17127,17 +17649,24 @@ TextEditor = /** @class */ (function () {
      * @return {?}
      */
     function () {
+        /** @type {?} */
+        var isRequired = this.columnEditor.required;
+        /** @type {?} */
+        var elmValue = this.$input && this.$input.val && this.$input.val();
+        /** @type {?} */
+        var errorMsg = this.columnEditor.errorMessage;
         if (this.validator) {
             /** @type {?} */
             var value = this.$input && this.$input.val && this.$input.val();
-            /** @type {?} */
-            var validationResults = this.validator(value, this.args);
-            if (!validationResults.valid) {
-                return validationResults;
-            }
+            return this.validator(value, this.args);
         }
-        // by default the editor is always valid
-        // if user want it to be a required checkbox, he would have to provide his own validator
+        // by default the editor is almost always valid (except when it's required but not provided)
+        if (isRequired && elmValue === '') {
+            return {
+                valid: false,
+                msg: errorMsg || Constants.VALIDATION_REQUIRED_FIELD
+            };
+        }
         return {
             valid: true,
             msg: null
@@ -17254,7 +17783,7 @@ var arrayToCsvFormatter = function (row, cell, value, columnDef, dataContext) {
 /** @type {?} */
 var boldFormatter = function (row, cell, value, columnDef, dataContext) {
     /** @type {?} */
-    var isNumber = (value === null || value === undefined) ? false : !isNaN(+value);
+    var isNumber = (value === null || value === undefined || value === '') ? false : !isNaN(+value);
     if (!isNumber) {
         return '';
     }
@@ -17500,7 +18029,7 @@ var decimalFormatter = function (row, cell, value, columnDef, dataContext) {
     /** @type {?} */
     var maxDecimalPlaces = (params.maxDecimalPlaces !== null && params.maxDecimalPlaces) || 2;
     /** @type {?} */
-    var isNumber = (value === null || value === undefined) ? false : !isNaN(+value);
+    var isNumber = (value === null || value === undefined || value === '') ? false : !isNaN(+value);
     return !isNumber ? value : "" + decimalFormatted(value, minDecimalPlaces, maxDecimalPlaces);
 };
 
@@ -17520,7 +18049,7 @@ var deleteIconFormatter = function (row, cell, value, columnDef, dataContext) {
 /** @type {?} */
 var dollarColoredBoldFormatter = function (row, cell, value, columnDef, dataContext) {
     /** @type {?} */
-    var isNumber = (value === null || value === undefined) ? false : !isNaN(+value);
+    var isNumber = (value === null || value === undefined || value === '') ? false : !isNaN(+value);
     /** @type {?} */
     var params = columnDef && columnDef.params || {};
     /** @type {?} */
@@ -17547,7 +18076,7 @@ var dollarColoredBoldFormatter = function (row, cell, value, columnDef, dataCont
 /** @type {?} */
 var dollarColoredFormatter = function (row, cell, value, columnDef, dataContext) {
     /** @type {?} */
-    var isNumber = (value === null || value === undefined) ? false : !isNaN(+value);
+    var isNumber = (value === null || value === undefined || value === '') ? false : !isNaN(+value);
     /** @type {?} */
     var params = columnDef && columnDef.params || {};
     /** @type {?} */
@@ -17574,7 +18103,7 @@ var dollarColoredFormatter = function (row, cell, value, columnDef, dataContext)
 /** @type {?} */
 var dollarFormatter = function (row, cell, value, columnDef, dataContext) {
     /** @type {?} */
-    var isNumber = (value === null || value === undefined) ? false : !isNaN(+value);
+    var isNumber = (value === null || value === undefined || value === '') ? false : !isNaN(+value);
     /** @type {?} */
     var params = columnDef && columnDef.params || {};
     /** @type {?} */

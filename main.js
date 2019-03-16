@@ -532,8 +532,8 @@ var AppModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomTranslateLoader", function() { return CustomTranslateLoader; });
 /* harmony import */ var inet_ui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! inet-ui */ "./node_modules/inet-ui/esm5/inet-ui.js");
-/* harmony import */ var _vi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./vi */ "./src/app/i18n/vi.ts");
-/* harmony import */ var _en__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./en */ "./src/app/i18n/en.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -547,94 +547,52 @@ var __extends = (undefined && undefined.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 
 
 
 var CustomTranslateLoader = /** @class */ (function (_super) {
     __extends(CustomTranslateLoader, _super);
-    function CustomTranslateLoader() {
+    function CustomTranslateLoader(http) {
         var _this = _super.call(this) || this;
-        _this.assign('vi', _vi__WEBPACK_IMPORTED_MODULE_1__["viLocale"]);
-        _this.assign('en', _en__WEBPACK_IMPORTED_MODULE_2__["enLocale"]);
-        return _this;
+        _this.http = http;
+        return CustomTranslateLoader.instance = CustomTranslateLoader.instance || _this;
     }
+    /**
+     * Gets the translations from the server
+     */
+    CustomTranslateLoader.prototype.getTranslation = function (lang) {
+        var _this = this;
+        if (this.translation) {
+            return rxjs__WEBPACK_IMPORTED_MODULE_1__["Observable"].of(this.translation);
+        }
+        if (_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].production) {
+            return this.http.getJSON(iNet.getPUrl('message/keys'), { group: 'examples' }).map(function (response) {
+                _this.translation = __assign({}, _this.getResourceByLang(lang), _this.convertResourceToObject(response['items'] || []));
+                return _this.translation;
+            });
+        }
+        else {
+            return this.http.getJSON("./assets/i18n/" + lang + ".json").map(function (response) {
+                _this.translation = __assign({}, _this.getResourceByLang(lang), response);
+                return _this.translation;
+            });
+        }
+    };
+    CustomTranslateLoader.instance = null;
     return CustomTranslateLoader;
 }(inet_ui__WEBPACK_IMPORTED_MODULE_0__["CloudTransLoader"]));
 
-
-
-/***/ }),
-
-/***/ "./src/app/i18n/en.ts":
-/*!****************************!*\
-  !*** ./src/app/i18n/en.ts ***!
-  \****************************/
-/*! exports provided: enLocale */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "enLocale", function() { return enLocale; });
-var enLocale = {
-    MENU: {
-        HOME: 'Home',
-        THEME: 'Themes'
-    },
-    GRID_COLUMNS: {
-        TITLE: 'Title',
-        DURATION: 'Duration',
-        COMPLETE: '% Complete',
-        START: 'Start',
-        FINISH: 'Finish',
-        COST: 'Cost',
-        EFFORT_DRIVEN: 'Effort Driven',
-        TOTAL: 'Total',
-        AVG: 'Avg'
-    },
-    SEARCH: {
-        KEYWORD: 'Keyword'
-    },
-    FILTER: {
-        ALL: 'All'
-    }
-};
-
-
-/***/ }),
-
-/***/ "./src/app/i18n/vi.ts":
-/*!****************************!*\
-  !*** ./src/app/i18n/vi.ts ***!
-  \****************************/
-/*! exports provided: viLocale */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "viLocale", function() { return viLocale; });
-var viLocale = {
-    MENU: {
-        HOME: 'Trang chủ',
-        THEME: 'Themes'
-    },
-    GRID_COLUMNS: {
-        TITLE: 'Tiêu đề',
-        DURATION: 'Thời gian',
-        COMPLETE: '% Hoàn thành',
-        START: 'Bắt đầu',
-        FINISH: 'Kết thúc',
-        COST: 'Chi phí',
-        EFFORT_DRIVEN: 'Trạng thái',
-        TOTAL: 'Tổng',
-        AVG: 'Trung bình'
-    },
-    SEARCH: {
-        KEYWORD: 'Từ khóa'
-    },
-    FILTER: {
-        ALL: 'Tất cả'
-    }
-};
 
 
 /***/ }),
@@ -762,7 +720,7 @@ var LayoutService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"p-2\">\n    <h4>Examples</h4>\n    <div class=\"alert alert-block alert-success\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"alert\">\n            <i class=\"ace-icon fa fa-times\"></i>\n        </button>\n        Welcome to\n        <strong class=\"green\">\n            iNet UI\n        </strong>,\n        the lightweight, feature-rich and easy to use admin template.\n    </div>\n    <p>\n        <a href=\"https://npmjs.org/package/inet-ui\"><img src=\"http://img.shields.io/npm/v/inet-ui.svg?style=flat\" /></a>&nbsp;\n        <a href=\"https://npmcharts.com/compare/inet-ui?minimal=true\"><img src=\"http://img.shields.io/npm/dm/inet-ui.svg?style=flat\" /></a>&nbsp;\n        <a href=\"https://www.codacy.com/app/nguyenthanhvy105/examples?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nguyenthanhvy105/examples&amp;utm_campaign=Badge_Grade\"><img src=\"https://api.codacy.com/project/badge/Grade/a9b84096d29f49738ba028f38e0606b7\"/></a>&nbsp;\n        <a href=\"https://travis-ci.org/nguyenthanhvy105/examples\"><img src=\"https://travis-ci.org/nguyenthanhvy105/examples.svg?branch=master\" alt=\"build:passed\"></a>\n    </p>\n    <p>Provides API, Layout, Component, Module for UI</p>\n    <p class=\"bd-lead\">Quickly get a project started with any of our examples ranging from using parts of the framework\n        to custom components and layouts.</p>\n    <h4>Components:</h4>\n    <ul>\n        <li><a routerLink=\"/themes\">Themes</a></li>\n        <li><a routerLink=\"/select\">Select & Tags</a></li>\n        <li><a routerLink=\"/grid\">Grid</a></li>\n        <li><a routerLink=\"/list-view\">ListView</a></li>\n        <li><a routerLink=\"/form\">Forms</a></li>\n    </ul>\n    <h4>Source Code:</h4>\n    <a class=\"btn btn-primary btn-lg\" href=\"https://github.com/nguyenthanhvy105/examples\" target=\"_blank\">\n        <i class=\"fa fa-github\" aria-hidden=\"true\"></i>\n        GitHub</a>\n    <a class=\"ml-1 btn btn-success btn-lg\" href=\"https://github.com/nguyenthanhvy105/examples/archive/master.zip\">\n        <i class=\"fa fa-download\" aria-hidden=\"true\"></i>\n         Download</a>\n</div>\n"
+module.exports = "<div class=\"p-2\">\n    <h4>Examples</h4>\n    <div class=\"alert alert-block alert-success\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"alert\">\n            <i class=\"ace-icon fa fa-times\"></i>\n        </button>\n        Welcome to\n        <strong class=\"green\">\n            iNet UI\n        </strong>,\n        the lightweight, feature-rich and easy to use admin template.\n    </div>\n    <p>\n        <a href=\"https://npmjs.org/package/inet-ui\" target=\"_blank\"><img src=\"http://img.shields.io/npm/v/inet-ui.svg?style=flat\" /></a>&nbsp;\n        <a href=\"https://npmcharts.com/compare/inet-ui?minimal=true\" target=\"_blank\"><img src=\"http://img.shields.io/npm/dm/inet-ui.svg?style=flat\" /></a>&nbsp;\n        <a href=\"https://www.codacy.com/app/nguyenthanhvy105/examples?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nguyenthanhvy105/examples&amp;utm_campaign=Badge_Grade\" target=\"_blank\"><img src=\"https://api.codacy.com/project/badge/Grade/a9b84096d29f49738ba028f38e0606b7\"/></a>&nbsp;\n        <a href=\"https://travis-ci.org/nguyenthanhvy105/examples\" target=\"_blank\"><img src=\"https://travis-ci.org/nguyenthanhvy105/examples.svg?branch=master\" alt=\"build:passed\"></a>\n    </p>\n    <p>Provides API, Layout, Component, Module for UI</p>\n    <p class=\"bd-lead\">Quickly get a project started with any of our examples ranging from using parts of the framework\n        to custom components and layouts.</p>\n    <h4>Components:</h4>\n    <ul>\n        <li><a routerLink=\"/themes\">Themes</a></li>\n        <li><a routerLink=\"/select\">Select & Tags</a></li>\n        <li><a routerLink=\"/grid\">Grid</a></li>\n        <li><a routerLink=\"/list-view\">ListView</a></li>\n        <li><a routerLink=\"/form\">Forms</a></li>\n    </ul>\n    <h4>Source Code:</h4>\n    <a class=\"btn btn-primary btn-lg\" href=\"https://github.com/nguyenthanhvy105/examples\" target=\"_blank\">\n        <i class=\"fa fa-github\" aria-hidden=\"true\"></i>\n        GitHub</a>\n    <a class=\"ml-1 btn btn-success btn-lg\" href=\"https://github.com/nguyenthanhvy105/examples/archive/master.zip\">\n        <i class=\"fa fa-download\" aria-hidden=\"true\"></i>\n         Download</a>\n</div>\n"
 
 /***/ }),
 
