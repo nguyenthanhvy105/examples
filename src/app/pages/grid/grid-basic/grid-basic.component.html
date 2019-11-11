@@ -15,7 +15,7 @@
                 [selectColumn]="true"
                 [multiSelect]="true"
                 [pagination_input]="true"
-                [pagination_range]="true"
+                [pagination_range]="false"
                 [indexColumnHeader]="'#'"
                 [selectOnRowClick]="true"
                 [showReloading]="true">
@@ -45,10 +45,16 @@
               [property]="'id'"
               [header]=""
               [width]="40">
-        <ng-template #dataTableCell let-item="item">
+        <ng-template #dataTableCell let-item="item" let-row="row">
           <span (click)="deleteItem(item, $event)" class="fs-100 badge badge-danger"><i class="fa fa-trash"></i></span>
         </ng-template>
       </data-table-column>
+        <ng-template #basicSearch>
+            <app-grid-basic-search (onToggle)="onToggleSearch($event)"></app-grid-basic-search>
+        </ng-template>
+        <ng-template #advanceSearch *ngIf="expandedAdvSearch">
+          <app-grid-advance-search></app-grid-advance-search>
+        </ng-template>
     </data-table>
     <app-confirm-dialog iconCls="fa fa-trash" [title]="'Xóa ?'"
                         [content]="'Bạn có chắc là đồng ý muốn xóa item đã chọn không ?'">

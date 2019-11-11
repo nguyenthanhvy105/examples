@@ -14,6 +14,7 @@ export class GridBasicComponent implements OnInit {
     pageNumber = 1;
     @ViewChild(DataTable) demoTable;
     @ViewChild(ConfirmDialogComponent) confirmDialog: ConfirmDialogComponent;
+    expandedAdvSearch = false;
     constructor(private dataService: DataService) {
     }
 
@@ -26,6 +27,7 @@ export class GridBasicComponent implements OnInit {
     }
 
     load(params) {
+
         this.clearSelected();
         this.dataResource.query(params).then( () => {
             this.dataService.getPeople().subscribe((items: any) => {
@@ -62,6 +64,10 @@ export class GridBasicComponent implements OnInit {
         const selectedRows: Array<DataTableRow> = this.confirmDialog.getData() || [];
         console.log('[selectedRows]', selectedRows);
         this.confirmDialog.hide();
+    }
+
+    onToggleSearch(expanded: boolean) {
+        this.expandedAdvSearch = expanded;
     }
 
 }

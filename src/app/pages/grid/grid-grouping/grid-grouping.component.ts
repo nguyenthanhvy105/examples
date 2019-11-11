@@ -15,7 +15,6 @@ import {
 import {TranslateService} from "@ngx-translate/core";
 import {Subscription} from "rxjs";
 
-@Injectable()
 @Component({
     templateUrl: './grid-grouping.component.html',
     styleUrls: ['./grid-grouping.component.scss']
@@ -161,7 +160,8 @@ export class GridGroupingComponent implements OnInit, OnDestroy {
     @HostListener('window:resize', ['$event'])
     onResize($event) {
         console.log('[window:resize]', $event.target.innerWidth);
-        this.angularGrid.resizerService.attachAutoResizeDataGrid();
+        this.angularGrid.resizerService.resizeGrid();
+        // this.angularGrid.resizerService.attachAutoResizeDataGrid();
     }
 
     angularGridReady(angularGrid: AngularGridInstance) {

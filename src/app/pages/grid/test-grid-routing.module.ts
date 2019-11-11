@@ -3,6 +3,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {GridBasicComponent} from "./grid-basic/grid-basic.component";
 import {GridEditableComponent} from "./grid-editable/grid-editable.component";
 import {GridGroupingComponent} from "./grid-grouping/grid-grouping.component";
+import {GridPaginationComponent} from "./grid-pagination/grid-pagination.component";
 
 const routes: Routes = [
     {path: '', redirectTo: 'basic', pathMatch: 'full'},
@@ -17,6 +18,10 @@ const routes: Routes = [
     {
         path: 'grouping',
         component: GridGroupingComponent
+    },
+    {
+        path: 'pagination',
+        component: GridPaginationComponent
     }
 ];
 

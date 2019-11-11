@@ -1,0 +1,11 @@
+<div class="d-flex pr-1 pl-0">
+  <input type="text" class="form-control form-control-sm" />
+  <button type="button" class="btn btn-sm btn-default ml-1" >
+    <i class="fa fa-search"></i>
+  </button>
+  <button type="button" (click)="onToggleSearch($event)" data-toggle="tooltip"
+          class="btn btn-sm btn-default ml-1">
+    <i class="fa font-sm"
+       [ngClass]="{' fa-chevron-up': expandedAdvSearch, 'fa-chevron-down': !expandedAdvSearch}"></i>
+  </button>
+</div>

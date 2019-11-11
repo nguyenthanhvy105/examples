@@ -3,6 +3,7 @@ import {Observable} from 'rxjs';
 import {DataService, Person} from "../../data/data.service";
 import {map} from 'rxjs/operators';
 import {Logger} from "inet-ui";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
     selector: 'app-select-multi',
@@ -11,6 +12,7 @@ import {Logger} from "inet-ui";
 
 @Logger()
 export class SelectMultiComponent implements OnInit {
+    demoForm: FormGroup;
 
     people$1: Observable<any[]>;
     selectedPeople1 = [];
@@ -37,10 +39,19 @@ export class SelectMultiComponent implements OnInit {
 
     changed: boolean;
 
-    constructor(private dataService: DataService) {
+    constructor(private dataService: DataService, private fb: FormBuilder) {
     }
 
     ngOnInit() {
+        this.demoForm = this.fb.group({
+            tag1: [null, null],
+            tag2: [null, null],
+            tag3: [null, null],
+            tag4: [null, null],
+            tag5: [null, null],
+            tag6: [null, null]
+        });
+
         this.people$1 = this.dataService.getPeople();
         this.people$2 = this.dataService.getPeople();
 
