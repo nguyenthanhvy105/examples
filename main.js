@@ -415,10 +415,16 @@ var AppComponent = /** @class */ (function () {
             _this.theme = theme;
         });
     };
+    AppComponent.prototype.onToggleMenu = function ($event) {
+        this.expandedMenu = !this.expandedMenu;
+    };
+    AppComponent.prototype.onChange = function ($event) {
+        this.expandedMenu = $event['expandedMenu'];
+    };
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
-            template: "\n        <app-layout [theme]=\"theme\" [homeRouterLink]=\"'home'\">\n            <ng-template #menu>\n                <app-example-menu></app-example-menu>\n            </ng-template>\n        </app-layout>"
+            template: "\n        <app-layout [theme]=\"theme\" [homeRouterLink]=\"'home'\" (routeChange)=\"onChange($event)\"\n                    [expandedMenu]=\"expandedMenu\"\n                    [hideTogglerButton]=\"false\" [hideSearch]=\"false\"\n                    [hideCompanyMenu]=\"true\" [hideProfileMenu]=\"true\">\n            <ng-template #menu>\n                <app-example-menu (onToggleMenu)=\"onToggleMenu($event)\" [expandedMenu]=\"expandedMenu\"></app-example-menu>\n            </ng-template>\n        </app-layout>"
         }),
         __metadata("design:paramtypes", [_pages_common_layout_service__WEBPACK_IMPORTED_MODULE_1__["LayoutService"]])
     ], AppComponent);
@@ -451,7 +457,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_common_example_common_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/common/example-common.module */ "./src/app/pages/common/example-common.module.ts");
 /* harmony import */ var _pages_home_home_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/home/home.component */ "./src/app/pages/home/home.component.ts");
 /* harmony import */ var _i18n_custom_translate_loader__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./i18n/custom-translate-loader */ "./src/app/i18n/custom-translate-loader.ts");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -475,17 +480,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
 var AppModule = /** @class */ (function () {
-    function AppModule(socketService, securityService, coreService, translate) {
+    function AppModule(socketService, securityService, coreService) {
         this.socketService = socketService;
         this.securityService = securityService;
         this.coreService = coreService;
-        this.translate = translate;
         this.coreService.setEnvironment(_environments_environment__WEBPACK_IMPORTED_MODULE_6__["environment"]);
-        if (!this.coreService.getEnvironment().production) {
-            this.translate.use('en');
-        }
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
@@ -511,8 +511,7 @@ var AppModule = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [inet_ui__WEBPACK_IMPORTED_MODULE_7__["SocketService"],
             inet_core__WEBPACK_IMPORTED_MODULE_5__["SecurityService"],
-            inet_core__WEBPACK_IMPORTED_MODULE_5__["CoreService"],
-            _ngx_translate_core__WEBPACK_IMPORTED_MODULE_12__["TranslateService"]])
+            inet_core__WEBPACK_IMPORTED_MODULE_5__["CoreService"]])
     ], AppModule);
     return AppModule;
 }());
@@ -783,7 +782,7 @@ var HomeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul id=\"mainnav-menu\" class=\"menu-lg list-group\">\n    <li class=\"list-header\">Menu</li>\n    <li routerLinkActive=\"active\">\n        <a routerLink=\"home\" routerLinkActive=\"active\">\n            <i class=\"fa fa-home\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">{{'MENU.HOME' | translate}}</span>\n        </a>\n    </li>\n    <li routerLinkActive=\"active\">\n        <a routerLink=\"themes\" routerLinkActive=\"active\">\n            <i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">{{'MENU.THEME' | translate}}</span>\n            <span class=\"pull-right badge badge-warning\">New</span>\n        </a>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#select-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-cog\"></i>\n            <span class=\"menu-title\">Select & Tags</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"select-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"select/tags\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-tags\"></i> Tags\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"select/multiselect\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-check-square\"></i> Multiselect\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#grid-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-table\"></i>\n            <span class=\"menu-title\">Grid</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"grid-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"grid/basic\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Basic\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"grid/editable\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-table\"></i> Editable\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"grid/grouping\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-table\"></i> Grouping\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#list-view-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-list\"></i>\n            <span class=\"menu-title\">ListView</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"list-view-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"list-view/basic\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Basic\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#forms-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-address-card\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">Forms</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"forms-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"form/elements\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Elements\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"form/number-format\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-calculator\"></i> Number Format\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"form/file-upload\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cloud-upload\"></i> File Upload\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active\">\n        <a href=\"https://valor-software.com/ngx-bootstrap/#/documentation#getting-started\" target=\"_blank\">\n            <i class=\"fa fa-codepen\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">ngx-bootstrap</span>\n        </a>\n    </li>\n</ul>\n"
+module.exports = "<ul id=\"mainnav-menu\" class=\"menu-lg list-group\">\n    <li class=\"list-header\">Menu\n        <span (click)=\"toggleMenu($event)\" class=\"pull-right fa fa-compress pointer\" title=\"{{'MENU.COLLAPSE' | translate}}\"></span>\n    </li>\n    <li *ngIf=\"!expandedMenu\">\n        <a href=\"javascript:;\" (click)=\"toggleMenu($event)\">\n            <i class=\"fa fa-bars\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">{{'MENU.EXPAND' | translate}}</span>\n        </a>\n    </li>\n    <li routerLinkActive=\"active\">\n        <a routerLink=\"home\" routerLinkActive=\"active\">\n            <i class=\"fa fa-home\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">{{'MENU.HOME' | translate}}</span>\n        </a>\n    </li>\n    <li routerLinkActive=\"active\">\n        <a routerLink=\"themes\" routerLinkActive=\"active\">\n            <i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">{{'MENU.THEME' | translate}}</span>\n            <span class=\"pull-right badge badge-warning\">New</span>\n        </a>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#select-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-cog\"></i>\n            <span class=\"menu-title\">Select & Tags</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"select-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"select/tags\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-tags\"></i> Tags\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"select/multiselect\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-check-square\"></i> Multiselect\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#grid-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-table\"></i>\n            <span class=\"menu-title\">Grid</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"grid-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"grid/basic\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Basic\n                </a>\n            </li>\n            <!--li>\n                <a routerLink=\"grid/pagination\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Pagination\n                </a>\n            </li-->\n            <li>\n                <a routerLink=\"grid/editable\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-table\"></i> Editable\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"grid/grouping\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-table\"></i> Grouping\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#list-view-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-list\"></i>\n            <span class=\"menu-title\">ListView</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"list-view-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"list-view/basic\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Basic\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#forms-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-address-card\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">Forms</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"forms-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"form/elements\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Elements\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"form/number-format\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-calculator\"></i> Number Format\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"form/file-upload\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cloud-upload\"></i> File Upload\n                </a>\n            </li>\n        </ul>\n    </li>\n</ul>\n"
 
 /***/ }),
 
@@ -794,7 +793,7 @@ module.exports = "<ul id=\"mainnav-menu\" class=\"menu-lg list-group\">\n    <li
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "img.file-icon {\n  width: 20px;\n  height: 20px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9uZ3V5ZW50aGFuaHZ5MTA1L2V4YW1wbGVzL3NyYy9hcHAvcGFnZXMvbGF5b3V0L21lbnUvbWVudS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQVc7RUFDWCxZQUFZLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9sYXlvdXQvbWVudS9tZW51LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW1nLmZpbGUtaWNvbiB7XG4gIHdpZHRoOiAyMHB4O1xuICBoZWlnaHQ6IDIwcHg7XG59Il19 */"
+module.exports = ".sidebar-collapse {\n  text-align: center;\n  padding: 3px 0;\n  position: relative;\n  font-size: 13px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3RyYXZpcy9idWlsZC9uZ3V5ZW50aGFuaHZ5MTA1L2V4YW1wbGVzL3NyYy9hcHAvcGFnZXMvbGF5b3V0L21lbnUvbWVudS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFrQjtFQUNsQixjQUFjO0VBQ2Qsa0JBQWtCO0VBQ2xCLGVBQWMsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2xheW91dC9tZW51L21lbnUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc2lkZWJhci1jb2xsYXBzZSB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgcGFkZGluZzogM3B4IDA7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgZm9udC1zaXplOjEzcHg7XG59XG4iXX0= */"
 
 /***/ }),
 
@@ -827,6 +826,8 @@ var MenuComponent = /** @class */ (function () {
     function MenuComponent(router, location) {
         this.router = router;
         this.location = location;
+        this.expandedMenu = false;
+        this.onToggleMenu = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
     }
     MenuComponent.prototype.ngOnInit = function () {
         this._router = this.router.events.filter(function (event) { return event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationEnd"]; })
@@ -839,6 +840,17 @@ var MenuComponent = /** @class */ (function () {
     MenuComponent.prototype.back = function () {
         this.location.back();
     };
+    MenuComponent.prototype.toggleMenu = function ($event) {
+        this.onToggleMenu.emit(this.expandedMenu);
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], MenuComponent.prototype, "expandedMenu", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", Object)
+    ], MenuComponent.prototype, "onToggleMenu", void 0);
     MenuComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-example-menu',

@@ -1,7 +1,9 @@
 {
   "MENU": {
     "HOME": "Trang chủ",
-    "THEME": "Giao diện"
+    "THEME": "Giao diện",
+    "EXPAND": "Mở rộng danh mục",
+    "COLLAPSE": "Thu gọn danh mục"
   },
   "GRID_COLUMNS": {
     "TITLE": "Tiêu đề",

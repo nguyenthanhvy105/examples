@@ -173,7 +173,7 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
 
             // returns an interaction object
             interaction: function( elem, dd ){
-                var offset = (elem && elem.ownerDocument) 
+                var offset = (elem && elem.ownerDocument)
                     ? $( elem )[ dd.relative ? "position" : "offset" ]() || { top:0, left:0 }
                     : { top: 0, left: 0 };
                 return {
@@ -401,7 +401,7 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
 
 ;/**
  * @author zhixin wen <wenzhixin2010@gmail.com>
- * @version 1.2.1
+ * @version 1.2.2
  *
  * http://wenzhixin.net.cn/p/multiple-select/
  *
@@ -610,7 +610,7 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
     this.selectItemName = 'data-name="selectItem' + name + '"';
 
     if (!this.options.keepOpen) {
-      $('body').off('click').on('click', function (e) {
+      $('body').click(function (e) {
         if ($(e.target)[0] === that.$choice[0] ||
           $(e.target).parents('.ms-choice')[0] === that.$choice[0]) {
           return;
@@ -623,6 +623,8 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
         }
       });
     }
+
+    this.options.onAfterCreate();
   }
 
   MultipleSelect.prototype = {
@@ -686,6 +688,12 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
 
       if (this.options.isOpen) {
         this.open();
+      }
+
+      if (this.options.openOnHover) {
+        $(".ms-parent").hover(function (e) {
+          that.open();
+        });
       }
     },
 
@@ -1041,7 +1049,7 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
       var scrollbarWidth = hasScrollbar ? this.getScrollbarWidth() : 0;
       var maxDropWidth = 0;
 
-      $('li span', this.$drop).each(function(index, elm) {
+      $('li span', this.$drop).each(function (index, elm) {
         var spanWidth = $(elm).width();
         if (spanWidth > maxDropWidth) {
           maxDropWidth = spanWidth;
@@ -1088,7 +1096,7 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
       return msDropOffsetTop - pageScroll;
     },
 
-    update: function (isInit) {
+    update: function (ignoreTrigger) {
       var selects = this.options.displayValues ? this.getSelects() : this.getSelects('text'),
         $span = this.$choice.find('>span'),
         sl = selects.length;
@@ -1124,7 +1132,7 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
       }
 
       // set selects to select
-      this.$el.val(this.getSelects()).trigger('change');
+      this.$el.val(this.getSelects());
 
       // add selected class to selected li
       this.$drop.find('li').removeClass('selected');
@@ -1133,7 +1141,7 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
       });
 
       // trigger <select> change event
-      if (!isInit) {
+      if (!ignoreTrigger) {
         this.$el.trigger('change');
       }
     },
@@ -1164,9 +1172,9 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
     //value or text, default: 'value'
     getSelects: function (type) {
       var that = this,
-      texts = [],
-      labels = [],
-      values = [];
+        texts = [],
+        labels = [],
+        values = [];
       this.$drop.find(sprintf('input[%s]:checked', this.selectItemName)).each(function () {
         texts.push($(this).parents('li').first().text());
         labels.push($(this).parents('li').attr('label') || '');
@@ -1225,7 +1233,7 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
         });
       }
 
-      switch(type) {
+      switch (type) {
         case 'text':
           return texts;
         case 'label':
@@ -1278,7 +1286,7 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
           $children.length === $children.filter(':checked').length);
       });
 
-      this.update();
+      this.update(false);
     },
 
     enable: function () {
@@ -1287,6 +1295,11 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
 
     disable: function () {
       this.$choice.addClass('disabled');
+    },
+
+    destroy: function () {
+      this.$el.before(this.$parent).show();
+      this.$parent.remove();
     },
 
     checkAll: function () {
@@ -1372,7 +1385,7 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
         'open', 'close',
         'checkAll', 'uncheckAll',
         'focus', 'blur',
-        'refresh', 'close'
+        'refresh', 'destroy'
       ];
 
     this.each(function () {
@@ -1438,6 +1451,7 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
     addTitle: false,
     filterAcceptOnEnter: false,
     hideOptgroupCheckboxes: false,
+    openOnHover: false,
     okButton: false,
     okButtonText: 'OK',
     selectAllText: 'Select all',
@@ -1480,6 +1494,9 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
       return false;
     },
     onFilter: function () {
+      return false;
+    },
+    onAfterCreate: function () {
       return false;
     }
   };

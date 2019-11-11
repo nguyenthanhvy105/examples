@@ -1,7 +1,9 @@
 {
   "MENU": {
     "HOME": "Home",
-    "THEME": "Themes"
+    "THEME": "Themes",
+    "EXPAND": "Expand menu",
+    "COLLAPSE": "Collapse menu"
   },
   "GRID_COLUMNS": {
     "TITLE": "Title",
