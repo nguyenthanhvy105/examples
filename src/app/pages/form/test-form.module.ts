@@ -8,6 +8,7 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
 import {AttachmentModule} from "./attachment/attachment.module";
 import { NumberFormatComponent } from './number-format/number-format.component';
 import {NumberFormatModule} from "inet-ui";
+import {ColorPickerModule} from "ngx-color-picker";
 
 @NgModule({
     declarations: [FormElementsComponent, FileUploadComponent, NumberFormatComponent],
@@ -17,7 +18,8 @@ import {NumberFormatModule} from "inet-ui";
         ReactiveFormsModule,
         TestFormRoutingModule,
         AttachmentModule,
-        NumberFormatModule
+        NumberFormatModule,
+        ColorPickerModule
     ]
 })
 export class TestFormModule {

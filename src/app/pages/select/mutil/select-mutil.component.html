@@ -3,7 +3,7 @@
         <h5><i class="fa fa-cube" aria-hidden="true"></i> Mutil Select</h5>
     </div>
     <div class="cp-content">
-        <form class="p-2">
+        <form [formGroup]="demoForm" class="p-2">
             <div class="col-sm-12 card">
                 <div class="card-body">
                     <div class="form-group margin-b-form-group row">
@@ -11,6 +11,7 @@
                         <div class="col-sm-5">
                             <button (click)="changeModel()" [disabled]="changed" class="mb-2 btn btn-sm btn-primary">Change model</button>
                             <ng-select
+                                    [formControl]="demoForm.controls['tag1']"
                                     [items]="people$1 | async"
                                     [multiple]="true"
                                     [closeOnSelect]="false"
@@ -24,12 +25,16 @@
                         </div>
                         <div class="col-sm-4">
                             <p class="p-2">Selected value: {{selectedPeople1 | json}}</p>
+                            <p *ngIf="!selectedPeople1.length" class="text-danger">
+                                <i class="fa fa-exclamation-triangle"></i> Name field is required
+                            </p>
                         </div>
                     </div>
                     <div class="form-group margin-b-form-group row">
                         <label class="control-label col-form-label col-sm-2 font-weight-bold">Hide selected : </label>
                         <div class="col-sm-5">
                             <ng-select
+                                    [formControl]="demoForm.controls['tag2']"
                                     [items]="people$1 | async"
                                     [multiple]="true"
                                     [closeOnSelect]="false"
@@ -37,11 +42,16 @@
                                     bindLabel="name"
                                     name="tag2"
                                     placeholder="Select people"
+                                    [ngClass]="{'ng-select-invalid':!selectedPeople2.length && demoForm.controls['tag2'].touched}"
                                     [(ngModel)]="selectedPeople2">
                             </ng-select>
                         </div>
                         <div class="col-sm-4">
                             <p class="p-2">Selected value: {{selectedPeople2 | json}}</p>
+                            <p *ngIf="demoForm.controls['tag2'].touched && !selectedPeople2.length"
+                                 class="text-danger col-sm-12 pl-0">
+                                <i class="fa fa-exclamation-triangle"></i> Tag2 field is required
+                            </p>
                         </div>
                     </div>
                     <div class="form-group margin-b-form-group row">
@@ -50,13 +60,14 @@
                             <div class="alert alert-warning mb-2" *ngIf="selectedPeople2.length === 3 && select.focused">
                                 <small >Max selection reached</small>
                             </div>
-                            <ng-select
-                                #select
+                            <ng-select #select
+                                       [formControl]="demoForm.controls['tag3']"
                                 [items]="people$2 | async"
                                 [multiple]="true"
                                 [maxSelectedItems]="3"
                                 bindLabel="name"
                                 name="tag3"
+
                                 [(ngModel)]="selectedPeople3">
                             </ng-select>
                         </div>
@@ -68,6 +79,7 @@
                         <label class="control-label col-form-label col-sm-2 font-weight-bold">Disabled: </label>
                         <div class="col-sm-5">
                             <ng-select
+                                    [formControl]="demoForm.controls['tag4']"
                                     [items]="people$3 | async"
                                     bindLabel="name"
                                     [multiple]="true"
@@ -77,7 +89,6 @@
                             </ng-select>
                         </div>
                         <div class="col-sm-4">
-
                             <p class="p-2">Selected value: {{selectedPeople4 | json}}</p>
                         </div>
                     </div>
@@ -86,6 +97,7 @@
                         <label class="control-label col-form-label col-sm-2 font-weight-bold">Custom template: </label>
                         <div class="col-sm-5">
                             <ng-select
+                                    [formControl]="demoForm.controls['tag5']"
                                     [items]="githubUsers$ | async"
                                     [multiple]="true"
                                     bindLabel="login"
@@ -111,6 +123,7 @@
                         <label class="control-label col-form-label col-sm-2 font-weight-bold">Checkbox & Group: </label>
                         <div class="col-sm-5">
                             <ng-select
+                                    [formControl]="demoForm.controls['tag6']"
                                     [items]="people"
                                     [multiple]="true"
                                     bindLabel="name"

@@ -56,7 +56,12 @@
                             </div>
                         </div>
                     </div>
-
+                    <div class="form-group row">
+                        <label class="control-label col-form-label col-sm-3 lbl-bold">Color picker : </label>
+                        <div class="col-sm-9 pl-0">
+                            <input name="color" class="form-control form-control-sm" [(colorPicker)]="color" [style.background]="color">
+                        </div>
+                    </div>
                     <div class="form-group row">
                         <label class="control-label col-form-label col-sm-3 lbl-bold">Status : </label>
                         <div class="col-sm-9 pl-0">

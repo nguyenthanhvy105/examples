@@ -19,7 +19,6 @@ import {MenuComponent} from './pages/layout/menu/menu.component';
 import {ExampleCommonModule} from "./pages/common/example-common.module";
 import { HomeComponent } from './pages/home/home.component';
 import {CustomTranslateLoader} from "./i18n/custom-translate-loader";
-import {TranslateService} from "@ngx-translate/core";
 
 @NgModule({
     declarations: [
@@ -45,11 +44,7 @@ import {TranslateService} from "@ngx-translate/core";
 export class AppModule {
     constructor(private socketService: SocketService,
                 private securityService: SecurityService,
-                private coreService: CoreService,
-                private translate: TranslateService) {
+                private coreService: CoreService) {
         this.coreService.setEnvironment(environment);
-        if (!this.coreService.getEnvironment().production) {
-            this.translate.use('en');
-        }
     }
 }

@@ -38,9 +38,9 @@
     "chart.js": "2.7.1",
     "core-js": "^2.5.7",
     "d3": "^4.10.2",
-    "inet-core": "0.8.2",
-    "inet-ui": "0.8.6",
-    "ngx-bootstrap": "~3.2.0",
+    "inet-core": "0.8.4",
+    "inet-ui": "0.9.6",
+    "ngx-bootstrap": "~3.1.2",
     "jquery": ">=3.0.0",
     "popper.js": "~1.14.6",
     "perfect-scrollbar": "0.7.1",
@@ -52,10 +52,11 @@
     "vertx3-eventbus-client": "3.5.4",
     "zone.js": "^0.8.26",
     "moment": "~2.22.2",
-    "angular-slickgrid": "2.4.2",
+    "angular-slickgrid": "2.8.1",
     "flatpickr": "^4.5.0",
     "jquery-ui-dist": "^1.12.1",
-    "lodash.isequal": "^4.5.0"
+    "lodash.isequal": "^4.5.0",
+    "ngx-color-picker": "7.4.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.10.0",

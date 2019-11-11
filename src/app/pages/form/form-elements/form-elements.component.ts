@@ -12,7 +12,7 @@ export class FormElementsComponent implements OnInit {
     demoForm: FormGroup;
     person: Developer = new Developer();
     data: Developer;
-
+    color: '#000';
     constructor(private fb: FormBuilder, private dataService: DataService) {
     }
 
@@ -54,7 +54,6 @@ export class Developer implements Person {
     phone: string;
     disabled?: boolean;
     picture: string;
-
     constructor(name?: string) {
         this.name = name;
     }

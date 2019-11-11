@@ -32,9 +32,6 @@
         .navbar-brand:before {
             content: 'Examples';
         }
-        #user-profile .dropdown-menu {
-            display: none !important;
-        }
         .navbar .logo {
             content: url("assets/images/logo.png") !important;
         }
@@ -62,12 +59,12 @@
         var arrPath = pathServer.split('/');
         // var domainPath = arrPath.slice(0, 3).join('/');
         iNet.apply(iNet, {
-            prefix: 'vinaco',
+            prefix: '',
+            firmPrefix: '',
             imgFolder: '//media.inetcloud.vn/images/examples',
             commonImageFolder: '//media.inetcloud.vn/images/common',
             jsFolder: '',
             webchat: 'http://vertx.inetcloud.vn:8082/eventbus',
-            firmPrefix: '',
             extension: '.cpx',
             fileServer: '//media.inetcloud.vn/',
             path: '/' + arrPath[3],
