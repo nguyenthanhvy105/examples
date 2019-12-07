@@ -532,7 +532,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomTranslateLoader", function() { return CustomTranslateLoader; });
 /* harmony import */ var inet_ui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! inet-ui */ "./node_modules/inet-ui/esm5/inet-ui.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -560,11 +561,13 @@ var __assign = (undefined && undefined.__assign) || function () {
 
 
 
+
 var CustomTranslateLoader = /** @class */ (function (_super) {
     __extends(CustomTranslateLoader, _super);
     function CustomTranslateLoader(http) {
         var _this = _super.call(this) || this;
         _this.http = http;
+        _this.storageKey = 'examples_translation';
         return CustomTranslateLoader.instance = CustomTranslateLoader.instance || _this;
     }
     /**
@@ -575,15 +578,31 @@ var CustomTranslateLoader = /** @class */ (function (_super) {
         if (this.translation) {
             return rxjs__WEBPACK_IMPORTED_MODULE_1__["Observable"].of(this.translation);
         }
-        if (_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].production) {
+        this.storageKey = this.storageKey + "_" + lang;
+        if (sessionStorage && sessionStorage.getItem(this.storageKey)) {
+            this.translation = JSON.parse(sessionStorage.getItem(this.storageKey));
+            return rxjs__WEBPACK_IMPORTED_MODULE_1__["Observable"].of(this.translation);
+        }
+        if (_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].production) {
+            // group : The name of your package (application)
             return this.http.getJSON(iNet.getPUrl('message/keys'), { group: 'examples' }).map(function (response) {
                 _this.translation = __assign({}, _this.getResourceByLang(lang), _this.convertResourceToObject(response['items'] || []));
+                if (sessionStorage) {
+                    sessionStorage.setItem(_this.storageKey, JSON.stringify(_this.translation));
+                }
                 return _this.translation;
             });
         }
         else {
-            return this.http.getJSON("./assets/i18n/" + lang + ".json").map(function (response) {
-                _this.translation = __assign({}, _this.getResourceByLang(lang), response);
+            /*
+              return this.http.getJSON(`./assets/i18n/json/${lang}.json`).map((response: any) => {
+                this.translation = {...this.getResourceByLang(lang), ...response};
+                return this.translation;
+            });
+             */
+            var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]().set('Content-Type', 'text/plain; charset=utf-8');
+            return this.http.get("./assets/i18n/common_" + lang + ".properties", { headers: headers, responseType: 'text' }).map(function (response) {
+                _this.translation = __assign({}, _this.getResourceByLang(lang), _this.convertPropertiesToObject(response));
                 return _this.translation;
             });
         }

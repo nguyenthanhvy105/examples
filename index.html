@@ -34,8 +34,8 @@
         .navbar .logo {
             content: url("assets/images/logo.png") !important;
         }
-        .theme-silver .navbar .logo {
-            content: url("assets/images/silver-logo.png") !important;
+        .theme-silver .navbar .logo-area:before {
+           content: 'LOGO COMPANY';
         }
     </style>
 </head>
@@ -67,6 +67,7 @@
             extension: '.cpx',
             fileServer: '//media.inetcloud.vn/',
             path: '/' + arrPath[3],
+            username: 'demo',
             displayName: 'Demo',
             getUrl: function (url) {
                 return pathServer + '/' + url.replace(/\//g,'-');
