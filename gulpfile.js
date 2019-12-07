@@ -87,14 +87,23 @@ function copyChunkToBuildFolder(callback) {
             .pipe(gulpRename(updatePath))
             .pipe(gulp.dest(buildDir + '/css')).on('end', resolve);
     }));
-
-/*    promises.push(new Promise(resolve => {
+    /*
+    promises.push(new Promise(resolve => {
         gulp.src(['dist/ng/!**!/!*.properties'])
             .pipe(gulpRename(function(path){
                 path.dirname = '';
             }))
             .pipe(gulp.dest(buildDir + '/message')).on('end', resolve);
-    }));*/
+    }));
+    */
+    promises.push(new Promise(resolve => {
+        gulp.src(['dist/ng/**/*.properties'])
+            .pipe(gulpRename(function(path){
+                path.dirname = '';
+            }))
+            .pipe(gulp.dest(buildDir + '/message')).on('end', resolve);
+    }));
+
     Promise.all(promises).then(callback);
 
     function updatePath(path) {
