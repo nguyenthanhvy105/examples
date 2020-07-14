@@ -14,8 +14,8 @@
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "resources": {
-        "files": ["/images/**", "/themes/**", "/js/**"],
-        "urls": ["https://media.inetcloud.vn/**"]
+        "files": ["/nguyenthanhvy105/**"],
+        "urls": ["https://my-json-server.typicode.com/**"]
       }
     }
   ]

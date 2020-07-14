@@ -69,10 +69,12 @@
             username: 'demo',
             displayName: 'Demo',
             getUrl: function (url) {
-                return pathServer + '/' + url.replace(/\//g,'-');
+                //return pathServer + '/' + url.replace(/\//g,'-');
+                return  pathServer + '/system-list';
             },
             getPUrl: function (url) {
-                return pathServer + '/' + url.replace(/\//g,'-');
+                //return pathServer + '/' + url.replace(/\//g,'-');
+                return  pathServer + '/system-list';
             }
         });
     </script>

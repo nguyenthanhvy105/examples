@@ -18,7 +18,7 @@
     "deploy": "npm run copy:flatpickr && ng build --prod --named-chunks --base-href https://nguyenthanhvy105.github.io/examples/",
     "ngsw": "node_modules/.bin/ngsw-config dist/ng/examples ngsw-config.json",
     "start:server": "http-server ./dist/ng/examples -p 4200 -c-1",
-    "test:local": "npm run build  && npm run start:server",
+    "deploy:local": "npm run build  && npm run start:server",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",

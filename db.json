@@ -1,14 +1,5 @@
 {
-  "system-userrole-list": {
+  "system-list": {
     "uuid": "2c57842423cb56c931e32379"
-  },
-  "gl-contact-profile-load": {
-    "uuid": "4d8c1ebed14abbda38807243"
-  },
-  "gl-organ-profile-load": {
-    "uuid": "d23669606624aaa3baa2937c"
-  },
-  "system-userprofile-view": {
-    "uuid": "0dde1537288532171662436a"
   }
 }
