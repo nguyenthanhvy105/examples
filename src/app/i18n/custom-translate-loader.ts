@@ -23,6 +23,7 @@ export class CustomTranslateLoader extends CloudTransLoader {
             this.translation = JSON.parse(sessionStorage.getItem(this.storageKey));
             return Observable.of(this.translation);
         }
+        /*
         if (environment.production) {
             // group : The name of your package (application)
             return this.http.getJSON(iNet.getPUrl('message/keys'), {group: 'examples'}).map((response: any) => {
@@ -33,17 +34,17 @@ export class CustomTranslateLoader extends CloudTransLoader {
                 return this.translation;
             });
         } else {
-            /*
-              return this.http.getJSON(`./assets/i18n/json/${lang}.json`).map((response: any) => {
-                this.translation = {...this.getResourceByLang(lang), ...response};
-                return this.translation;
-            });
-             */
             const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
             return this.http.get(`./assets/i18n/common_${lang}.properties`,  { headers, responseType: 'text'}).map((response: any) => {
                 this.translation = {...this.getResourceByLang(lang), ...this.convertPropertiesToObject(response)};
                 return this.translation;
             });
         }
+        */
+        return this.http.getJSON(`./assets/i18n/json/${lang}.json`).map((response: any) => {
+            this.translation = {...this.getResourceByLang(lang), ...response};
+            return this.translation;
+        });
+
     }
 }
