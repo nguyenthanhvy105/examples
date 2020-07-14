@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1594699151114,
+  "timestamp": 1594701436029,
   "appData": "",
   "index": "https://nguyenthanhvy105.github.io/examples/index.html",
   "assetGroups": [
@@ -12,7 +12,7 @@
         "https://nguyenthanhvy105.github.io/examples/common.a8021ddfeeac2bd23bd2.js",
         "https://nguyenthanhvy105.github.io/examples/favicon.ico",
         "https://nguyenthanhvy105.github.io/examples/index.html",
-        "https://nguyenthanhvy105.github.io/examples/main.fa89c552a2b4ed13441f.js",
+        "https://nguyenthanhvy105.github.io/examples/main.c05cb21da9cc1adab9fa.js",
         "https://nguyenthanhvy105.github.io/examples/multiple-select.0374d3512faa18ddac2c.png",
         "https://nguyenthanhvy105.github.io/examples/pages-form-test-form-module-ngfactory.8f4fe994bfde8fbfc465.js",
         "https://nguyenthanhvy105.github.io/examples/pages-grid-test-grid-module-ngfactory.59ef78b4c01e0052180f.js",
@@ -40,8 +40,8 @@
   "hashTable": {
     "https://nguyenthanhvy105.github.io/examples/common.a8021ddfeeac2bd23bd2.js": "a4ec36f933f44911f6ba663f13ce21a4c329cd2e",
     "https://nguyenthanhvy105.github.io/examples/favicon.ico": "a4299fda5701addd6d917a89bb225f758337857b",
-    "https://nguyenthanhvy105.github.io/examples/index.html": "1732076a946744bf89e224bcabd027b05af19e2d",
-    "https://nguyenthanhvy105.github.io/examples/main.fa89c552a2b4ed13441f.js": "2cf2d78a6cefaf5a616befd0a7d6513975f7aaa0",
+    "https://nguyenthanhvy105.github.io/examples/index.html": "b368cf3e5039943fec2acbdf973f484c1db95bef",
+    "https://nguyenthanhvy105.github.io/examples/main.c05cb21da9cc1adab9fa.js": "24fc13e25fe2d0b427ee87f6eabbed8ce482772b",
     "https://nguyenthanhvy105.github.io/examples/multiple-select.0374d3512faa18ddac2c.png": "e305c7277a4911e6fb6d04d5ceb0baa6d59f5c57",
     "https://nguyenthanhvy105.github.io/examples/pages-form-test-form-module-ngfactory.8f4fe994bfde8fbfc465.js": "3acfd06b26cca6161947afc26ded4c2251cd17ba",
     "https://nguyenthanhvy105.github.io/examples/pages-grid-test-grid-module-ngfactory.59ef78b4c01e0052180f.js": "825c69cba13dd7a016fe56cc6960a27c54ea16b4",
