@@ -15,12 +15,15 @@ export class ListViewBasicComponent implements OnInit {
     @ViewChild(ListViewComponent) listView: ListViewComponent;
 
     constructor(private dataService: DataService) {
+
     }
 
     ngOnInit() {
         this.dataService.getPeople().subscribe((items: any) => {
             this.peoples = items;
         });
+
+
     }
 
     onListSelectionChanged(items, click?: boolean) {
@@ -30,4 +33,12 @@ export class ListViewBasicComponent implements OnInit {
     search($event: any) {
 
     }
+
+    clear() {
+        this.dataService.getPeople().subscribe((items: any) => {
+            this.peoples = [items[5], items[6], items[10]];
+            // this.listView.selectItem(1);
+        });
+    }
+
 }

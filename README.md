@@ -9,7 +9,7 @@ Simple Admin App built using Angular 7 and Bootstrap 4
 
 [Demo](https://nguyenthanhvy105.github.io/examples)
 ===
-Tasks to do for running the project:
+Tasks to do for running the project
 ===
 Quickly get a project started with any of our examples ranging from using parts of the framework to custom components and layouts.
 
@@ -20,7 +20,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - RxJS 6.2.0
 - iNet Core 0.7.9
 - iNet UI 0.7.14
-- Bootstrap 4.1.1 
+- Bootstrap 4.1.1
 - Ngx-bootstrap 3.1.2
 
 Features
@@ -89,12 +89,10 @@ sudo npm i -g bower gulp-cli
 ```
 Run `gulp` to build the project for a module.
 
-Contributors:
+Contributors
 ===
 - Vy Nguyen <ntvy@inetcloud.vn>
 - Hanh Le <hanhld@inetcloud.vn>
-- An Tran <anttt@inetcloud.vn>
-- Van Nguyen <vannbt@inetcloud.vn>
 
 [npm-url]: https://npmjs.org/package/inet-ui
 [npm-version-image]: http://img.shields.io/npm/v/inet-ui.svg?style=flat

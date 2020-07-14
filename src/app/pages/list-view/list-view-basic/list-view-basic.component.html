@@ -4,11 +4,13 @@
     </div>
     <div class="cp-content">
         <div class="list-container">
+            <button class="btn btn-primary btn-sm m-2" (click)="clear()">Clear</button>
+
             <div class="row">
                 <list-view
                         class="list-view list-group col-sm-4" [items]="peoples"
                         idProperty="uuid"
-                        (onSelectionChanged)="onListSelectionChanged($event,true)">
+                        (onSelectionChanged)="onListSelectionChanged($event,true)" [autoSelect]="true" [singleSelect]="true">
 
                     <ng-template #toolbarTpl>
                         <nav class="nav nav-tabs text-center">

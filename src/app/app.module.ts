@@ -12,7 +12,6 @@ import {CoreService, SecurityService} from 'inet-core';
 import {environment} from '../environments/environment';
 import {
     BootstrapLayoutModule, CloudTranslateModule,
-    SocketService,
     WebsocketModule
 } from 'inet-ui';
 import {MenuComponent} from './pages/layout/menu/menu.component';
@@ -42,8 +41,7 @@ import {CustomTranslateLoader} from "./i18n/custom-translate-loader";
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {
-    constructor(private socketService: SocketService,
-                private securityService: SecurityService,
+    constructor(private securityService: SecurityService,
                 private coreService: CoreService) {
         this.coreService.setEnvironment(environment);
     }

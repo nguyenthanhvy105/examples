@@ -42,10 +42,6 @@ ng_module(
         "@npm//inet-ui",
         "@npm//d3",
         "@npm//later",
-        "@npm//ng5-slider",
-        "@npm//ng2-dnd",
-        "@npm//ng2-charts",
-        "@npm//ng2-pdf-viewer",
         "@npm//interactjs",
         "@npm//jssip",
         "@rxjs"
