@@ -5,7 +5,7 @@ import {LayoutService} from "./pages/common/layout.service";
     selector: 'app-root',
     template: `
         <app-layout [theme]="theme" [homeRouterLink]="'home'" (routeChange)="onChange($event)"
-                    [expandedMenu]="expandedMenu"
+                    [expandedMenu]="expandedMenu" [visibleMessageIcon]="false"
                     [hideTogglerButton]="false" [hideSearch]="false"
                     [hideCompanyMenu]="true" [hideProfileMenu]="true">
             <ng-template #menu>

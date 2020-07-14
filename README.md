@@ -22,7 +22,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - iNet UI 0.7.14
 - Bootstrap 4.1.1
 - Ngx-bootstrap 3.1.2
-
 Features
 ===
 - Integrate with iCloud Platform modules
@@ -33,7 +32,7 @@ Features
 - ListView
 - Forms
 - File Upload
-
+- Progressive Web App (PWA)
 Build
 ===
 
