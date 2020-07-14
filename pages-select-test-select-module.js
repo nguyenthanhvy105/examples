@@ -13,7 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _data_data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../data/data.service */ "./src/app/pages/data/data.service.ts");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var inet_ui__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! inet-ui */ "./node_modules/inet-ui/esm5/inet-ui.js");
+/* harmony import */ var inet_ui__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! inet-ui */ "./node_modules/inet-ui/fesm5/inet-ui.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -242,7 +242,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _test_select_routing_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./test-select-routing.module */ "./src/app/pages/select/test-select-routing.module.ts");
-/* harmony import */ var inet_ui__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! inet-ui */ "./node_modules/inet-ui/esm5/inet-ui.js");
+/* harmony import */ var inet_ui__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! inet-ui */ "./node_modules/inet-ui/fesm5/inet-ui.js");
 /* harmony import */ var _tags_tags_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./tags/tags.component */ "./src/app/pages/select/tags/tags.component.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _mutil_select_multi_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./mutil/select-multi.component */ "./src/app/pages/select/mutil/select-multi.component.ts");

@@ -1,5 +1,304 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
 
+/***/ "./node_modules/inet-chat/node_modules/moment/locale sync recursive ^\\.\\/.*$":
+/*!*************************************************************************!*\
+  !*** ./node_modules/inet-chat/node_modules/moment/locale sync ^\.\/.*$ ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": "./node_modules/inet-chat/node_modules/moment/locale/af.js",
+	"./af.js": "./node_modules/inet-chat/node_modules/moment/locale/af.js",
+	"./ar": "./node_modules/inet-chat/node_modules/moment/locale/ar.js",
+	"./ar-dz": "./node_modules/inet-chat/node_modules/moment/locale/ar-dz.js",
+	"./ar-dz.js": "./node_modules/inet-chat/node_modules/moment/locale/ar-dz.js",
+	"./ar-kw": "./node_modules/inet-chat/node_modules/moment/locale/ar-kw.js",
+	"./ar-kw.js": "./node_modules/inet-chat/node_modules/moment/locale/ar-kw.js",
+	"./ar-ly": "./node_modules/inet-chat/node_modules/moment/locale/ar-ly.js",
+	"./ar-ly.js": "./node_modules/inet-chat/node_modules/moment/locale/ar-ly.js",
+	"./ar-ma": "./node_modules/inet-chat/node_modules/moment/locale/ar-ma.js",
+	"./ar-ma.js": "./node_modules/inet-chat/node_modules/moment/locale/ar-ma.js",
+	"./ar-sa": "./node_modules/inet-chat/node_modules/moment/locale/ar-sa.js",
+	"./ar-sa.js": "./node_modules/inet-chat/node_modules/moment/locale/ar-sa.js",
+	"./ar-tn": "./node_modules/inet-chat/node_modules/moment/locale/ar-tn.js",
+	"./ar-tn.js": "./node_modules/inet-chat/node_modules/moment/locale/ar-tn.js",
+	"./ar.js": "./node_modules/inet-chat/node_modules/moment/locale/ar.js",
+	"./az": "./node_modules/inet-chat/node_modules/moment/locale/az.js",
+	"./az.js": "./node_modules/inet-chat/node_modules/moment/locale/az.js",
+	"./be": "./node_modules/inet-chat/node_modules/moment/locale/be.js",
+	"./be.js": "./node_modules/inet-chat/node_modules/moment/locale/be.js",
+	"./bg": "./node_modules/inet-chat/node_modules/moment/locale/bg.js",
+	"./bg.js": "./node_modules/inet-chat/node_modules/moment/locale/bg.js",
+	"./bm": "./node_modules/inet-chat/node_modules/moment/locale/bm.js",
+	"./bm.js": "./node_modules/inet-chat/node_modules/moment/locale/bm.js",
+	"./bn": "./node_modules/inet-chat/node_modules/moment/locale/bn.js",
+	"./bn.js": "./node_modules/inet-chat/node_modules/moment/locale/bn.js",
+	"./bo": "./node_modules/inet-chat/node_modules/moment/locale/bo.js",
+	"./bo.js": "./node_modules/inet-chat/node_modules/moment/locale/bo.js",
+	"./br": "./node_modules/inet-chat/node_modules/moment/locale/br.js",
+	"./br.js": "./node_modules/inet-chat/node_modules/moment/locale/br.js",
+	"./bs": "./node_modules/inet-chat/node_modules/moment/locale/bs.js",
+	"./bs.js": "./node_modules/inet-chat/node_modules/moment/locale/bs.js",
+	"./ca": "./node_modules/inet-chat/node_modules/moment/locale/ca.js",
+	"./ca.js": "./node_modules/inet-chat/node_modules/moment/locale/ca.js",
+	"./cs": "./node_modules/inet-chat/node_modules/moment/locale/cs.js",
+	"./cs.js": "./node_modules/inet-chat/node_modules/moment/locale/cs.js",
+	"./cv": "./node_modules/inet-chat/node_modules/moment/locale/cv.js",
+	"./cv.js": "./node_modules/inet-chat/node_modules/moment/locale/cv.js",
+	"./cy": "./node_modules/inet-chat/node_modules/moment/locale/cy.js",
+	"./cy.js": "./node_modules/inet-chat/node_modules/moment/locale/cy.js",
+	"./da": "./node_modules/inet-chat/node_modules/moment/locale/da.js",
+	"./da.js": "./node_modules/inet-chat/node_modules/moment/locale/da.js",
+	"./de": "./node_modules/inet-chat/node_modules/moment/locale/de.js",
+	"./de-at": "./node_modules/inet-chat/node_modules/moment/locale/de-at.js",
+	"./de-at.js": "./node_modules/inet-chat/node_modules/moment/locale/de-at.js",
+	"./de-ch": "./node_modules/inet-chat/node_modules/moment/locale/de-ch.js",
+	"./de-ch.js": "./node_modules/inet-chat/node_modules/moment/locale/de-ch.js",
+	"./de.js": "./node_modules/inet-chat/node_modules/moment/locale/de.js",
+	"./dv": "./node_modules/inet-chat/node_modules/moment/locale/dv.js",
+	"./dv.js": "./node_modules/inet-chat/node_modules/moment/locale/dv.js",
+	"./el": "./node_modules/inet-chat/node_modules/moment/locale/el.js",
+	"./el.js": "./node_modules/inet-chat/node_modules/moment/locale/el.js",
+	"./en-au": "./node_modules/inet-chat/node_modules/moment/locale/en-au.js",
+	"./en-au.js": "./node_modules/inet-chat/node_modules/moment/locale/en-au.js",
+	"./en-ca": "./node_modules/inet-chat/node_modules/moment/locale/en-ca.js",
+	"./en-ca.js": "./node_modules/inet-chat/node_modules/moment/locale/en-ca.js",
+	"./en-gb": "./node_modules/inet-chat/node_modules/moment/locale/en-gb.js",
+	"./en-gb.js": "./node_modules/inet-chat/node_modules/moment/locale/en-gb.js",
+	"./en-ie": "./node_modules/inet-chat/node_modules/moment/locale/en-ie.js",
+	"./en-ie.js": "./node_modules/inet-chat/node_modules/moment/locale/en-ie.js",
+	"./en-il": "./node_modules/inet-chat/node_modules/moment/locale/en-il.js",
+	"./en-il.js": "./node_modules/inet-chat/node_modules/moment/locale/en-il.js",
+	"./en-in": "./node_modules/inet-chat/node_modules/moment/locale/en-in.js",
+	"./en-in.js": "./node_modules/inet-chat/node_modules/moment/locale/en-in.js",
+	"./en-nz": "./node_modules/inet-chat/node_modules/moment/locale/en-nz.js",
+	"./en-nz.js": "./node_modules/inet-chat/node_modules/moment/locale/en-nz.js",
+	"./en-sg": "./node_modules/inet-chat/node_modules/moment/locale/en-sg.js",
+	"./en-sg.js": "./node_modules/inet-chat/node_modules/moment/locale/en-sg.js",
+	"./eo": "./node_modules/inet-chat/node_modules/moment/locale/eo.js",
+	"./eo.js": "./node_modules/inet-chat/node_modules/moment/locale/eo.js",
+	"./es": "./node_modules/inet-chat/node_modules/moment/locale/es.js",
+	"./es-do": "./node_modules/inet-chat/node_modules/moment/locale/es-do.js",
+	"./es-do.js": "./node_modules/inet-chat/node_modules/moment/locale/es-do.js",
+	"./es-us": "./node_modules/inet-chat/node_modules/moment/locale/es-us.js",
+	"./es-us.js": "./node_modules/inet-chat/node_modules/moment/locale/es-us.js",
+	"./es.js": "./node_modules/inet-chat/node_modules/moment/locale/es.js",
+	"./et": "./node_modules/inet-chat/node_modules/moment/locale/et.js",
+	"./et.js": "./node_modules/inet-chat/node_modules/moment/locale/et.js",
+	"./eu": "./node_modules/inet-chat/node_modules/moment/locale/eu.js",
+	"./eu.js": "./node_modules/inet-chat/node_modules/moment/locale/eu.js",
+	"./fa": "./node_modules/inet-chat/node_modules/moment/locale/fa.js",
+	"./fa.js": "./node_modules/inet-chat/node_modules/moment/locale/fa.js",
+	"./fi": "./node_modules/inet-chat/node_modules/moment/locale/fi.js",
+	"./fi.js": "./node_modules/inet-chat/node_modules/moment/locale/fi.js",
+	"./fil": "./node_modules/inet-chat/node_modules/moment/locale/fil.js",
+	"./fil.js": "./node_modules/inet-chat/node_modules/moment/locale/fil.js",
+	"./fo": "./node_modules/inet-chat/node_modules/moment/locale/fo.js",
+	"./fo.js": "./node_modules/inet-chat/node_modules/moment/locale/fo.js",
+	"./fr": "./node_modules/inet-chat/node_modules/moment/locale/fr.js",
+	"./fr-ca": "./node_modules/inet-chat/node_modules/moment/locale/fr-ca.js",
+	"./fr-ca.js": "./node_modules/inet-chat/node_modules/moment/locale/fr-ca.js",
+	"./fr-ch": "./node_modules/inet-chat/node_modules/moment/locale/fr-ch.js",
+	"./fr-ch.js": "./node_modules/inet-chat/node_modules/moment/locale/fr-ch.js",
+	"./fr.js": "./node_modules/inet-chat/node_modules/moment/locale/fr.js",
+	"./fy": "./node_modules/inet-chat/node_modules/moment/locale/fy.js",
+	"./fy.js": "./node_modules/inet-chat/node_modules/moment/locale/fy.js",
+	"./ga": "./node_modules/inet-chat/node_modules/moment/locale/ga.js",
+	"./ga.js": "./node_modules/inet-chat/node_modules/moment/locale/ga.js",
+	"./gd": "./node_modules/inet-chat/node_modules/moment/locale/gd.js",
+	"./gd.js": "./node_modules/inet-chat/node_modules/moment/locale/gd.js",
+	"./gl": "./node_modules/inet-chat/node_modules/moment/locale/gl.js",
+	"./gl.js": "./node_modules/inet-chat/node_modules/moment/locale/gl.js",
+	"./gom-deva": "./node_modules/inet-chat/node_modules/moment/locale/gom-deva.js",
+	"./gom-deva.js": "./node_modules/inet-chat/node_modules/moment/locale/gom-deva.js",
+	"./gom-latn": "./node_modules/inet-chat/node_modules/moment/locale/gom-latn.js",
+	"./gom-latn.js": "./node_modules/inet-chat/node_modules/moment/locale/gom-latn.js",
+	"./gu": "./node_modules/inet-chat/node_modules/moment/locale/gu.js",
+	"./gu.js": "./node_modules/inet-chat/node_modules/moment/locale/gu.js",
+	"./he": "./node_modules/inet-chat/node_modules/moment/locale/he.js",
+	"./he.js": "./node_modules/inet-chat/node_modules/moment/locale/he.js",
+	"./hi": "./node_modules/inet-chat/node_modules/moment/locale/hi.js",
+	"./hi.js": "./node_modules/inet-chat/node_modules/moment/locale/hi.js",
+	"./hr": "./node_modules/inet-chat/node_modules/moment/locale/hr.js",
+	"./hr.js": "./node_modules/inet-chat/node_modules/moment/locale/hr.js",
+	"./hu": "./node_modules/inet-chat/node_modules/moment/locale/hu.js",
+	"./hu.js": "./node_modules/inet-chat/node_modules/moment/locale/hu.js",
+	"./hy-am": "./node_modules/inet-chat/node_modules/moment/locale/hy-am.js",
+	"./hy-am.js": "./node_modules/inet-chat/node_modules/moment/locale/hy-am.js",
+	"./id": "./node_modules/inet-chat/node_modules/moment/locale/id.js",
+	"./id.js": "./node_modules/inet-chat/node_modules/moment/locale/id.js",
+	"./is": "./node_modules/inet-chat/node_modules/moment/locale/is.js",
+	"./is.js": "./node_modules/inet-chat/node_modules/moment/locale/is.js",
+	"./it": "./node_modules/inet-chat/node_modules/moment/locale/it.js",
+	"./it-ch": "./node_modules/inet-chat/node_modules/moment/locale/it-ch.js",
+	"./it-ch.js": "./node_modules/inet-chat/node_modules/moment/locale/it-ch.js",
+	"./it.js": "./node_modules/inet-chat/node_modules/moment/locale/it.js",
+	"./ja": "./node_modules/inet-chat/node_modules/moment/locale/ja.js",
+	"./ja.js": "./node_modules/inet-chat/node_modules/moment/locale/ja.js",
+	"./jv": "./node_modules/inet-chat/node_modules/moment/locale/jv.js",
+	"./jv.js": "./node_modules/inet-chat/node_modules/moment/locale/jv.js",
+	"./ka": "./node_modules/inet-chat/node_modules/moment/locale/ka.js",
+	"./ka.js": "./node_modules/inet-chat/node_modules/moment/locale/ka.js",
+	"./kk": "./node_modules/inet-chat/node_modules/moment/locale/kk.js",
+	"./kk.js": "./node_modules/inet-chat/node_modules/moment/locale/kk.js",
+	"./km": "./node_modules/inet-chat/node_modules/moment/locale/km.js",
+	"./km.js": "./node_modules/inet-chat/node_modules/moment/locale/km.js",
+	"./kn": "./node_modules/inet-chat/node_modules/moment/locale/kn.js",
+	"./kn.js": "./node_modules/inet-chat/node_modules/moment/locale/kn.js",
+	"./ko": "./node_modules/inet-chat/node_modules/moment/locale/ko.js",
+	"./ko.js": "./node_modules/inet-chat/node_modules/moment/locale/ko.js",
+	"./ku": "./node_modules/inet-chat/node_modules/moment/locale/ku.js",
+	"./ku.js": "./node_modules/inet-chat/node_modules/moment/locale/ku.js",
+	"./ky": "./node_modules/inet-chat/node_modules/moment/locale/ky.js",
+	"./ky.js": "./node_modules/inet-chat/node_modules/moment/locale/ky.js",
+	"./lb": "./node_modules/inet-chat/node_modules/moment/locale/lb.js",
+	"./lb.js": "./node_modules/inet-chat/node_modules/moment/locale/lb.js",
+	"./lo": "./node_modules/inet-chat/node_modules/moment/locale/lo.js",
+	"./lo.js": "./node_modules/inet-chat/node_modules/moment/locale/lo.js",
+	"./lt": "./node_modules/inet-chat/node_modules/moment/locale/lt.js",
+	"./lt.js": "./node_modules/inet-chat/node_modules/moment/locale/lt.js",
+	"./lv": "./node_modules/inet-chat/node_modules/moment/locale/lv.js",
+	"./lv.js": "./node_modules/inet-chat/node_modules/moment/locale/lv.js",
+	"./me": "./node_modules/inet-chat/node_modules/moment/locale/me.js",
+	"./me.js": "./node_modules/inet-chat/node_modules/moment/locale/me.js",
+	"./mi": "./node_modules/inet-chat/node_modules/moment/locale/mi.js",
+	"./mi.js": "./node_modules/inet-chat/node_modules/moment/locale/mi.js",
+	"./mk": "./node_modules/inet-chat/node_modules/moment/locale/mk.js",
+	"./mk.js": "./node_modules/inet-chat/node_modules/moment/locale/mk.js",
+	"./ml": "./node_modules/inet-chat/node_modules/moment/locale/ml.js",
+	"./ml.js": "./node_modules/inet-chat/node_modules/moment/locale/ml.js",
+	"./mn": "./node_modules/inet-chat/node_modules/moment/locale/mn.js",
+	"./mn.js": "./node_modules/inet-chat/node_modules/moment/locale/mn.js",
+	"./mr": "./node_modules/inet-chat/node_modules/moment/locale/mr.js",
+	"./mr.js": "./node_modules/inet-chat/node_modules/moment/locale/mr.js",
+	"./ms": "./node_modules/inet-chat/node_modules/moment/locale/ms.js",
+	"./ms-my": "./node_modules/inet-chat/node_modules/moment/locale/ms-my.js",
+	"./ms-my.js": "./node_modules/inet-chat/node_modules/moment/locale/ms-my.js",
+	"./ms.js": "./node_modules/inet-chat/node_modules/moment/locale/ms.js",
+	"./mt": "./node_modules/inet-chat/node_modules/moment/locale/mt.js",
+	"./mt.js": "./node_modules/inet-chat/node_modules/moment/locale/mt.js",
+	"./my": "./node_modules/inet-chat/node_modules/moment/locale/my.js",
+	"./my.js": "./node_modules/inet-chat/node_modules/moment/locale/my.js",
+	"./nb": "./node_modules/inet-chat/node_modules/moment/locale/nb.js",
+	"./nb.js": "./node_modules/inet-chat/node_modules/moment/locale/nb.js",
+	"./ne": "./node_modules/inet-chat/node_modules/moment/locale/ne.js",
+	"./ne.js": "./node_modules/inet-chat/node_modules/moment/locale/ne.js",
+	"./nl": "./node_modules/inet-chat/node_modules/moment/locale/nl.js",
+	"./nl-be": "./node_modules/inet-chat/node_modules/moment/locale/nl-be.js",
+	"./nl-be.js": "./node_modules/inet-chat/node_modules/moment/locale/nl-be.js",
+	"./nl.js": "./node_modules/inet-chat/node_modules/moment/locale/nl.js",
+	"./nn": "./node_modules/inet-chat/node_modules/moment/locale/nn.js",
+	"./nn.js": "./node_modules/inet-chat/node_modules/moment/locale/nn.js",
+	"./oc-lnc": "./node_modules/inet-chat/node_modules/moment/locale/oc-lnc.js",
+	"./oc-lnc.js": "./node_modules/inet-chat/node_modules/moment/locale/oc-lnc.js",
+	"./pa-in": "./node_modules/inet-chat/node_modules/moment/locale/pa-in.js",
+	"./pa-in.js": "./node_modules/inet-chat/node_modules/moment/locale/pa-in.js",
+	"./pl": "./node_modules/inet-chat/node_modules/moment/locale/pl.js",
+	"./pl.js": "./node_modules/inet-chat/node_modules/moment/locale/pl.js",
+	"./pt": "./node_modules/inet-chat/node_modules/moment/locale/pt.js",
+	"./pt-br": "./node_modules/inet-chat/node_modules/moment/locale/pt-br.js",
+	"./pt-br.js": "./node_modules/inet-chat/node_modules/moment/locale/pt-br.js",
+	"./pt.js": "./node_modules/inet-chat/node_modules/moment/locale/pt.js",
+	"./ro": "./node_modules/inet-chat/node_modules/moment/locale/ro.js",
+	"./ro.js": "./node_modules/inet-chat/node_modules/moment/locale/ro.js",
+	"./ru": "./node_modules/inet-chat/node_modules/moment/locale/ru.js",
+	"./ru.js": "./node_modules/inet-chat/node_modules/moment/locale/ru.js",
+	"./sd": "./node_modules/inet-chat/node_modules/moment/locale/sd.js",
+	"./sd.js": "./node_modules/inet-chat/node_modules/moment/locale/sd.js",
+	"./se": "./node_modules/inet-chat/node_modules/moment/locale/se.js",
+	"./se.js": "./node_modules/inet-chat/node_modules/moment/locale/se.js",
+	"./si": "./node_modules/inet-chat/node_modules/moment/locale/si.js",
+	"./si.js": "./node_modules/inet-chat/node_modules/moment/locale/si.js",
+	"./sk": "./node_modules/inet-chat/node_modules/moment/locale/sk.js",
+	"./sk.js": "./node_modules/inet-chat/node_modules/moment/locale/sk.js",
+	"./sl": "./node_modules/inet-chat/node_modules/moment/locale/sl.js",
+	"./sl.js": "./node_modules/inet-chat/node_modules/moment/locale/sl.js",
+	"./sq": "./node_modules/inet-chat/node_modules/moment/locale/sq.js",
+	"./sq.js": "./node_modules/inet-chat/node_modules/moment/locale/sq.js",
+	"./sr": "./node_modules/inet-chat/node_modules/moment/locale/sr.js",
+	"./sr-cyrl": "./node_modules/inet-chat/node_modules/moment/locale/sr-cyrl.js",
+	"./sr-cyrl.js": "./node_modules/inet-chat/node_modules/moment/locale/sr-cyrl.js",
+	"./sr.js": "./node_modules/inet-chat/node_modules/moment/locale/sr.js",
+	"./ss": "./node_modules/inet-chat/node_modules/moment/locale/ss.js",
+	"./ss.js": "./node_modules/inet-chat/node_modules/moment/locale/ss.js",
+	"./sv": "./node_modules/inet-chat/node_modules/moment/locale/sv.js",
+	"./sv.js": "./node_modules/inet-chat/node_modules/moment/locale/sv.js",
+	"./sw": "./node_modules/inet-chat/node_modules/moment/locale/sw.js",
+	"./sw.js": "./node_modules/inet-chat/node_modules/moment/locale/sw.js",
+	"./ta": "./node_modules/inet-chat/node_modules/moment/locale/ta.js",
+	"./ta.js": "./node_modules/inet-chat/node_modules/moment/locale/ta.js",
+	"./te": "./node_modules/inet-chat/node_modules/moment/locale/te.js",
+	"./te.js": "./node_modules/inet-chat/node_modules/moment/locale/te.js",
+	"./tet": "./node_modules/inet-chat/node_modules/moment/locale/tet.js",
+	"./tet.js": "./node_modules/inet-chat/node_modules/moment/locale/tet.js",
+	"./tg": "./node_modules/inet-chat/node_modules/moment/locale/tg.js",
+	"./tg.js": "./node_modules/inet-chat/node_modules/moment/locale/tg.js",
+	"./th": "./node_modules/inet-chat/node_modules/moment/locale/th.js",
+	"./th.js": "./node_modules/inet-chat/node_modules/moment/locale/th.js",
+	"./tk": "./node_modules/inet-chat/node_modules/moment/locale/tk.js",
+	"./tk.js": "./node_modules/inet-chat/node_modules/moment/locale/tk.js",
+	"./tl-ph": "./node_modules/inet-chat/node_modules/moment/locale/tl-ph.js",
+	"./tl-ph.js": "./node_modules/inet-chat/node_modules/moment/locale/tl-ph.js",
+	"./tlh": "./node_modules/inet-chat/node_modules/moment/locale/tlh.js",
+	"./tlh.js": "./node_modules/inet-chat/node_modules/moment/locale/tlh.js",
+	"./tr": "./node_modules/inet-chat/node_modules/moment/locale/tr.js",
+	"./tr.js": "./node_modules/inet-chat/node_modules/moment/locale/tr.js",
+	"./tzl": "./node_modules/inet-chat/node_modules/moment/locale/tzl.js",
+	"./tzl.js": "./node_modules/inet-chat/node_modules/moment/locale/tzl.js",
+	"./tzm": "./node_modules/inet-chat/node_modules/moment/locale/tzm.js",
+	"./tzm-latn": "./node_modules/inet-chat/node_modules/moment/locale/tzm-latn.js",
+	"./tzm-latn.js": "./node_modules/inet-chat/node_modules/moment/locale/tzm-latn.js",
+	"./tzm.js": "./node_modules/inet-chat/node_modules/moment/locale/tzm.js",
+	"./ug-cn": "./node_modules/inet-chat/node_modules/moment/locale/ug-cn.js",
+	"./ug-cn.js": "./node_modules/inet-chat/node_modules/moment/locale/ug-cn.js",
+	"./uk": "./node_modules/inet-chat/node_modules/moment/locale/uk.js",
+	"./uk.js": "./node_modules/inet-chat/node_modules/moment/locale/uk.js",
+	"./ur": "./node_modules/inet-chat/node_modules/moment/locale/ur.js",
+	"./ur.js": "./node_modules/inet-chat/node_modules/moment/locale/ur.js",
+	"./uz": "./node_modules/inet-chat/node_modules/moment/locale/uz.js",
+	"./uz-latn": "./node_modules/inet-chat/node_modules/moment/locale/uz-latn.js",
+	"./uz-latn.js": "./node_modules/inet-chat/node_modules/moment/locale/uz-latn.js",
+	"./uz.js": "./node_modules/inet-chat/node_modules/moment/locale/uz.js",
+	"./vi": "./node_modules/inet-chat/node_modules/moment/locale/vi.js",
+	"./vi.js": "./node_modules/inet-chat/node_modules/moment/locale/vi.js",
+	"./x-pseudo": "./node_modules/inet-chat/node_modules/moment/locale/x-pseudo.js",
+	"./x-pseudo.js": "./node_modules/inet-chat/node_modules/moment/locale/x-pseudo.js",
+	"./yo": "./node_modules/inet-chat/node_modules/moment/locale/yo.js",
+	"./yo.js": "./node_modules/inet-chat/node_modules/moment/locale/yo.js",
+	"./zh-cn": "./node_modules/inet-chat/node_modules/moment/locale/zh-cn.js",
+	"./zh-cn.js": "./node_modules/inet-chat/node_modules/moment/locale/zh-cn.js",
+	"./zh-hk": "./node_modules/inet-chat/node_modules/moment/locale/zh-hk.js",
+	"./zh-hk.js": "./node_modules/inet-chat/node_modules/moment/locale/zh-hk.js",
+	"./zh-mo": "./node_modules/inet-chat/node_modules/moment/locale/zh-mo.js",
+	"./zh-mo.js": "./node_modules/inet-chat/node_modules/moment/locale/zh-mo.js",
+	"./zh-tw": "./node_modules/inet-chat/node_modules/moment/locale/zh-tw.js",
+	"./zh-tw.js": "./node_modules/inet-chat/node_modules/moment/locale/zh-tw.js"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) { // check for number or string
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return id;
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./node_modules/inet-chat/node_modules/moment/locale sync recursive ^\\.\\/.*$";
+
+/***/ }),
+
 /***/ "./node_modules/moment/locale sync recursive ^\\.\\/.*$":
 /*!**************************************************!*\
   !*** ./node_modules/moment/locale sync ^\.\/.*$ ***!
@@ -450,9 +749,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var inet_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! inet-core */ "./node_modules/inet-core/esm5/inet-core.js");
+/* harmony import */ var inet_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! inet-core */ "./node_modules/inet-core/fesm5/inet-core.js");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var inet_ui__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! inet-ui */ "./node_modules/inet-ui/esm5/inet-ui.js");
+/* harmony import */ var inet_ui__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! inet-ui */ "./node_modules/inet-ui/fesm5/inet-ui.js");
 /* harmony import */ var _pages_layout_menu_menu_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/layout/menu/menu.component */ "./src/app/pages/layout/menu/menu.component.ts");
 /* harmony import */ var _pages_common_example_common_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/common/example-common.module */ "./src/app/pages/common/example-common.module.ts");
 /* harmony import */ var _pages_home_home_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/home/home.component */ "./src/app/pages/home/home.component.ts");
@@ -481,8 +780,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var AppModule = /** @class */ (function () {
-    function AppModule(socketService, securityService, coreService) {
-        this.socketService = socketService;
+    function AppModule(securityService, coreService) {
         this.securityService = securityService;
         this.coreService = coreService;
         this.coreService.setEnvironment(_environments_environment__WEBPACK_IMPORTED_MODULE_6__["environment"]);
@@ -509,8 +807,7 @@ var AppModule = /** @class */ (function () {
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]],
             schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["CUSTOM_ELEMENTS_SCHEMA"]]
         }),
-        __metadata("design:paramtypes", [inet_ui__WEBPACK_IMPORTED_MODULE_7__["SocketService"],
-            inet_core__WEBPACK_IMPORTED_MODULE_5__["SecurityService"],
+        __metadata("design:paramtypes", [inet_core__WEBPACK_IMPORTED_MODULE_5__["SecurityService"],
             inet_core__WEBPACK_IMPORTED_MODULE_5__["CoreService"]])
     ], AppModule);
     return AppModule;
@@ -530,7 +827,7 @@ var AppModule = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomTranslateLoader", function() { return CustomTranslateLoader; });
-/* harmony import */ var inet_ui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! inet-ui */ "./node_modules/inet-ui/esm5/inet-ui.js");
+/* harmony import */ var inet_ui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! inet-ui */ "./node_modules/inet-ui/fesm5/inet-ui.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
@@ -628,8 +925,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var ngx_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-bootstrap */ "./node_modules/ngx-bootstrap/esm5/ngx-bootstrap.js");
-/* harmony import */ var inet_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! inet-core */ "./node_modules/inet-core/esm5/inet-core.js");
-/* harmony import */ var inet_ui__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! inet-ui */ "./node_modules/inet-ui/esm5/inet-ui.js");
+/* harmony import */ var inet_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! inet-core */ "./node_modules/inet-core/fesm5/inet-core.js");
+/* harmony import */ var inet_ui__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! inet-ui */ "./node_modules/inet-ui/fesm5/inet-ui.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _i18n_custom_translate_loader__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../i18n/custom-translate-loader */ "./src/app/i18n/custom-translate-loader.ts");
 /* harmony import */ var _layout_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./layout.service */ "./src/app/pages/common/layout.service.ts");
@@ -801,7 +1098,7 @@ var HomeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul id=\"mainnav-menu\" class=\"menu-lg list-group\">\n    <li class=\"list-header\">Menu\n        <span (click)=\"toggleMenu($event)\" class=\"pull-right fa fa-compress pointer\" title=\"{{'MENU.COLLAPSE' | translate}}\"></span>\n    </li>\n    <li *ngIf=\"!expandedMenu\">\n        <a href=\"javascript:;\" (click)=\"toggleMenu($event)\">\n            <i class=\"fa fa-bars\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">{{'MENU.EXPAND' | translate}}</span>\n        </a>\n    </li>\n    <li routerLinkActive=\"active\">\n        <a routerLink=\"home\" routerLinkActive=\"active\">\n            <i class=\"fa fa-home\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">{{'MENU.HOME' | translate}}</span>\n        </a>\n    </li>\n    <li routerLinkActive=\"active\">\n        <a routerLink=\"themes\" routerLinkActive=\"active\">\n            <i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">{{'MENU.THEME' | translate}}</span>\n            <span class=\"pull-right badge badge-warning\">New</span>\n        </a>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#select-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-cog\"></i>\n            <span class=\"menu-title\">Select & Tags</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"select-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"select/tags\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-tags\"></i> Tags\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"select/multiselect\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-check-square\"></i> Multiselect\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#grid-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-table\"></i>\n            <span class=\"menu-title\">Grid</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"grid-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"grid/basic\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Basic\n                </a>\n            </li>\n            <!--li>\n                <a routerLink=\"grid/pagination\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Pagination\n                </a>\n            </li-->\n            <li>\n                <a routerLink=\"grid/editable\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-table\"></i> Editable\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"grid/grouping\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-table\"></i> Grouping\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#list-view-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-list\"></i>\n            <span class=\"menu-title\">ListView</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"list-view-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"list-view/basic\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Basic\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#forms-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-address-card\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">Forms</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"forms-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"form/elements\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Elements\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"form/number-format\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-calculator\"></i> Number Format\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"form/file-upload\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cloud-upload\"></i> File Upload\n                </a>\n            </li>\n        </ul>\n    </li>\n</ul>\n"
+module.exports = "<ul id=\"mainnav-menu\" class=\"menu-lg list-group\">\n    <li class=\"list-header\">Menu\n        <span (click)=\"toggleMenu($event)\" class=\"pull-right fa fa-compress pointer\" title=\"{{'MENU.COLLAPSE' | translate}}\"></span>\n    </li>\n    <li *ngIf=\"!expandedMenu\">\n        <a href=\"javascript:;\" (click)=\"toggleMenu($event)\">\n            <i class=\"fa fa-bars\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">{{'MENU.EXPAND' | translate}}</span>\n        </a>\n    </li>\n    <li routerLinkActive=\"active\">\n        <a routerLink=\"home\" routerLinkActive=\"active\">\n            <i class=\"fa fa-home\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">{{'MENU.HOME' | translate}}</span>\n        </a>\n    </li>\n    <li routerLinkActive=\"active\">\n        <a routerLink=\"themes\" routerLinkActive=\"active\">\n            <i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">{{'MENU.THEME' | translate}}</span>\n            <span class=\"pull-right badge badge-warning\">New</span>\n        </a>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#select-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-cog\"></i>\n            <span class=\"menu-title\">Select & Tags</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"select-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"select/tags\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-tags\"></i> Tags\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"select/multiselect\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-check-square\"></i> Multiselect\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#grid-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-table\"></i>\n            <span class=\"menu-title\">Grid</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"grid-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"grid/basic\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Basic\n                </a>\n            </li>\n            <!--li>\n                <a routerLink=\"grid/pagination\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Pagination\n                </a>\n            </li-->\n            <li>\n                <a routerLink=\"grid/editable\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-table\"></i> Editable\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"grid/grouping\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-table\"></i> Grouping\n                </a>\n            </li>\n            <!--li>\n                <a routerLink=\"grid/search\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-table\"></i> Search\n                </a>\n            </li-->\n        </ul>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#list-view-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-list\"></i>\n            <span class=\"menu-title\">ListView</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"list-view-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"list-view/basic\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Basic\n                </a>\n            </li>\n        </ul>\n    </li>\n    <li routerLinkActive=\"active active-sub\">\n        <a href=\"#forms-menu\" data-toggle=\"collapse\" aria-expanded=\"false\">\n            <i class=\"fa fa-address-card\" aria-hidden=\"true\"></i>\n            <span class=\"menu-title\">Forms</span>\n            <i class=\"arrow\"></i>\n        </a>\n        <ul id=\"forms-menu\" class=\"submenu collapse\" routerLinkActive=\"show\">\n            <li>\n                <a routerLink=\"form/elements\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cog\"></i> Elements\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"form/number-format\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-calculator\"></i> Number Format\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"form/file-upload\" routerLinkActive=\"active\">\n                    <i class=\"fa fa-cloud-upload\"></i> File Upload\n                </a>\n            </li>\n        </ul>\n    </li>\n</ul>\n"
 
 /***/ }),
 
