@@ -1,0 +1,74 @@
+{
+  "configVersion": 1,
+  "timestamp": 1594697339741,
+  "appData": "",
+  "index": "https://nguyenthanhvy105.github.io/examples/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://nguyenthanhvy105.github.io/examples/common.a8021ddfeeac2bd23bd2.js",
+        "https://nguyenthanhvy105.github.io/examples/favicon.ico",
+        "https://nguyenthanhvy105.github.io/examples/index.html",
+        "https://nguyenthanhvy105.github.io/examples/main.a12c81205051a158bdee.js",
+        "https://nguyenthanhvy105.github.io/examples/multiple-select.0374d3512faa18ddac2c.png",
+        "https://nguyenthanhvy105.github.io/examples/pages-form-test-form-module-ngfactory.8f4fe994bfde8fbfc465.js",
+        "https://nguyenthanhvy105.github.io/examples/pages-grid-test-grid-module-ngfactory.59ef78b4c01e0052180f.js",
+        "https://nguyenthanhvy105.github.io/examples/pages-list-view-test-list-view-module-ngfactory.466b5634e6b74ac0afa5.js",
+        "https://nguyenthanhvy105.github.io/examples/pages-select-test-select-module-ngfactory.09cebb8d835aaf20f44f.js",
+        "https://nguyenthanhvy105.github.io/examples/pages-themes-themes-module-ngfactory.04f75ce76e504df1f574.js",
+        "https://nguyenthanhvy105.github.io/examples/polyfills.6dc64db09d5eced21cb7.js",
+        "https://nguyenthanhvy105.github.io/examples/runtime.1fa76401cde601b5c915.js",
+        "https://nguyenthanhvy105.github.io/examples/scripts.4d1443af9c9553c0ab9a.js",
+        "https://nguyenthanhvy105.github.io/examples/styles.f0b537bb05d5d1dc3bda.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [],
+      "patterns": [
+        "https:\\/\\/media\\.inetcloud\\.vn\\/.*"
+      ]
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://nguyenthanhvy105.github.io/examples/common.a8021ddfeeac2bd23bd2.js": "a4ec36f933f44911f6ba663f13ce21a4c329cd2e",
+    "https://nguyenthanhvy105.github.io/examples/favicon.ico": "a4299fda5701addd6d917a89bb225f758337857b",
+    "https://nguyenthanhvy105.github.io/examples/index.html": "235a1e282226df2492ae4377d1c3426dc854852a",
+    "https://nguyenthanhvy105.github.io/examples/main.a12c81205051a158bdee.js": "b83d95baeeb0c8057bb0a8ae2b894c0899b1d5d8",
+    "https://nguyenthanhvy105.github.io/examples/multiple-select.0374d3512faa18ddac2c.png": "e305c7277a4911e6fb6d04d5ceb0baa6d59f5c57",
+    "https://nguyenthanhvy105.github.io/examples/pages-form-test-form-module-ngfactory.8f4fe994bfde8fbfc465.js": "3acfd06b26cca6161947afc26ded4c2251cd17ba",
+    "https://nguyenthanhvy105.github.io/examples/pages-grid-test-grid-module-ngfactory.59ef78b4c01e0052180f.js": "825c69cba13dd7a016fe56cc6960a27c54ea16b4",
+    "https://nguyenthanhvy105.github.io/examples/pages-list-view-test-list-view-module-ngfactory.466b5634e6b74ac0afa5.js": "6c9a0a77de260a545daa91c28aa173ce9dffa525",
+    "https://nguyenthanhvy105.github.io/examples/pages-select-test-select-module-ngfactory.09cebb8d835aaf20f44f.js": "a6332192442e190290ff58096f55d6061d5e05bd",
+    "https://nguyenthanhvy105.github.io/examples/pages-themes-themes-module-ngfactory.04f75ce76e504df1f574.js": "fe6d001e81ad046c602194808c35ac1351b030f3",
+    "https://nguyenthanhvy105.github.io/examples/polyfills.6dc64db09d5eced21cb7.js": "46d97333e909ea06ee23c844e98ce732f04da9e0",
+    "https://nguyenthanhvy105.github.io/examples/runtime.1fa76401cde601b5c915.js": "82bb4cc752281b5d61bbbc8c189e3a4af4969ce5",
+    "https://nguyenthanhvy105.github.io/examples/scripts.4d1443af9c9553c0ab9a.js": "8e5f8559b73312417d261e9ee916e0643531a1c4",
+    "https://nguyenthanhvy105.github.io/examples/styles.f0b537bb05d5d1dc3bda.css": "09b17a6100c6a53b5000fa69739a77515c237217"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
