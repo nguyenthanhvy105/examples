@@ -8,7 +8,7 @@
   },
   "homepage": "https://www.inetcloud.vn",
   "engines": {
-    "node": ">=9.0.0 <13.0.0",
+    "node": ">=10.0.0 <14.0.0",
     "yarn": ">=1.9.2 <2.0.0"
   },
   "scripts": {
