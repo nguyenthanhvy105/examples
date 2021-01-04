@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 import {Location} from '@angular/common';
-import {ConfirmDialogComponent, DialogAction, FileFormatService, FileUploader, ResponseUploadFile} from 'inet-ui';
+import {ConfirmDialogComponent, DialogAction, FileUploader, ResponseUploadFile} from 'inet-ui';
 import {HttpClientService} from 'inet-core';
 
 @Component({
