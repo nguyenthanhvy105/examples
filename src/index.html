@@ -50,31 +50,29 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
             crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://static.inetcloud.vn/js/common/inet/lib/inet-core.min.js?version=1599666739355"></script>
+    <script type="text/javascript" src="https://cdn.inetcloud.vn/data/api/lib/inet-core.min.js"></script>
 
     <script type="text/javascript">
         // Config server here
-        var pathServer = 'https://my-json-server.typicode.com/nguyenthanhvy105/examples';
+        var pathServer ='https://my-json-server.typicode.com/nguyenthanhvy105/examples';
         var arrPath = pathServer.split('/');
         iNet.apply(iNet, {
             prefix: '',
             firmPrefix: '',
-            imgFolder: '//media.inetcloud.vn/images/examples',
-            commonImageFolder: 'https://static.inetcloud.vn/images/common',
+            imgFolder: '//cdn.inetcloud.vn/api/examples/images',
+            commonImageFolder: 'https//cdn.inetcloud.vn/api/examples/images/common',
             jsFolder: '',
-            webchat: 'http://vertx.inetcloud.vn:8082/eventbus',
-            extension: '.cpx',
-            fileServer: 'https://static.inetcloud.vn/',
+            webchat: '//cdn.inetcloud.vn/api/api/examples/eventbus',
+            extension: '.json',
+            fileServer: 'https://cdn.inetcloud.vn/',
             path: '/' + arrPath[3],
             username: 'demo',
             displayName: 'Demo',
             getUrl: function (url) {
-                //return pathServer + '/' + url.replace(/\//g,'-');
-                return  pathServer + '/system-list';
+                return  'https://my-json-server.typicode.com/nguyenthanhvy105/examples/system-list';
             },
             getPUrl: function (url) {
-                //return pathServer + '/' + url.replace(/\//g,'-');
-                return  pathServer + '/system-list';
+                return  'https://my-json-server.typicode.com/nguyenthanhvy105/examples/system-list';
             }
         });
     </script>

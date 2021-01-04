@@ -15,7 +15,7 @@
       "updateMode": "prefetch",
       "resources": {
         "files": ["/nguyenthanhvy105/**"],
-        "urls": ["https://my-json-server.typicode.com/**"]
+        "urls": ["https://my-json-server.typicode.com/**","https://cdn.inetcloud.vn/**"]
       }
     }
   ]
