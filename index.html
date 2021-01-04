@@ -38,7 +38,7 @@
            content: 'LOGO COMPANY';
         }
     </style>
-<link rel="stylesheet" href="styles.f0b537bb05d5d1dc3bda.css"></head>
+<link rel="stylesheet" href="styles.1904563e7ec39eb1415a.css"></head>
 <body>
     <app-root>
         <div class="loading"></div>
@@ -49,33 +49,31 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
             crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://media.inetcloud.vn/js/common/inet/lib/inet-core.min.js?version=1594276479149"></script>
+    <script type="text/javascript" src="https://cdn.inetcloud.vn/data/api/lib/inet-core.min.js"></script>
 
     <script type="text/javascript">
         // Config server here
-        var pathServer = 'https://my-json-server.typicode.com/nguyenthanhvy105/examples';
+        var pathServer ='https://my-json-server.typicode.com/nguyenthanhvy105/examples';
         var arrPath = pathServer.split('/');
         iNet.apply(iNet, {
             prefix: '',
             firmPrefix: '',
-            imgFolder: '//media.inetcloud.vn/images/examples',
-            commonImageFolder: '//media.inetcloud.vn/images/common',
+            imgFolder: '//cdn.inetcloud.vn/api/examples/images',
+            commonImageFolder: 'https//cdn.inetcloud.vn/api/examples/images/common',
             jsFolder: '',
-            webchat: 'http://vertx.inetcloud.vn:8082/eventbus',
-            extension: '.cpx',
-            fileServer: '//media.inetcloud.vn/',
+            webchat: '//cdn.inetcloud.vn/api/api/examples/eventbus',
+            extension: '.json',
+            fileServer: 'https://cdn.inetcloud.vn/',
             path: '/' + arrPath[3],
             username: 'demo',
             displayName: 'Demo',
             getUrl: function (url) {
-                //return pathServer + '/' + url.replace(/\//g,'-');
-                return  pathServer + '/system-list';
+                return  'https://my-json-server.typicode.com/nguyenthanhvy105/examples/system-list';
             },
             getPUrl: function (url) {
-                //return pathServer + '/' + url.replace(/\//g,'-');
-                return  pathServer + '/system-list';
+                return  'https://my-json-server.typicode.com/nguyenthanhvy105/examples/system-list';
             }
         });
     </script>
-<script type="text/javascript" src="runtime.1fa76401cde601b5c915.js"></script><script type="text/javascript" src="polyfills.6dc64db09d5eced21cb7.js"></script><script type="text/javascript" src="scripts.4d1443af9c9553c0ab9a.js"></script><script type="text/javascript" src="main.c05cb21da9cc1adab9fa.js"></script></body>
+<script type="text/javascript" src="runtime.be2f270cafbe1a3be30e.js"></script><script type="text/javascript" src="polyfills.c44e18698ecf4b39e5cc.js"></script><script type="text/javascript" src="scripts.4d1443af9c9553c0ab9a.js"></script><script type="text/javascript" src="main.894b40a51317b8ee7b8a.js"></script></body>
 </html>
