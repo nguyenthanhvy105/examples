@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {ModalModule} from 'ngx-bootstrap';
+import {ModalModule} from 'ngx-bootstrap/modal';
 import {CoreModule} from "inet-core";
 import {CloudTranslateModule, InterceptorModule} from 'inet-ui';
 import {HttpClientModule} from '@angular/common/http';
