@@ -67,11 +67,12 @@
     "photoswipe": "4.1.2",
     "popper.js": "~1.14.6",
     "resize-sensor": "0.0.6",
-    "rxjs": "~6.3.3",
+    "rxjs": "6.6.7",
     "rxjs-compat": "~6.3.3",
     "timeago.js": "3.0.2",
     "vertx3-eventbus-client": "3.5.4",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.26",
+    "jodit-angular": "1.0.119"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.10.7",
