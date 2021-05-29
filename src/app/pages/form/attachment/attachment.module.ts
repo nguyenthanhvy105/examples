@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {AttachmentComponent} from './attachment.component';
 import {ModalModule} from 'ngx-bootstrap/modal';
-import {TooltipModule} from 'ngx-bootstrap';
+import {TooltipModule} from 'ngx-bootstrap/tooltip';
 import {DialogModule, FileModule, FileUploadModule} from 'inet-ui';
 
 @NgModule({
