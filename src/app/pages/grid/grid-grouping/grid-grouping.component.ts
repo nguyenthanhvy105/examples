@@ -33,6 +33,7 @@ export class GridGroupingComponent implements OnInit, OnDestroy {
     private columnsTranslations: any;
 
     constructor(private translate: TranslateService) {
+
         this.translateSubscription = translate.get(['GRID_COLUMNS']).subscribe(data => {
             this.columnsTranslations = data['GRID_COLUMNS'];
         });

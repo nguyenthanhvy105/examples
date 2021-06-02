@@ -2,7 +2,11 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": [ "perfect-scrollbar"]
+    "types": [
+      "perfect-scrollbar",
+      "moment",
+      "jquery"
+    ]
   },
   "files": [
     "src/main.ts",

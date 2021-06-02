@@ -57,7 +57,7 @@ export class AttachmentComponent implements OnInit {
 
         const modalDeleteActions = [
             new DialogAction('Đồng ý', 'btn-danger', 'fa fa-check', this.onDelete.bind(this)),
-            new DialogAction('Đóng', 'btn-cancel', 'fa fa-times', this.confirmDialog.hide)
+            new DialogAction('Đóng', 'btn-cancel', 'fa fa-times',  this.confirmDialog ? this.confirmDialog.hide : function () {})
         ];
 
         this.confirmDialog.setActions(modalDeleteActions);
