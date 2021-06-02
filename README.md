@@ -5,7 +5,7 @@ Examples
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/78c6575f8c2142a1b5552855a64c1696)](https://app.codacy.com/app/nguyenthanhvy105/examples?utm_source=github.com&utm_medium=referral&utm_content=nguyenthanhvy105/examples&utm_campaign=Badge_Grade_Settings)
 [![Build Status](https://travis-ci.org/nguyenthanhvy105/examples.svg?branch=master)](https://travis-ci.org/nguyenthanhvy105/examples)
 
-Simple Admin App built using Angular 7 and Bootstrap 4
+Simple Admin App built using Angular 12 and Bootstrap 4
 
 [Demo](https://nguyenthanhvy105.github.io/examples)
 ===
@@ -13,26 +13,25 @@ Tasks to do for running the project
 ===
 Quickly get a project started with any of our examples ranging from using parts of the framework to custom components and layouts.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.2
+-  Angular 12
+-  TypeScript 4
+-  RxJS 6.6.7
+-  iNet Core
+-  iNet UI
+-  Bootstrap & ngx-bootstrap
 
-- Angular 7
-- TypeScript 3
-- RxJS 6.2.0
-- iNet Core 0.7.9
-- iNet UI 0.7.14
-- Bootstrap 4.1.1
-- Ngx-bootstrap 3.1.2
 Features
 ===
-- Integrate with iCloud Platform modules
-- CAS Authentication
-- Custom components
-- Grid
-- Select & Tags
-- ListView
-- Forms
-- File Upload
-- Progressive Web App (PWA)
+-  Integrate with iCloud Platform modules
+-  CAS Authentication
+-  Custom components
+-  Grid
+-  Select & Tags
+-  ListView
+-  Forms
+-  File Upload
+-  Progressive Web App (PWA)
 
 Build
 ===

@@ -16,11 +16,14 @@
             "main": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "polyfills": "src/polyfills.ts",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/assets",
               "src/favicon.ico"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.css",
               "node_modules/flatpickr/dist/flatpickr.min.css",
               "node_modules/angular-slickgrid/lib/multiple-select/multiple-select.css",
               "node_modules/angular-slickgrid/styles/css/slickgrid-theme-bootstrap.css",
@@ -89,6 +92,7 @@
             "karmaConfig": "./karma.conf.js",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
             "scripts": [],
             "styles": [
               "src/styles.scss"
@@ -143,7 +147,7 @@
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
-      "styleext": "scss"
+      "style": "scss"
     },
     "@schematics/angular:directive": {
       "prefix": "app"
