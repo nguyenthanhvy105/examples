@@ -14,24 +14,24 @@ Tasks to do for running the project
 Quickly get a project started with any of our examples ranging from using parts of the framework to custom components and layouts.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.2
-- Angular 12
-- TypeScript 4
-- RxJS 6.6.7
-- iNet Core
-- iNet UI
-- Bootstrap & ngx-bootstrap
+-  Angular 12
+-  TypeScript 4
+-  RxJS 6.6.7
+-  iNet Core
+-  iNet UI
+-  Bootstrap & ngx-bootstrap
 
 Features
 ===
-- Integrate with iCloud Platform modules
-- CAS Authentication
-- Custom components
-- Grid
-- Select & Tags
-- ListView
-- Forms
-- File Upload
-- Progressive Web App (PWA)
+-  Integrate with iCloud Platform modules
+-  CAS Authentication
+-  Custom components
+-  Grid
+-  Select & Tags
+-  ListView
+-  Forms
+-  File Upload
+-  Progressive Web App (PWA)
 
 Build
 ===

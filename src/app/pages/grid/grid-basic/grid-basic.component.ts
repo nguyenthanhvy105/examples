@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from "@angular/core";
 import {DataService} from "../../data/data.service";
 import {ConfirmDialogComponent, DataTable, DataTableResource, DataTableRow, DialogAction} from "inet-ui";
 
@@ -24,10 +24,10 @@ export class GridBasicComponent implements OnInit, AfterViewInit {
     }
     ngAfterViewInit(): void {
         const modalDeleteActions = [
-            new DialogAction('Xóa', 'btn-danger', 'fa fa-check', () => {
+            new DialogAction("Xóa", "btn-danger", "fa fa-check", () => {
                 this.confirmDelete();
             }),
-            new DialogAction('Bỏ qua', 'btn-cancel', 'fa fa-times', () => {
+            new DialogAction("Bỏ qua", "btn-cancel", "fa fa-times", () => {
                 this.confirmDialog.hide();
             })
         ];
@@ -40,7 +40,6 @@ export class GridBasicComponent implements OnInit, AfterViewInit {
             this.dataService.getPeople().subscribe((items: any) => {
                 this.items = items.slice(params.page * params.limit, (params.page + 1) * params.limit);
                 this.itemCount = items.length;
-                console.log(this.items);
             });
         });
     }
@@ -51,7 +50,6 @@ export class GridBasicComponent implements OnInit, AfterViewInit {
 
     rowClick($event) {
        const row = $event.row as DataTableRow;
-       console.log('[rowClick]', row);
     }
 
     private findRowsById(id: string): Array<DataTableRow> {
@@ -70,7 +68,6 @@ export class GridBasicComponent implements OnInit, AfterViewInit {
 
     private confirmDelete() {
         const selectedRows: Array<DataTableRow> = this.confirmDialog.getData() || [];
-        console.log('[selectedRows]', selectedRows);
         this.confirmDialog.hide();
     }
 
