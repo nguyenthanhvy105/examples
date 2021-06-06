@@ -22,7 +22,7 @@ export class MenuComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.router.events.pipe(
-            filter(event => event instanceof NavigationEnd)
+            filter((event) => event instanceof NavigationEnd)
         ).subscribe((e: NavigationEnd) => {
         });
     }

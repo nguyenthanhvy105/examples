@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {DataService, Person} from "../../data/data.service";
-import {CustomValidators} from "ng2-validation";
 
 @Component({
     selector: 'app-form-elements',
@@ -22,7 +21,7 @@ export class FormElementsComponent implements OnInit {
             status: [],
             phone: [],
             gender: [],
-            email: [null, Validators.compose([CustomValidators.email])],
+            email: [null, Validators.compose([Validators.required, Validators.email])],
         });
 
         this.dataService.getPeople().subscribe((items: any) => {

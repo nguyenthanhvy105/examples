@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 import {Location} from '@angular/common';
 import {ConfirmDialogComponent, DialogAction, FileUploader, ResponseUploadFile} from 'inet-ui';
@@ -9,7 +9,7 @@ import {HttpClientService} from 'inet-core';
     templateUrl: './attachment.component.html',
     styleUrls: ['./attachment.component.scss']
 })
-export class AttachmentComponent implements OnInit {
+export class AttachmentComponent implements OnInit, AfterViewInit {
 
     @ViewChild(ConfirmDialogComponent) confirmDialog: ConfirmDialogComponent;
     @Input() attachments: Array<any> = [];
@@ -55,13 +55,18 @@ export class AttachmentComponent implements OnInit {
             item.remove();
         };
 
+    }
+
+    ngAfterViewInit(): void {
         const modalDeleteActions = [
-            new DialogAction('Đồng ý', 'btn-danger', 'fa fa-check', this.onDelete.bind(this)),
-            new DialogAction('Đóng', 'btn-cancel', 'fa fa-times',  this.confirmDialog ? this.confirmDialog.hide : function () {})
+            new DialogAction("Xóa", "btn-danger", "fa fa-check", () => {
+                this.onDelete();
+            }),
+            new DialogAction("Bỏ qua", "btn-cancel", "fa fa-times", () => {
+                this.confirmDialog.hide();
+            })
         ];
-
         this.confirmDialog.setActions(modalDeleteActions);
-
     }
 
     onDelete() {

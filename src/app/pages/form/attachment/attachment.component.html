@@ -7,14 +7,14 @@
 <table class="table" *ngIf="attachments?.length>0 || uploader.queue?.length>0">
     <thead>
     <tr>
-        <th style="width: 20px"></th>
+        <!--th style="width: 20px"></th-->
         <th>File name</th>
         <th style="width: 120px;"></th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let attachment of attachments">
-        <td><img [src]="attachment.name | fileIcon" class="file-icon"></td>
+        <!--td><img [src]="attachment.name | fileIcon" class="file-icon"></td-->
         <td><strong><a href="javascript:;" appViewer
                        [docId]="attachment.contentUuid"
                        [ext]="attachment.name | fileExt"
