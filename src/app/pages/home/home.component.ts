@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {NotificationService} from "inet-core";
 
 @Component({
     selector: 'app-home',
@@ -12,5 +13,4 @@ export class HomeComponent implements OnInit {
 
     ngOnInit() {
     }
-
 }

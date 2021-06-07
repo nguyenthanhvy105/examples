@@ -1,4 +1,4 @@
-import {Component, Injectable, OnInit, OnDestroy, HostListener} from '@angular/core';
+import {Component, OnInit, OnDestroy, HostListener} from '@angular/core';
 import {
     AngularGridInstance,
     Aggregators,
@@ -14,6 +14,8 @@ import {
 } from 'angular-slickgrid';
 import {TranslateService} from "@ngx-translate/core";
 import {Subscription} from "rxjs";
+import Vietnamese from 'flatpickr/dist/l10n/vn';
+import flatpickr from "flatpickr";
 
 @Component({
     templateUrl: './grid-grouping.component.html',
@@ -37,6 +39,8 @@ export class GridGroupingComponent implements OnInit, OnDestroy {
         this.translateSubscription = translate.get(['GRID_COLUMNS']).subscribe(data => {
             this.columnsTranslations = data['GRID_COLUMNS'];
         });
+
+        flatpickr.l10ns['vi'] = Vietnamese.vn;
     }
 
     ngOnDestroy() {
