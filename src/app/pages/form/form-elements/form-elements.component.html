@@ -4,7 +4,13 @@
     </div>
     <div class="cp-content">
         <div class="row-fluid">
-            <div class="col-sm-12">{{person | json}}</div>
+            <div class="m-2">
+                <button class="btn btn-warning btn-sm" (click)="showMessage('warning')">Show warning</button>
+                <button class="btn btn-success btn-sm ml-1" (click)="showMessage('success')">Show Success</button>
+                <button class="btn btn-danger btn-sm ml-1" (click)="showMessage('error')">Show error</button>
+                <button class="btn btn-info btn-sm ml-1" (click)="showMessageWithConfig()">Show with config</button>
+
+            </div>
         </div>
         <hr>
         <form [formGroup]="demoForm">

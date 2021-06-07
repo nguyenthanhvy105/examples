@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {DataService, Person} from "../../data/data.service";
+import {NotificationService} from "inet-core";
 
 @Component({
     selector: 'app-form-elements',
@@ -12,7 +13,9 @@ export class FormElementsComponent implements OnInit {
     person: Developer = new Developer();
     data: Developer;
     color: '#000';
-    constructor(private fb: FormBuilder, private dataService: DataService) {
+    constructor(private fb: FormBuilder,
+                private dataService: DataService,
+                private notification: NotificationService) {
     }
 
     ngOnInit() {
@@ -34,12 +37,21 @@ export class FormElementsComponent implements OnInit {
         });
 
         this.demoForm.valueChanges.subscribe(v => {
-            console.log('[onChange]', v);
             this.data = {...this.person, ...v};
         });
 
     }
 
+    showMessage(type: string = 'success') {
+        this.notification.showMessage('A primarily informational message', type, type.toUpperCase());
+    }
+
+    showMessageWithConfig() {
+        const config = {disableTimeOut: true, enableHtml: true};
+        this.notification.showMessage(`Toast message with config: <br>${JSON.stringify(config)}`, 'info', 'Toast title',
+            config
+        );
+    }
 }
 
 export class Developer implements Person {

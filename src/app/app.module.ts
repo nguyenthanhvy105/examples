@@ -45,5 +45,6 @@ export class AppModule {
     constructor(private securityService: SecurityService,
                 private coreService: CoreService) {
         this.coreService.setEnvironment(environment);
+
     }
 }
