@@ -33,14 +33,14 @@
               "node_modules/jquery-ui-dist/jquery-ui.min.js",
               "node_modules/slickgrid/lib/jquery.event.drag-2.3.0.js",
               "node_modules/angular-slickgrid/lib/multiple-select/multiple-select.js"
-            ]
+            ],
+            "allowedCommonJsDependencies": ["angular-slickgrid", "vertx3-eventbus-client", "stream"]
           },
           "configurations": {
             "production": {
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -56,13 +56,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "3mb",
+                  "maximumError": "6mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "8kb",
+                  "maximumError": "16kb"
                 }
               ]
             }
