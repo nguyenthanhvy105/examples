@@ -22,8 +22,7 @@
     "deploy:local": "npm run build  && npm run start:server",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "copy:flatpickr": "copyfiles -f node_modules/inet-ui/lib/flatpickr/dist/l10n/vi.js node_modules/flatpickr/dist/l10n"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {

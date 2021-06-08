@@ -56,7 +56,7 @@
             //     resolve();
             // });
 
-            const ng = exec(`node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build --project=${project} --aot --prod --named-chunks --progress`, {maxBuffer: 1024 * 2048}, function (err, stdou, stderr) {
+            const ng = exec(`node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build --project=${project} --aot --configuration production --named-chunks --progress`, {maxBuffer: 1024 * 2048}, function (err, stdou, stderr) {
                 resolve();
             });
 
@@ -113,22 +113,13 @@
     }
 
     function updateLazyLoadChunkPath(callback) {
-        gulp.src([buildDir + '/**/runtime.*.js'], {base: "./"})
-            .pipe(gulpReplace(/(\.src=.*?{return\s).*?\+/, function (str, p1) {
-                // dist/build/js/***/runtime.*.js
-                let subPath = '';
-                let paths = this.file.relative.replace(/\\/g, '/').split('/');
-                paths = paths.slice(paths.indexOf('js') + 1, paths.length - 1);
-                if (paths.length > 0) {
-                    paths.push('');
-                    subPath = paths.join('/');
-                }
-
-                return `${p1}${jsFolder}+"${subPath}"+`;
-            }))
-            // .pipe(gulpReplace(/(\.src=.*?{return\s).*?\+/, '$1' + chunkDir + '+'))
-            .pipe(gulp.dest('./'))
-            .on('end', callback);
+      let newCodeStr= 'iNet.jsFolder+e+"."+';
+      let regCode = new RegExp(/(\e\+"."\+)/);
+      const runtimeFile = buildDir + "/**/runtime.*.js";
+      gulp.src([runtimeFile], { base: "./" })
+        .pipe(gulpReplace(regCode,  newCodeStr))
+        .pipe(gulp.dest('./'))
+        .on("end", callback)
     }
 
     function updateChunkPathOnHTML(callback) {
