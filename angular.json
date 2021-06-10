@@ -7,6 +7,18 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        },
+        "@schematics/angular:component": {
+          "prefix": "app",
+          "style": "scss"
+        },
+        "@schematics/angular:directive": {
+          "prefix": "app"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -34,7 +46,11 @@
               "node_modules/slickgrid/lib/jquery.event.drag-2.3.0.js",
               "node_modules/angular-slickgrid/lib/multiple-select/multiple-select.js"
             ],
-            "allowedCommonJsDependencies": ["angular-slickgrid", "vertx3-eventbus-client", "stream"]
+            "allowedCommonJsDependencies": [
+              "angular-slickgrid",
+              "vertx3-eventbus-client",
+              "stream"
+            ]
           },
           "configurations": {
             "production": {
@@ -65,6 +81,14 @@
                   "maximumError": "16kb"
                 }
               ]
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             }
           }
         },
@@ -76,8 +100,12 @@
           "configurations": {
             "production": {
               "browserTarget": "examples:build:production"
+            },
+            "development": {
+              "browserTarget": "examples:build:development"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -104,39 +132,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "examples-e2e": {
-      "root": "",
-      "sourceRoot": "",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "examples:serve"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
             ]
           }
         }
@@ -144,15 +144,6 @@
     }
   },
   "defaultProject": "examples",
-  "schematics": {
-    "@schematics/angular:component": {
-      "prefix": "app",
-      "style": "scss"
-    },
-    "@schematics/angular:directive": {
-      "prefix": "app"
-    }
-  },
   "cli": {
     "analytics": "3946ba3f-bc96-4137-8cea-2900d2bcb216"
   }

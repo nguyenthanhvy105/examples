@@ -10,6 +10,7 @@ export class GridEditableComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('[GridEditableComponent]--ngOnInit--');
   }
 
 }

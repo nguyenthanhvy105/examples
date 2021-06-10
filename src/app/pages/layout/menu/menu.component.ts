@@ -12,7 +12,7 @@ import {filter} from "rxjs/operators";
 export class MenuComponent implements OnInit, OnDestroy {
     private _router: Subscription;
     @Input() expandedMenu = false;
-    @Output() onToggleMenu = new EventEmitter<boolean>();
+    @Output() toggleMenu = new EventEmitter<boolean>();
 
     constructor(private router: Router,
                 private location: Location,
@@ -35,7 +35,7 @@ export class MenuComponent implements OnInit, OnDestroy {
         this.location.back();
     }
 
-    toggleMenu($event) {
-        this.onToggleMenu.emit(this.expandedMenu);
+    onToggleMenu($event) {
+        this.toggleMenu.emit(this.expandedMenu);
     }
 }

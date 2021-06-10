@@ -6,23 +6,24 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
     styleUrls: ['./grid-basic-search.component.scss']
 })
 export class GridBasicSearchComponent implements OnInit {
-    @Input('keyword') key = '';
-    @Output('onToggle') onToggle = new EventEmitter<boolean>();
-    @Output('onSearch') onSearch = new EventEmitter<any>();
+    @Input() keyword;
+    @Output() toggle = new EventEmitter<boolean>();
+    @Output() search = new EventEmitter<any>();
     expandedAdvSearch = false;
 
     constructor() {
     }
 
     ngOnInit() {
+      console.log('[GridBasicSearchComponent]--ngOnInit--');
     }
 
     onToggleSearch($event) {
         this.expandedAdvSearch = !this.expandedAdvSearch;
-        this.onToggle.emit(this.expandedAdvSearch);
+        this.toggle.emit(this.expandedAdvSearch);
     }
 
-    search($event) {
-        this.onSearch.emit({keyword: this.key});
+    onSearch($event) {
+        this.search.emit({keyword: this.keyword});
     }
 }

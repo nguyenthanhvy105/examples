@@ -1,0 +1,15 @@
+<div class="admin-layout">
+  <div class="nav-fixed-top cp-toolbar">
+    <h5><i class="fa fa-font-awesome" aria-hidden="true"></i>
+      Icons
+    </h5>
+  </div>
+  <div class="cp-content">
+    <div class="row-fluid p-2 font-container">
+      <p><b>Font Awesome 4.7</b></p>
+      <ng-container *ngFor="let iconCls of icons">
+        <i class="fa {{iconCls}}"></i>
+      </ng-container>
+    </div>
+  </div>
+</div>

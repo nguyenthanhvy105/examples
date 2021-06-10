@@ -13,8 +13,8 @@ export class AttachmentComponent implements OnInit, AfterViewInit {
 
     @ViewChild(ConfirmDialogComponent) confirmDialog: ConfirmDialogComponent;
     @Input() attachments: Array<any> = [];
-    @Output('onUpload') onUpload = new EventEmitter<Array<Attachment>>();
-    @Output('onRemove') onRemove = new EventEmitter<Attachment>();
+    @Output() upload = new EventEmitter<Array<Attachment>>();
+    @Output() remove = new EventEmitter<Attachment>();
 
     confirmMessage = '';
     uploader: FileUploader;
@@ -48,7 +48,7 @@ export class AttachmentComponent implements OnInit, AfterViewInit {
                     files.push(new Attachment(file.uuid, file.name, file.mimetype));
                 }
             }
-            this.onUpload.emit(files);
+            this.upload.emit(files);
         });
 
         this.uploader.onCompleteItem = function (item, response, status, headers) {
@@ -73,7 +73,7 @@ export class AttachmentComponent implements OnInit, AfterViewInit {
         const attachment = new Attachment();
         Object.assign(attachment, this.confirmDialog.getData());
         this.confirmDialog.hide();
-        this.onRemove.emit(attachment);
+        this.remove.emit(attachment);
     }
 
     removeAttachment(att: Attachment) {

@@ -10,6 +10,7 @@ export class GridAdvanceSearchComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('[GridAdvanceSearchComponent]--ngOnInit--');
   }
 
 }
