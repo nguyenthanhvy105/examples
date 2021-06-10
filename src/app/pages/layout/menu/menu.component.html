@@ -1,9 +1,9 @@
 <ul id="mainnav-menu" class="menu-lg list-group">
     <li class="list-header">Menu
-        <span (click)="toggleMenu($event)" class="pull-right fa fa-compress pointer" title="{{'MENU.COLLAPSE' | translate}}"></span>
+        <span (click)="onToggleMenu($event)" class="pull-right fa fa-compress pointer" title="{{'MENU.COLLAPSE' | translate}}"></span>
     </li>
     <li *ngIf="!expandedMenu">
-        <a href="javascript:;" (click)="toggleMenu($event)">
+        <a href="javascript:;" (click)="onToggleMenu($event)">
             <i class="fa fa-bars" aria-hidden="true"></i>
             <span class="menu-title">{{'MENU.EXPAND' | translate}}</span>
         </a>
@@ -110,6 +110,11 @@
                     <i class="fa fa-cloud-upload"></i> File Upload
                 </a>
             </li>
+          <li>
+            <a routerLink="form/design-icon" routerLinkActive="active">
+              <i class="fa fa-font-awesome"></i> Icons
+            </a>
+          </li>
         </ul>
     </li>
 </ul>

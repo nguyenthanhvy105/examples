@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from "@angular/core";
 import {NavigationEnd, Router} from "@angular/router";
 import {Location} from "@angular/common";
-import {Subscription} from "rxjs/Rx";
+import {Subscription} from "rxjs";
 import {filter} from "rxjs/operators";
 
 @Component({
@@ -12,7 +12,7 @@ import {filter} from "rxjs/operators";
 export class MenuComponent implements OnInit, OnDestroy {
     private _router: Subscription;
     @Input() expandedMenu = false;
-    @Output() onToggleMenu = new EventEmitter<boolean>();
+    @Output() toggleMenu = new EventEmitter<boolean>();
 
     constructor(private router: Router,
                 private location: Location,
@@ -35,7 +35,8 @@ export class MenuComponent implements OnInit, OnDestroy {
         this.location.back();
     }
 
-    toggleMenu($event) {
-        this.onToggleMenu.emit(this.expandedMenu);
+    onToggleMenu($event) {
+        this.expandedMenu = !this.expandedMenu;
+        this.toggleMenu.emit(this.expandedMenu);
     }
 }

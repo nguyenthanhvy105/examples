@@ -9,9 +9,10 @@ import {AttachmentModule} from "./attachment/attachment.module";
 import { NumberFormatComponent } from './number-format/number-format.component';
 import {NumberFormatModule} from "inet-ui";
 import {ColorPickerModule} from "ngx-color-picker";
+import { DesignIconComponent } from './design-icon/design-icon.component';
 
 @NgModule({
-    declarations: [FormElementsComponent, FileUploadComponent, NumberFormatComponent],
+    declarations: [FormElementsComponent, FileUploadComponent, NumberFormatComponent, DesignIconComponent],
     imports: [
         CommonModule,
         FormsModule,
