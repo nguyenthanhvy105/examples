@@ -9,7 +9,7 @@ import {LayoutService} from "./pages/common/layout.service";
                     [hideTogglerButton]="false" [hideSearch]="false"
                     [hideCompanyMenu]="true" [hideProfileMenu]="true">
             <ng-template #menu>
-                <app-example-menu (onToggleMenu)="onToggleMenu($event)" [expandedMenu]="expandedMenu"></app-example-menu>
+                <app-example-menu (toggleMenu)="onToggleMenu($event)" [expandedMenu]="expandedMenu"></app-example-menu>
             </ng-template>
         </app-layout>`
 })

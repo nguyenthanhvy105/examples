@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from "@angular/core";
 import {NavigationEnd, Router} from "@angular/router";
 import {Location} from "@angular/common";
-import {Subscription} from "rxjs/Rx";
+import {Subscription} from "rxjs";
 import {filter} from "rxjs/operators";
 
 @Component({
@@ -36,6 +36,7 @@ export class MenuComponent implements OnInit, OnDestroy {
     }
 
     onToggleMenu($event) {
+        this.expandedMenu = !this.expandedMenu;
         this.toggleMenu.emit(this.expandedMenu);
     }
 }
