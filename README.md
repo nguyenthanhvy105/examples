@@ -2,7 +2,7 @@
 Examples
 ===
 [![NPM version][npm-version-image]][npm-url] [![NPM downloads][npm-downloads-image]][downloads-url]
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/78c6575f8c2142a1b5552855a64c1696)](https://app.codacy.com/app/nguyenthanhvy105/examples?utm_source=github.com&utm_medium=referral&utm_content=nguyenthanhvy105/examples&utm_campaign=Badge_Grade_Settings)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/9d2344a877e54643bad3910bb9caab80)](https://www.codacy.com/gh/nguyenthanhvy105/examples/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nguyenthanhvy105/examples&amp;utm_campaign=Badge_Grade)
 [![Build Status](https://travis-ci.org/nguyenthanhvy105/examples.svg?branch=master)](https://travis-ci.org/nguyenthanhvy105/examples)
 
 Simple Admin App built using Angular 12 and Bootstrap 4
