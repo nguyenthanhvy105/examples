@@ -2,6 +2,7 @@
 Examples
 ===
 [![NPM version][npm-version-image]][npm-url] [![NPM downloads][npm-downloads-image]][downloads-url]
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ef907231fcab4a5d8c5713d10a18fb64)](https://app.codacy.com/gh/nguyenthanhvy105/examples?utm_source=github.com&utm_medium=referral&utm_content=nguyenthanhvy105/examples&utm_campaign=Badge_Grade_Settings)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/78c6575f8c2142a1b5552855a64c1696)](https://app.codacy.com/app/nguyenthanhvy105/examples?utm_source=github.com&utm_medium=referral&utm_content=nguyenthanhvy105/examples&utm_campaign=Badge_Grade_Settings)
 [![Build Status](https://travis-ci.org/nguyenthanhvy105/examples.svg?branch=master)](https://travis-ci.org/nguyenthanhvy105/examples)
 
