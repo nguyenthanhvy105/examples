@@ -46,7 +46,7 @@
     "jquery": ">=3.0.0",
     "jquery-ui-dist": "^1.12.1",
     "lodash.isequal": "^4.5.0",
-    "moment": "~2.22.2",
+    "moment": "2.29.2",
     "ngx-autosize": "^1.7.5",
     "ngx-bootstrap": "~6.2.0",
     "ngx-color-picker": "11.0.0",
